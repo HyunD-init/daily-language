@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>여행자의 한 마디</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<style>html{color-scheme:light dark}body{margin:0}img{max-width:100%}</style>
+</head>
+<body>
+<style>
+  :root {
+    --bg: #ffffff;
+    --text: #37352f;
+    --text-2: #6b6a67;
+    --text-3: #9b9a97;
+    --divider: #e9e9e7;
+    --hover: #f7f6f3;
+    --gray-bg: #f7f6f3;
+    --blue-bg: #e7f1f7;
+    --blue-text: #0b6e99;
+    --green-bg: #e4efec;
+    --green-text: #0f7b6c;
+    --red-bg: #fbeceb;
+    --red-text: #c4554d;
+    --yellow-bg: #fbf3db;
+    --yellow-text: #986f24;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #191919; --text: #d4d4d4; --text-2: #9b9a97; --text-3: #787774;
+      --divider: #2f2f2f; --hover: #232323; --gray-bg: #202020;
+      --blue-bg: #143a4e; --blue-text: #7eb8da;
+      --green-bg: #17332e; --green-text: #67b5a5;
+      --red-bg: #3b2523; --red-text: #df8c85;
+      --yellow-bg: #372e20; --yellow-text: #d4b36a;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #191919; --text: #d4d4d4; --text-2: #9b9a97; --text-3: #787774;
+    --divider: #2f2f2f; --hover: #232323; --gray-bg: #202020;
+    --blue-bg: #143a4e; --blue-text: #7eb8da;
+    --green-bg: #17332e; --green-text: #67b5a5;
+    --red-bg: #3b2523; --red-text: #df8c85;
+    --yellow-bg: #372e20; --yellow-text: #d4b36a;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Inter", "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page { max-width: 720px; margin: 0 auto; padding: 56px 24px 120px; }
+
+  .page-icon { font-size: 60px; line-height: 1; margin-bottom: 12px; }
+
+  h1 {
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin: 0 0 8px;
+    text-wrap: balance;
+  }
+
+  .page-sub { color: var(--text-3); font-size: 15px; margin-bottom: 36px; }
+
+  .toc { margin-bottom: 44px; }
+
+  .toc-label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-3);
+    margin-bottom: 10px;
+  }
+
+  .toc a {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 7px 8px;
+    margin: 0 -8px;
+    border-radius: 4px;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 15px;
+  }
+
+  .toc a:hover { background: var(--hover); }
+  .toc a:focus-visible { outline: 2px solid var(--blue-text); outline-offset: -2px; }
+
+  .toc .cat {
+    font-size: 11.5px;
+    color: var(--blue-text);
+    background: var(--blue-bg);
+    border-radius: 3px;
+    padding: 1px 7px;
+    min-width: 52px;
+    text-align: center;
+  }
+
+  .toc .expr { font-weight: 500; }
+  .toc .gloss { color: var(--text-3); font-size: 14px; }
+
+  .entry { padding-top: 8px; }
+  .entry + .entry { border-top: 1px solid var(--divider); margin-top: 56px; padding-top: 48px; }
+
+  .entry-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    font-size: 13px;
+    color: var(--text-3);
+    margin-bottom: 14px;
+  }
+
+  .chip { background: var(--blue-bg); color: var(--blue-text); border-radius: 3px; padding: 2px 8px; font-size: 12px; }
+
+  h2.expr {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    margin: 0 0 20px;
+    text-wrap: balance;
+  }
+
+  h3 {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 34px 0 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  h3 .marker { color: var(--text-3); font-weight: 400; }
+
+  p { margin: 0 0 12px; }
+  p:last-child { margin-bottom: 0; }
+
+  .callout {
+    display: flex;
+    gap: 12px;
+    padding: 16px 16px 16px 14px;
+    border-radius: 4px;
+    background: var(--gray-bg);
+    font-size: 15.5px;
+    margin: 0 0 12px;
+  }
+
+  .callout .ico { font-size: 18px; line-height: 1.5; flex: none; }
+  .callout.blue { background: var(--blue-bg); }
+  .callout.green { background: var(--green-bg); }
+  .callout .body > :last-child { margin-bottom: 0; }
+  .callout b, .callout .term { font-weight: 600; }
+
+  /* 대화 */
+  .scene {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text-3);
+    margin: 22px 0 10px;
+  }
+
+  .dialogue { display: flex; flex-direction: column; gap: 14px; }
+
+  .turn { display: grid; grid-template-columns: 44px 1fr; gap: 12px; }
+
+  .turn .who {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-3);
+    padding-top: 4px;
+  }
+
+  .turn.me .who { color: var(--blue-text); }
+
+  .turn .en { font-size: 16.5px; line-height: 1.6; }
+  .turn .ko { color: var(--text-2); font-size: 14.5px; margin-top: 3px; }
+
+  /* 비교 */
+  .compare { display: flex; flex-direction: column; gap: 10px; }
+
+  .compare-row {
+    display: grid;
+    grid-template-columns: 108px 1fr;
+    gap: 12px;
+    align-items: start;
+    font-size: 15px;
+  }
+
+  .compare-row .tag {
+    font-size: 11.5px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 3px;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .compare-row.ok .tag { background: var(--green-bg); color: var(--green-text); }
+  .compare-row.no .tag { background: var(--red-bg); color: var(--red-text); }
+  .compare-row .exp { color: var(--text-2); }
+  .compare-row .exp b { color: var(--text); font-weight: 600; }
+
+  details.toggle { margin-top: 56px; border-top: 1px solid var(--divider); padding-top: 16px; }
+
+  details.toggle > summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-2);
+    padding: 8px;
+    margin: 0 -8px;
+    border-radius: 4px;
+  }
+
+  details.toggle > summary::-webkit-details-marker { display: none; }
+  details.toggle > summary:hover { background: var(--hover); }
+  details.toggle > summary:focus-visible { outline: 2px solid var(--blue-text); outline-offset: -2px; }
+
+  details.toggle > summary::before {
+    content: "▸";
+    color: var(--text-3);
+    font-size: 12px;
+    transition: transform 0.15s ease;
+  }
+
+  details.toggle[open] > summary::before { transform: rotate(90deg); }
+
+  @media (prefers-reduced-motion: reduce) {
+    details.toggle > summary::before { transition: none; }
+  }
+
+  footer {
+    margin-top: 72px;
+    padding-top: 20px;
+    border-top: 1px solid var(--divider);
+    color: var(--text-3);
+    font-size: 13px;
+  }
+
+  @media (max-width: 600px) {
+    .page { padding: 36px 18px 90px; }
+    h1 { font-size: 30px; }
+    h2.expr { font-size: 25px; }
+    .page-icon { font-size: 48px; }
+    .compare-row { grid-template-columns: 1fr; gap: 4px; }
+    .compare-row .tag { justify-self: start; }
+    .turn { grid-template-columns: 36px 1fr; }
+  }
+</style>
+
+<div class="page">
+
+  <div class="page-icon">✈️</div>
+  <h1>여행자의 한 마디</h1>
+  <div class="page-sub">미국에서 실제로 쓰는 영어 · 매일 아침 8시</div>
+
+  <!-- INDEX:START — 새 회차는 이 목록 맨 위에 <a> 하나 추가 -->
+  <nav class="toc">
+    <div class="toc-label">회차</div>
+    <a href="#e2"><span class="cat">식당</span><span class="expr">Can I get a to-go box?</span><span class="gloss">남은 음식 포장해 주세요</span></a>
+    <a href="#e1"><span class="cat">공항</span><span class="expr">Could I get this gate-checked?</span><span class="gloss">게이트에서 짐 부치기</span></a>
+  </nav>
+  <!-- INDEX:END -->
+
+  <!-- ENTRIES:START — 새 회차 <article class="entry">는 이 줄 바로 아래에 -->
+
+  <article class="entry" id="e2">
+    <div class="entry-meta">
+      <span class="chip">식당</span>
+      <span>2026년 9월 1일</span>
+    </div>
+
+    <h2 class="expr">“Can I get a to-go box?”</h2>
+
+    <div class="callout">
+      <span class="ico">💡</span>
+      <div class="body">
+        <p><span class="term">to-go box</span> = 남은 음식을 싸 갈 때 주는 포장 용기. 미국 식당은 양이 많아 남기는 게 당연하고, 포장해 가는 것도 전혀 눈치 볼 일이 아닙니다.</p>
+        <p>식사를 어느 정도 마친 뒤 서버에게 요청하는 말이에요. 서버가 먼저 “Do you want a box for that?”이라고 물어보는 경우도 많습니다.</p>
+        <p><span class="term">doggy bag</span>은 같은 뜻의 옛날 표현. 지금도 알아듣긴 하지만 나이 든 세대 말투로 들려서, 요즘은 to-go box 또는 그냥 box를 씁니다.</p>
+      </div>
+    </div>
+
+    <h3><span class="marker">/</span>실제 상황 대화</h3>
+
+    <div class="scene">스테이크를 반쯤 남겼을 때</div>
+    <div class="dialogue">
+      <div class="turn me">
+        <div class="who">나</div>
+        <div>
+          <div class="en">I'm done, but could I get a to-go box for this?</div>
+          <div class="ko">다 먹었는데, 이거 포장 용기 하나 주실 수 있을까요?</div>
+        </div>
+      </div>
+      <div class="turn">
+        <div class="who">서버</div>
+        <div>
+          <div class="en">Of course — I'll bring one right out.</div>
+          <div class="ko">그럼요, 바로 가져다드릴게요.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scene">일행 것까지 같이 쌀 때</div>
+    <div class="dialogue">
+      <div class="turn me">
+        <div class="who">나</div>
+        <div>
+          <div class="en">Could we get a couple of boxes? We'll take the rest home.</div>
+          <div class="ko">포장 용기 두어 개 받을 수 있을까요? 남은 건 가져가려고요.</div>
+        </div>
+      </div>
+      <div class="turn">
+        <div class="who">서버</div>
+        <div>
+          <div class="en">Sure thing. Want me to box it up for you?</div>
+          <div class="ko">네. 제가 담아드릴까요?</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scene">서버가 먼저 물어볼 때</div>
+    <div class="dialogue">
+      <div class="turn">
+        <div class="who">서버</div>
+        <div>
+          <div class="en">Still working on that, or should I box it up?</div>
+          <div class="ko">더 드실 건가요, 아니면 포장해드릴까요?</div>
+        </div>
+      </div>
+      <div class="turn me">
+        <div class="who">나</div>
+        <div>
+          <div class="en">I'm all set — a box would be great, thanks.</div>
+          <div class="ko">다 먹었어요. 포장해주시면 좋겠어요, 감사합니다.</div>
+        </div>
+      </div>
+    </div>
+
+    <h3><span class="marker">/</span>헷갈리는 표현과의 차이</h3>
+    <div class="compare">
+      <div class="compare-row ok">
+        <span class="tag">to-go box</span>
+        <span class="exp"><b>식사 후</b> 남은 음식을 싸 갈 때. 이미 나온 음식이 대상.</span>
+      </div>
+      <div class="compare-row no">
+        <span class="tag">to go</span>
+        <span class="exp"><b>주문할 때</b> 처음부터 포장해 달라는 뜻. “Can I get this to go?”를 식사 도중에 쓰면 서버가 새로 포장 주문을 넣는 걸로 오해할 수 있음.</span>
+      </div>
+    </div>
+
+    <h3><span class="marker">/</span>원어민이 받아칠 만한 대답</h3>
+    <div class="callout blue">
+      <span class="ico">💬</span>
+      <div class="body">
+        <p>“Absolutely — I'll grab a box. Do you want a bag with that?”</p>
+        <p style="color:var(--text-2);font-size:14.5px;">그럼요, 용기 가져올게요. 봉투도 같이 드릴까요?</p>
+      </div>
+    </div>
+  </article>
+
+  <details class="toggle">
+    <summary>지난 회차 1개</summary>
+
+    <article class="entry" id="e1">
+      <div class="entry-meta">
+        <span class="chip">공항</span>
+        <span>2026년 8월 23일</span>
+      </div>
+
+      <h2 class="expr">“Could I get this gate-checked?”</h2>
+
+      <div class="callout">
+        <span class="ico">💡</span>
+        <div class="body">
+          <p><span class="term">gate-check</span> = 탑승구(게이트)에서 짐을 맡겨 화물칸에 싣는 것. 보안검색대는 이미 통과한 뒤, 비행기 타기 직전 게이트에서 이루어지는 절차입니다.</p>
+          <p>기내용 캐리어가 오버헤드 짐칸에 안 들어갈 만큼 크거나, 유모차·서프보드처럼 부피가 큰 물건을 들고 탈 때 자주 씁니다. 대부분 무료(항공사 재량)이고, 내릴 때 비행기 바로 앞(제트브릿지) 또는 수하물 찾는 곳에서 돌려받아요.</p>
+        </div>
+      </div>
+
+      <h3><span class="marker">/</span>실제 상황 대화</h3>
+
+      <div class="scene">탑승구 — 오버헤드 짐칸이 다 찼을 때</div>
+      <div class="dialogue">
+        <div class="turn me">
+          <div class="who">나</div>
+          <div>
+            <div class="en">Excuse me, could I get this gate-checked? I don't think there's any overhead space left.</div>
+            <div class="ko">실례합니다, 이거 게이트에서 부칠 수 있을까요? 짐칸에 자리가 없는 것 같아서요.</div>
+          </div>
+        </div>
+        <div class="turn">
+          <div class="who">직원</div>
+          <div>
+            <div class="en">Sure, just leave it right here by the door and we'll tag it for you.</div>
+            <div class="ko">네, 여기 문 옆에 두시면 저희가 태그 달아드릴게요.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="scene">유모차를 가지고 탑승할 때</div>
+      <div class="dialogue">
+        <div class="turn me">
+          <div class="who">나</div>
+          <div>
+            <div class="en">Can I gate-check my stroller, or do I need to check it at the counter?</div>
+            <div class="ko">유모차 게이트에서 부쳐도 되나요, 아니면 카운터에서 부쳐야 하나요?</div>
+          </div>
+        </div>
+        <div class="turn">
+          <div class="who">직원</div>
+          <div>
+            <div class="en">You can gate-check it — we'll bring it right to the jet bridge when you land.</div>
+            <div class="ko">게이트에서 부치시면 돼요. 도착하면 탑승교 앞으로 바로 가져다드릴게요.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="scene">캐리어 크기가 애매할 때</div>
+      <div class="dialogue">
+        <div class="turn me">
+          <div class="who">나</div>
+          <div>
+            <div class="en">My bag might be too big for the overhead bin. Should I just gate-check it now?</div>
+            <div class="ko">제 가방이 짐칸에 안 들어갈 것 같은데, 지금 미리 게이트에서 부치는 게 나을까요?</div>
+          </div>
+        </div>
+        <div class="turn">
+          <div class="who">직원</div>
+          <div>
+            <div class="en">That's probably a good idea — it'll save you the hassle at boarding.</div>
+            <div class="ko">그게 낫겠네요. 탑승할 때 번거로울 일 없게요.</div>
+          </div>
+        </div>
+      </div>
+
+      <h3><span class="marker">/</span>헷갈리는 표현과의 차이</h3>
+      <div class="compare">
+        <div class="compare-row ok">
+          <span class="tag">gate-check</span>
+          <span class="exp"><b>탑승구</b>에서, 탑승 직전에 하는 절차. 보안검색대 통과 후.</span>
+        </div>
+        <div class="compare-row no">
+          <span class="tag">check-in bag</span>
+          <span class="exp"><b>발권 카운터</b>에서 미리 부치는 절차. 게이트에서 이 표현을 쓰면 직원이 “지금요? 왜 카운터에서 안 하셨어요?” 하고 의아해할 수 있음.</span>
+        </div>
+      </div>
+
+      <h3><span class="marker">/</span>원어민이 받아칠 만한 대답</h3>
+      <div class="callout blue">
+        <span class="ico">💬</span>
+        <div class="body">
+          <p>“Sure, no problem — I'll just print you a tag. You can grab it right at the door when you land, or down at baggage claim, depending on the aircraft.”</p>
+          <p style="color:var(--text-2);font-size:14.5px;">네, 문제없어요. 태그만 붙여드릴게요. 도착하면 비행기 문 앞에서 바로 받으시거나, 기종에 따라 수하물 찾는 곳에서 받으시면 돼요.</p>
+        </div>
+      </div>
+    </article>
+  </details>
+
+  <!-- ENTRIES:END -->
+
+  <footer>매일 아침 3개 — 미국 일상 회화 1 + 여행 실전 2</footer>
+
+</div>
+</body>
+</html>
