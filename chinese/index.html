@@ -1,0 +1,722 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>매일 중국어 한 덩어리</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap">
+<style>html{color-scheme:light dark}body{margin:0}img{max-width:100%}</style>
+</head>
+<body>
+<style>
+  :root {
+    --bg: #ffffff;
+    --text: #37352f;
+    --text-2: #6b6a67;
+    --text-3: #9b9a97;
+    --divider: #e9e9e7;
+    --hover: #f7f6f3;
+    --gray-bg: #f7f6f3;
+    --blue-bg: #e7f1f7;
+    --blue-text: #0b6e99;
+    --green-bg: #e4efec;
+    --green-text: #0f7b6c;
+    --red-bg: #fbeceb;
+    --red-text: #c4554d;
+    --yellow-bg: #fbf3db;
+    --yellow-text: #986f24;
+    --code-bg: #f2f1ee;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #191919; --text: #d4d4d4; --text-2: #9b9a97; --text-3: #787774;
+      --divider: #2f2f2f; --hover: #232323; --gray-bg: #202020;
+      --blue-bg: #143a4e; --blue-text: #7eb8da;
+      --green-bg: #17332e; --green-text: #67b5a5;
+      --red-bg: #3b2523; --red-text: #df8c85;
+      --yellow-bg: #372e20; --yellow-text: #d4b36a;
+      --code-bg: #242424;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #191919; --text: #d4d4d4; --text-2: #9b9a97; --text-3: #787774;
+    --divider: #2f2f2f; --hover: #232323; --gray-bg: #202020;
+    --blue-bg: #143a4e; --blue-text: #7eb8da;
+    --green-bg: #17332e; --green-text: #67b5a5;
+    --red-bg: #3b2523; --red-text: #df8c85;
+    --yellow-bg: #372e20; --yellow-text: #d4b36a;
+    --code-bg: #242424;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Inter", "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 56px 24px 120px;
+  }
+
+  /* ── 페이지 헤더 ── */
+  .page-icon { font-size: 60px; line-height: 1; margin-bottom: 12px; }
+
+  h1 {
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin: 0 0 8px;
+    text-wrap: balance;
+  }
+
+  .page-sub { color: var(--text-3); font-size: 15px; margin-bottom: 36px; }
+
+  /* ── 목차 ── */
+  .toc { margin-bottom: 44px; }
+
+  .toc-label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-3);
+    margin-bottom: 10px;
+  }
+
+  .toc a {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    padding: 7px 8px;
+    margin: 0 -8px;
+    border-radius: 4px;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 15px;
+  }
+
+  .toc a:hover { background: var(--hover); }
+  .toc a:focus-visible { outline: 2px solid var(--blue-text); outline-offset: -2px; }
+
+  .toc .n {
+    color: var(--text-3);
+    font-size: 13px;
+    font-variant-numeric: tabular-nums;
+    min-width: 42px;
+  }
+
+  .toc .zh { font-family: "Noto Serif SC", serif; font-weight: 600; }
+  .toc .gloss { color: var(--text-3); font-size: 14px; }
+
+  /* ── 회차 ── */
+  .entry { padding-top: 8px; }
+
+  .entry + .entry { border-top: 1px solid var(--divider); margin-top: 56px; padding-top: 48px; }
+
+  .entry-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    font-size: 13px;
+    color: var(--text-3);
+    margin-bottom: 14px;
+  }
+
+  .chip {
+    background: var(--gray-bg);
+    border-radius: 3px;
+    padding: 2px 8px;
+    font-size: 12px;
+    color: var(--text-2);
+  }
+
+  .chip.type { background: var(--blue-bg); color: var(--blue-text); }
+
+  h2.headword {
+    font-family: "Noto Serif SC", "Noto Sans KR", serif;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 0 0 4px;
+    letter-spacing: -0.01em;
+  }
+
+  .pinyin { color: var(--text-2); font-size: 16px; margin-bottom: 18px; }
+
+  h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    margin: 34px 0 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  h3 .marker { color: var(--text-3); font-weight: 400; }
+
+  p { margin: 0 0 12px; }
+  p:last-child { margin-bottom: 0; }
+
+  /* ── 콜아웃 ── */
+  .callout {
+    display: flex;
+    gap: 12px;
+    padding: 16px 16px 16px 14px;
+    border-radius: 4px;
+    background: var(--gray-bg);
+    font-size: 15.5px;
+    margin: 0 0 12px;
+  }
+
+  .callout .ico { font-size: 18px; line-height: 1.5; flex: none; }
+  .callout.blue { background: var(--blue-bg); }
+  .callout.green { background: var(--green-bg); }
+  .callout.yellow { background: var(--yellow-bg); }
+  .callout .body > :last-child { margin-bottom: 0; }
+
+  /* ── 짝 표현 목록 ── */
+  .pairs { display: flex; flex-direction: column; }
+
+  .pair {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px 10px;
+    padding: 11px 0;
+    border-bottom: 1px solid var(--divider);
+  }
+
+  .pair:first-child { border-top: 1px solid var(--divider); }
+
+  .pair .zh { font-family: "Noto Serif SC", serif; font-weight: 600; font-size: 17px; }
+  .pair .py { color: var(--text-3); font-size: 13.5px; }
+  .pair .ko { color: var(--text-2); font-size: 15px; width: 100%; }
+
+  /* ── 대화문 ── */
+  .dialogue { display: flex; flex-direction: column; gap: 18px; }
+
+  .turn { display: grid; grid-template-columns: 30px 1fr; gap: 12px; }
+
+  .turn .who {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-3);
+    padding-top: 5px;
+  }
+
+  .turn .zh {
+    font-family: "Noto Serif SC", serif;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  .turn .zh mark {
+    background: var(--yellow-bg);
+    color: inherit;
+    border-radius: 2px;
+    padding: 0 2px;
+  }
+
+  .turn .py { color: var(--text-3); font-size: 13.5px; line-height: 1.5; margin-top: 3px; }
+  .turn .ko { color: var(--text-2); font-size: 15px; margin-top: 3px; }
+
+  /* ── 병원 표현 ── */
+  .clinic { margin-top: 34px; }
+
+  .clinic-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--green-text);
+    margin-bottom: 12px;
+  }
+
+  .ask {
+    background: var(--green-bg);
+    border-radius: 4px;
+    padding: 16px;
+    margin-bottom: 14px;
+  }
+
+  .ask .label, .ans-label {
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--green-text);
+    margin-bottom: 6px;
+  }
+
+  .ans-label { color: var(--text-3); margin: 0 0 8px; }
+
+  .ask .zh { font-family: "Noto Serif SC", serif; font-size: 18px; font-weight: 600; }
+  .ask .py { color: var(--text-2); font-size: 13.5px; margin-top: 3px; }
+  .ask .ko { color: var(--text-2); font-size: 15px; margin-top: 4px; }
+
+  .answers { display: flex; flex-direction: column; }
+
+  .ans {
+    padding: 11px 0;
+    border-bottom: 1px solid var(--divider);
+  }
+
+  .ans:first-child { border-top: 1px solid var(--divider); }
+  .ans .zh { font-family: "Noto Serif SC", serif; font-size: 17px; }
+  .ans .py { color: var(--text-3); font-size: 13.5px; margin-top: 2px; }
+  .ans .ko { color: var(--text-2); font-size: 15px; margin-top: 2px; }
+
+  /* ── 토글(지난 회차) ── */
+  details.toggle { margin-top: 56px; border-top: 1px solid var(--divider); padding-top: 16px; }
+
+  details.toggle > summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-2);
+    padding: 8px;
+    margin: 0 -8px;
+    border-radius: 4px;
+  }
+
+  details.toggle > summary::-webkit-details-marker { display: none; }
+  details.toggle > summary:hover { background: var(--hover); }
+  details.toggle > summary:focus-visible { outline: 2px solid var(--blue-text); outline-offset: -2px; }
+
+  details.toggle > summary::before {
+    content: "▸";
+    color: var(--text-3);
+    font-size: 12px;
+    transition: transform 0.15s ease;
+  }
+
+  details.toggle[open] > summary::before { transform: rotate(90deg); }
+
+  @media (prefers-reduced-motion: reduce) {
+    details.toggle > summary::before { transition: none; }
+  }
+
+  footer {
+    margin-top: 72px;
+    padding-top: 20px;
+    border-top: 1px solid var(--divider);
+    color: var(--text-3);
+    font-size: 13px;
+  }
+
+  @media (max-width: 600px) {
+    .page { padding: 36px 18px 90px; }
+    h1 { font-size: 30px; }
+    h2.headword { font-size: 28px; }
+    .page-icon { font-size: 48px; }
+  }
+</style>
+
+<div class="page">
+
+  <div class="page-icon">🀄</div>
+  <h1>매일 중국어 한 덩어리</h1>
+  <div class="page-sub">HSK 5급 이후 · 실전 회화와 병원 문진 · 하루 10~15분</div>
+
+  <!-- INDEX:START — 새 회차는 이 목록 맨 위에 <a> 하나 추가 -->
+  <nav class="toc">
+    <div class="toc-label">회차</div>
+    <a href="#d3"><span class="n">3일차</span><span class="zh">走后门</span><span class="gloss">연줄로 일을 처리하다</span></a>
+    <a href="#d2"><span class="n">2일차</span><span class="zh">拍马屁</span><span class="gloss">아부하다</span></a>
+    <a href="#d1"><span class="n">1일차</span><span class="zh">说曹操，曹操到</span><span class="gloss">호랑이도 제 말 하면 온다</span></a>
+  </nav>
+  <!-- INDEX:END -->
+
+  <!-- ENTRIES:START — 새 회차 <article class="entry">는 이 줄 바로 아래에 -->
+
+  <article class="entry" id="d3">
+    <div class="entry-meta">
+      <span class="chip">3일차</span>
+      <span>2026년 9월 1일</span>
+      <span class="chip type">구어 성어·관용어</span>
+    </div>
+
+    <h2 class="headword">走后门</h2>
+    <div class="pinyin">zǒu hòumén · 연줄이나 뒷거래로 일을 처리하다</div>
+
+    <div class="callout">
+      <span class="ico">💡</span>
+      <div class="body">
+        <p>직역하면 "뒷문으로 들어가다". 정식 절차를 건너뛰고 아는 사람을 통해 일을 해결했을 때 씁니다.</p>
+        <p>입학·취업·진료 순서처럼 원래 줄을 서야 하는 일에 주로 등장하고, 부정적 뉘앙스가 강해서 보통 남을 흉볼 때 써요. 자기 얘기로 할 땐 농담조로 슬쩍 붙이는 정도.</p>
+      </div>
+    </div>
+
+    <h3><span class="marker">/</span>자주 붙는 짝 표현</h3>
+    <div class="pairs">
+      <div class="pair"><span class="zh">走关系</span><span class="py">zǒu guānxi</span><span class="ko">인맥을 동원하다 — 走后门보다 조금 중립적</span></div>
+      <div class="pair"><span class="zh">托人办事</span><span class="py">tuō rén bànshì</span><span class="ko">사람을 통해 일을 부탁하다</span></div>
+      <div class="pair"><span class="zh">有门路</span><span class="py">yǒu ménlù</span><span class="ko">뚫을 줄이 있다, 방법이 있다</span></div>
+    </div>
+
+    <h3><span class="marker">/</span>대화문</h3>
+    <div class="dialogue">
+      <div class="turn">
+        <div class="who">A</div>
+        <div>
+          <div class="zh">你儿子怎么进那所学校的？听说名额特别难抢。</div>
+          <div class="py">nǐ érzi zěnme jìn nà suǒ xuéxiào de? tīngshuō míng'é tèbié nán qiǎng.</div>
+          <div class="ko">너희 아들 그 학교 어떻게 들어갔어? 자리 잡기 엄청 어렵다던데.</div>
+        </div>
+      </div>
+      <div class="turn">
+        <div class="who">B</div>
+        <div>
+          <div class="zh">正常排队根本排不上，最后还是<mark>走了后门</mark>。</div>
+          <div class="py">zhèngcháng páiduì gēnběn pái bu shàng, zuìhòu háishi zǒu le hòumén.</div>
+          <div class="ko">정상적으로 줄 서서는 도저히 안 돼서, 결국 연줄 썼어.</div>
+        </div>
+      </div>
+      <div class="turn">
+        <div class="who">A</div>
+        <div>
+          <div class="zh">你还有这门路呢？</div>
+          <div class="py">nǐ hái yǒu zhè ménlù ne?</div>
+          <div class="ko">너 그런 줄도 있었어?</div>
+        </div>
+      </div>
+      <div class="turn">
+        <div class="who">B</div>
+        <div>
+          <div class="zh">我一个老同学在那边工作，托他帮的忙。</div>
+          <div class="py">wǒ yí ge lǎo tóngxué zài nàbiān gōngzuò, tuō tā bāng de máng.</div>
+          <div class="ko">동창 하나가 거기서 일해서, 걔한테 부탁했어.</div>
+        </div>
+      </div>
+      <div class="turn">
+        <div class="who">A</div>
+        <div>
+          <div class="zh">这事儿别到处说啊。</div>
+          <div class="py">zhè shìr bié dàochù shuō a.</div>
+          <div class="ko">이 얘긴 아무 데나 하고 다니지 마.</div>
+        </div>
+      </div>
+    </div>
+
+    <h3><span class="marker">/</span>헷갈리는 표현과의 차이</h3>
+    <div class="callout blue">
+      <span class="ico">⚖️</span>
+      <div class="body">
+        <p><b>走关系</b> (zǒu guānxi)는 "인맥을 쓰다"라는 사실 서술에 가까워 중립적으로도 쓰이지만, <b>走后门</b>은 "정당하지 않게 뚫었다"는 비난 뉘앙스가 확실히 들어갑니다.</p>
+      </div>
+    </div>
+
+    <h3><span class="marker">/</span>직접 답해보기</h3>
+    <div class="callout yellow">
+      <span class="ico">✍️</span>
+      <div class="body">
+        <p>주변에서 누군가 연줄로 일을 해결한 걸 본 적 있어? 그 상황을 走后门을 넣어 중국어 두 문장으로 말해봐.</p>
+      </div>
+    </div>
+
+    <section class="clinic">
+      <div class="clinic-head"><span>🩺</span>오늘의 병원 표현 · 발열 문진</div>
+
+      <div class="ask">
+        <div class="label">의료진이 묻는 말</div>
+        <div class="zh">你从什么时候开始发烧的？最高烧到多少度？</div>
+        <div class="py">nǐ cóng shénme shíhou kāishǐ fāshāo de? zuì gāo shāo dào duōshao dù?</div>
+        <div class="ko">언제부터 열이 났고, 최고 몇 도까지 올랐나요?</div>
+      </div>
+
+      <div class="ans-label">환자가 답으로 쓸 법한 말</div>
+      <div class="answers">
+        <div class="ans">
+          <div class="zh">从昨天晚上开始发烧。</div>
+          <div class="py">cóng zuótiān wǎnshang kāishǐ fāshāo.</div>
+          <div class="ko">어제 저녁부터 열이 났어요.</div>
+        </div>
+        <div class="ans">
+          <div class="zh">烧到三十九度。</div>
+          <div class="py">shāo dào sānshíjiǔ dù.</div>
+          <div class="ko">39도까지 올랐어요.</div>
+        </div>
+        <div class="ans">
+          <div class="zh">吃了退烧药就退，过几个小时又烧起来。</div>
+          <div class="py">chī le tuìshāoyào jiù tuì, guò jǐ ge xiǎoshí yòu shāo qǐlái.</div>
+          <div class="ko">해열제 먹으면 내렸다가 몇 시간 지나면 다시 올라요.</div>
+        </div>
+        <div class="ans">
+          <div class="zh">一直低烧，三十七度五左右。</div>
+          <div class="py">yìzhí dīshāo, sānshíqī dù wǔ zuǒyòu.</div>
+          <div class="ko">계속 미열이에요, 37.5도쯤 돼요.</div>
+        </div>
+      </div>
+    </section>
+  </article>
+
+  <details class="toggle">
+    <summary>지난 회차 2개</summary>
+
+    <article class="entry" id="d2">
+      <div class="entry-meta">
+        <span class="chip">2일차</span>
+        <span>2026년 8월 31일</span>
+        <span class="chip type">구어 성어·관용어</span>
+      </div>
+
+      <h2 class="headword">拍马屁</h2>
+      <div class="pinyin">pāi mǎpì · 아부하다, 알랑거리다</div>
+
+      <div class="callout">
+        <span class="ico">💡</span>
+        <div class="body">
+          <p>윗사람이나 힘 있는 사람에게 잘 보이려고 듣기 좋은 말만 할 때. 대놓고 냉소적인 뉘앙스라 당사자 앞에서보다 뒤에서 흉볼 때 자주 씁니다.</p>
+        </div>
+      </div>
+
+      <h3><span class="marker">/</span>자주 붙는 짝 표현</h3>
+      <div class="pairs">
+        <div class="pair"><span class="zh">拍 X 的马屁</span><span class="py">pāi X de mǎpì</span><span class="ko">X에게 아부하다 — 가장 기본 문형</span></div>
+        <div class="pair"><span class="zh">马屁精</span><span class="py">mǎpìjīng</span><span class="ko">아첨꾼 — 그런 사람을 가리키는 명사</span></div>
+        <div class="pair"><span class="zh">不是拍马屁</span><span class="py">bú shì pāi mǎpì</span><span class="ko">아부하는 거 아니고 — 진심 어린 칭찬 전에 미리 까는 말</span></div>
+      </div>
+
+      <h3><span class="marker">/</span>대화문</h3>
+      <div class="dialogue">
+        <div class="turn">
+          <div class="who">A</div>
+          <div>
+            <div class="zh">你觉得我们老板今天心情怎么样？</div>
+            <div class="py">nǐ juéde wǒmen lǎobǎn jīntiān xīnqíng zěnmeyàng?</div>
+            <div class="ko">우리 사장님 오늘 기분 어때 보여?</div>
+          </div>
+        </div>
+        <div class="turn">
+          <div class="who">B</div>
+          <div>
+            <div class="zh">挺好的，你猜为什么？</div>
+            <div class="py">tǐng hǎo de, nǐ cāi wèishénme?</div>
+            <div class="ko">꽤 좋아 보이던데, 왜 그런지 맞혀볼래?</div>
+          </div>
+        </div>
+        <div class="turn">
+          <div class="who">A</div>
+          <div>
+            <div class="zh">是不是小李又在<mark>拍他马屁</mark>？</div>
+            <div class="py">shì bu shì Xiǎo Lǐ yòu zài pāi tā mǎpì?</div>
+            <div class="ko">샤오리가 또 사장님한테 아부하는 거 아니야?</div>
+          </div>
+        </div>
+        <div class="turn">
+          <div class="who">B</div>
+          <div>
+            <div class="zh">对啊，一直夸他方案做得好。</div>
+            <div class="py">duì a, yìzhí kuā tā fāng'àn zuò de hǎo.</div>
+            <div class="ko">맞아, 계속 기획안 잘 짰다고 칭찬하더라고.</div>
+          </div>
+        </div>
+        <div class="turn">
+          <div class="who">A</div>
+          <div>
+            <div class="zh">哈哈，这<mark>马屁精</mark>真是有一套。</div>
+            <div class="py">hāhā, zhè mǎpìjīng zhēnshi yǒu yí tào.</div>
+            <div class="ko">하하, 저 아첨꾼 진짜 한 수 있다니까.</div>
+          </div>
+        </div>
+      </div>
+
+      <h3><span class="marker">/</span>헷갈리는 표현과의 차이</h3>
+      <div class="callout blue">
+        <span class="ico">⚖️</span>
+        <div class="body">
+          <p><b>恭维</b> (gōngwéi)도 "듣기 좋은 말로 치켜세우다"지만 중립적이고 다소 문어적이어서 그냥 칭찬에 가깝습니다. 拍马屁는 구어체이고 "속이 뻔히 보이는 아부"라는 조롱 섞인 뉘앙스가 강해요.</p>
+        </div>
+      </div>
+
+      <h3><span class="marker">/</span>직접 답해보기</h3>
+      <div class="callout yellow">
+        <span class="ico">✍️</span>
+        <div class="body">
+          <p>직장 후배가 상사에게 아부하는 모습을 보고 친구에게 그 얘기를 하는 상황이야. 拍马屁를 넣어 중국어 두 문장으로 말해봐.</p>
+        </div>
+      </div>
+
+      <section class="clinic">
+        <div class="clinic-head"><span>🩺</span>오늘의 병원 표현 · 주호소 묻기</div>
+
+        <div class="ask">
+          <div class="label">의료진이 묻는 말</div>
+          <div class="zh">你哪里不舒服？</div>
+          <div class="py">nǐ nǎlǐ bù shūfu?</div>
+          <div class="ko">어디가 불편하세요? (문진을 여는 가장 기본 질문)</div>
+        </div>
+
+        <div class="ans-label">환자가 답으로 쓸 법한 말</div>
+        <div class="answers">
+          <div class="ans">
+            <div class="zh">我这几天一直头疼。</div>
+            <div class="py">wǒ zhè jǐ tiān yìzhí tóuténg.</div>
+            <div class="ko">요 며칠 계속 머리가 아파요.</div>
+          </div>
+          <div class="ans">
+            <div class="zh">我肚子疼，还有点儿恶心。</div>
+            <div class="py">wǒ dùzi téng, hái yǒudiǎnr ěxin.</div>
+            <div class="ko">배가 아프고 좀 메스꺼워요.</div>
+          </div>
+          <div class="ans">
+            <div class="zh">我嗓子疼，咳嗽得厉害。</div>
+            <div class="py">wǒ sǎngzi téng, késou de lìhai.</div>
+            <div class="ko">목이 아프고 기침을 심하게 해요.</div>
+          </div>
+          <div class="ans">
+            <div class="zh">没有力气，浑身酸疼。</div>
+            <div class="py">méiyǒu lìqi, húnshēn suānténg.</div>
+            <div class="ko">기운이 없고 온몸이 쑤셔요.</div>
+          </div>
+        </div>
+      </section>
+    </article>
+
+    <article class="entry" id="d1">
+      <div class="entry-meta">
+        <span class="chip">1일차</span>
+        <span>2026년 8월 23일</span>
+        <span class="chip type">구어 성어·관용어</span>
+      </div>
+
+      <h2 class="headword">说曹操，曹操到</h2>
+      <div class="pinyin">shuō Cáocāo, Cáocāo dào · 호랑이도 제 말 하면 온다</div>
+
+      <div class="callout">
+        <span class="ico">💡</span>
+        <div class="body">
+          <p>누군가에 대해 이야기하고 있는데 하필 그 사람이 그 순간 나타났을 때, 가볍게 놀라며 웃음 섞어 하는 말.</p>
+          <p>격식 없는 자리에서 매우 자주 쓰고 드라마·일상 대화에 흔히 등장합니다.</p>
+        </div>
+      </div>
+
+      <h3><span class="marker">/</span>자주 붙는 짝 표현</h3>
+      <div class="pairs">
+        <div class="pair"><span class="zh">你看</span><span class="py">nǐ kàn</span><span class="ko">"봐봐" 하며 앞에 붙이는 감탄사 — 你看，说曹操，曹操到！</span></div>
+        <div class="pair"><span class="zh">正说你呢</span><span class="py">zhèng shuō nǐ ne</span><span class="ko">마침 네 얘기하고 있었어 — 바로 뒤에 이어 붙는 말</span></div>
+        <div class="pair"><span class="zh">真是巧了</span><span class="py">zhēnshi qiǎo le</span><span class="ko">진짜 딱 맞아떨어지네 — 감탄으로 덧붙임</span></div>
+      </div>
+
+      <h3><span class="marker">/</span>대화문</h3>
+      <div class="dialogue">
+        <div class="turn">
+          <div class="who">A</div>
+          <div>
+            <div class="zh">哎，你知道小王最近怎么样吗？我好久没联系他了。</div>
+            <div class="py">āi, nǐ zhīdào Xiǎo Wáng zuìjìn zěnmeyàng ma? wǒ hǎojiǔ méi liánxì tā le.</div>
+            <div class="ko">아 참, 너 샤오왕 요즘 어떻게 지내는지 알아? 나 걔랑 연락 안 한 지 오래됐어.</div>
+          </div>
+        </div>
+        <div class="turn">
+          <div class="who">B</div>
+          <div>
+            <div class="zh">他啊，最近好像换工作了，具体我也不太清楚……</div>
+            <div class="py">tā a, zuìjìn hǎoxiàng huàn gōngzuò le, jùtǐ wǒ yě bú tài qīngchu.</div>
+            <div class="ko">걔? 요즘 이직한 것 같던데, 자세히는 나도 잘 몰라...</div>
+          </div>
+        </div>
+        <div class="turn">
+          <div class="who">A</div>
+          <div>
+            <div class="zh">诶？<mark>说曹操，曹操到</mark>！小王，我们正说你呢！</div>
+            <div class="py">éi? shuō Cáocāo, Cáocāo dào! Xiǎo Wáng, wǒmen zhèng shuō nǐ ne!</div>
+            <div class="ko">어? 호랑이도 제 말 하면 온다더니! 샤오왕, 우리 방금 네 얘기하고 있었어!</div>
+          </div>
+        </div>
+        <div class="turn">
+          <div class="who">小王</div>
+          <div>
+            <div class="zh">啊？你们在说我什么坏话呢？</div>
+            <div class="py">a? nǐmen zài shuō wǒ shénme huàihuà ne?</div>
+            <div class="ko">어? 너네 내 욕하고 있었어?</div>
+          </div>
+        </div>
+        <div class="turn">
+          <div class="who">B</div>
+          <div>
+            <div class="zh">没有没有，就是问你最近工作怎么样。</div>
+            <div class="py">méiyǒu méiyǒu, jiùshì wèn nǐ zuìjìn gōngzuò zěnmeyàng.</div>
+            <div class="ko">아니 아니, 그냥 너 요즘 일 어떤지 물어본 거야.</div>
+          </div>
+        </div>
+      </div>
+
+      <h3><span class="marker">/</span>헷갈리는 표현과의 차이</h3>
+      <div class="callout blue">
+        <span class="ico">⚖️</span>
+        <div class="body">
+          <p><b>无巧不成书</b> (wú qiǎo bù chéng shū)도 "우연치고는 참 신기하다"는 뜻이지만 여러 우연이 겹쳐 이야기가 되는 상황 전반에 씁니다. 说曹操，曹操到는 오직 "얘기하던 사람이 그 순간 나타났을 때"에만 써요.</p>
+        </div>
+      </div>
+
+      <h3><span class="marker">/</span>직접 답해보기</h3>
+      <div class="callout yellow">
+        <span class="ico">✍️</span>
+        <div class="body">
+          <p>최근에 친구나 동료 이야기를 하고 있는데 그 사람이 갑자기 나타난 적 있어? 그 상황을 说曹操，曹操到를 넣어 중국어 한두 문장으로 말해봐.</p>
+        </div>
+      </div>
+
+      <section class="clinic">
+        <div class="clinic-head"><span>🩺</span>오늘의 병원 표현 · 통증 양상</div>
+
+        <div class="ask">
+          <div class="label">의료진이 묻는 말</div>
+          <div class="zh">疼是什么样的疼？是刺痛还是钝痛？</div>
+          <div class="py">téng shì shénme yàng de téng? shì cìtòng háishì dùntòng?</div>
+          <div class="ko">어떤 식으로 아프세요? 찌르는 듯한 통증인가요, 둔한 통증인가요?</div>
+        </div>
+
+        <div class="ans-label">환자가 답으로 쓸 법한 말</div>
+        <div class="answers">
+          <div class="ans">
+            <div class="zh">一阵一阵地疼</div>
+            <div class="py">yí zhèn yí zhèn de téng</div>
+            <div class="ko">한 번씩 콕콕 쑤시듯 아파요 (간헐적 통증)</div>
+          </div>
+          <div class="ans">
+            <div class="zh">一直隐隐作痛</div>
+            <div class="py">yìzhí yǐnyǐn zuò tòng</div>
+            <div class="ko">계속 은은하게 아파요 (둔통이 지속됨)</div>
+          </div>
+          <div class="ans">
+            <div class="zh">疼得厉害，受不了了</div>
+            <div class="py">téng de lìhai, shòu bu liǎo le</div>
+            <div class="ko">너무 심하게 아파요, 못 참겠어요</div>
+          </div>
+          <div class="ans">
+            <div class="zh">有点儿胀痛</div>
+            <div class="py">yǒudiǎnr zhàng tòng</div>
+            <div class="ko">약간 팽팽하게 당기듯 아파요</div>
+          </div>
+        </div>
+      </section>
+    </article>
+  </details>
+
+  <!-- ENTRIES:END -->
+
+  <footer>매일 하나씩, 반복 없이 · 다음 회차 예고: 구어 패턴·어기 표현 得了吧</footer>
+
+</div>
+</body>
+</html>
