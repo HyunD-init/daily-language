@@ -1,0 +1,73 @@
+<!--
+  회차 <article> 골격. index.html 의 ENTRIES:START 바로 아래에 이 형태로 넣는다.
+  이 파일은 루틴이 참고만 하고 수정하지 않는다. 여기 없는 CSS 클래스는 쓰지 않는다.
+
+  치환할 것:
+    mN        → m1, m2, ... (회차 번호)
+    N회차     → 1회차, 2회차, ...
+    분야      → 비만·대사 / 종양학 / 의료 AI / 감염 / 공중보건 / 규제·승인 ...
+
+  섹션 순서는 고정. 「짚어둘 점」은 생략 금지.
+-->
+
+<article class="entry" id="mN">
+  <div class="entry-meta">
+    <span class="chip">N회차</span>
+    <span>2026년 0월 0일</span>
+    <span class="chip type">분야</span>
+  </div>
+
+  <h2 class="headword">한국어 제목 — 무엇이 어떻게 됐는지 한 줄로</h2>
+  <div class="lede">원 제목(영문) · 저널 또는 기관 · 발표일</div>
+
+  <div class="callout blue">
+    <span class="ico">💡</span>
+    <div class="body">
+      <p>세 줄 이내 요약. 무엇을, 누구에게, 어떤 결과로 확인했는지.</p>
+    </div>
+  </div>
+
+  <h3><span class="marker">/</span>무슨 일인가</h3>
+  <p>배경과 경위. 이 연구·발표가 왜 지금 나왔는지, 기존에는 무엇이 문제였는지.</p>
+  <p>연구라면 설계를 명시한다 — 디자인(RCT/코호트/전향·후향), 대상 집단, 비교군, 추적 기간, 1차 평가변수.</p>
+
+  <h3><span class="marker">/</span>핵심 결과</h3>
+  <div class="facts">
+    <div class="fact"><span class="k">대상</span><span class="v">n = <b>0,000</b>명, 어떤 환자군인지</span></div>
+    <div class="fact"><span class="k">비교</span><span class="v">개입군 vs 대조군</span></div>
+    <div class="fact"><span class="k">1차 평가변수</span><span class="v"><b>수치</b> (95% CI 0.00–0.00, p=0.00)</span></div>
+    <div class="fact"><span class="k">주요 2차</span><span class="v">수치</span></div>
+    <div class="fact"><span class="k">이상반응</span><span class="v">빈도와 종류, 중단률</span></div>
+  </div>
+
+  <h3><span class="marker">/</span>기전 · 왜 이런 결과가 나오나</h3>
+  <p>작용 기전이나 원리. 본과생이 배우는 수준의 생리·약리로 연결해서 설명한다.</p>
+
+  <h3><span class="marker">/</span>왜 중요한가</h3>
+  <p>현재 표준치료·기존 지견과 무엇이 달라지는지. 실제 진료나 가이드라인에 언제쯤, 어떤 형태로 반영될 수 있는지.</p>
+
+  <div class="callout yellow">
+    <span class="ico">⚠️</span>
+    <div class="body">
+      <p><b>짚어둘 점</b> — 한계와 반론. 대조군 설정, 표본 크기와 검정력, 대리 지표(surrogate endpoint) 사용 여부, 추적 기간의 짧음, 일반화 가능성, 자금 출처·이해상충, 아직 동료심사를 거치지 않은 프리프린트인지 등.</p>
+    </div>
+  </div>
+
+  <h3><span class="marker">/</span>알아두면 좋은 용어</h3>
+  <div class="terms">
+    <div class="term">
+      <div class="en">Term (약어)</div>
+      <div class="ko">한국어 뜻과 한 줄 설명</div>
+    </div>
+    <div class="term">
+      <div class="en">Term (약어)</div>
+      <div class="ko">한국어 뜻과 한 줄 설명</div>
+    </div>
+  </div>
+
+  <h3><span class="marker">/</span>출처</h3>
+  <div class="src">
+    <div class="item"><a href="https://...">논문·발표문 제목</a> — 저널 또는 기관, 발표일</div>
+    <div class="item"><a href="https://...">보조 출처 제목</a> — 매체, 날짜</div>
+  </div>
+</article>
