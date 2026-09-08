@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>오늘의 의학 토픽</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<style>html{color-scheme:light dark}body{margin:0}img{max-width:100%}</style>
+</head>
+<body>
+<style>
+  :root {
+    --bg: #ffffff;
+    --text: #37352f;
+    --text-2: #6b6a67;
+    --text-3: #9b9a97;
+    --divider: #e9e9e7;
+    --hover: #f7f6f3;
+    --gray-bg: #f7f6f3;
+    --blue-bg: #e7f1f7;
+    --blue-text: #0b6e99;
+    --green-bg: #e4efec;
+    --green-text: #0f7b6c;
+    --red-bg: #fbeceb;
+    --red-text: #c4554d;
+    --yellow-bg: #fbf3db;
+    --yellow-text: #986f24;
+    --code-bg: #f2f1ee;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #191919; --text: #d4d4d4; --text-2: #9b9a97; --text-3: #787774;
+      --divider: #2f2f2f; --hover: #232323; --gray-bg: #202020;
+      --blue-bg: #143a4e; --blue-text: #7eb8da;
+      --green-bg: #17332e; --green-text: #67b5a5;
+      --red-bg: #3b2523; --red-text: #df8c85;
+      --yellow-bg: #372e20; --yellow-text: #d4b36a;
+      --code-bg: #242424;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #191919; --text: #d4d4d4; --text-2: #9b9a97; --text-3: #787774;
+    --divider: #2f2f2f; --hover: #232323; --gray-bg: #202020;
+    --blue-bg: #143a4e; --blue-text: #7eb8da;
+    --green-bg: #17332e; --green-text: #67b5a5;
+    --red-bg: #3b2523; --red-text: #df8c85;
+    --yellow-bg: #372e20; --yellow-text: #d4b36a;
+    --code-bg: #242424;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Inter", "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 56px 24px 120px;
+  }
+
+  /* ── 페이지 헤더 ── */
+  .page-icon { font-size: 60px; line-height: 1; margin-bottom: 12px; }
+
+  h1 {
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin: 0 0 8px;
+    text-wrap: balance;
+  }
+
+  .page-sub { color: var(--text-3); font-size: 15px; margin-bottom: 36px; }
+
+  /* ── 목차 ── */
+  .toc { margin-bottom: 44px; }
+
+  .toc-label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-3);
+    margin-bottom: 10px;
+  }
+
+  .toc a {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    padding: 7px 8px;
+    margin: 0 -8px;
+    border-radius: 4px;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 15px;
+  }
+
+  .toc a:hover { background: var(--hover); }
+  .toc a:focus-visible { outline: 2px solid var(--blue-text); outline-offset: -2px; }
+
+  .toc .n {
+    color: var(--text-3);
+    font-size: 13px;
+    font-variant-numeric: tabular-nums;
+    min-width: 42px;
+    flex: none;
+  }
+
+  .toc .t { font-weight: 600; }
+  .toc .gloss { color: var(--text-3); font-size: 14px; }
+
+  .toc .empty { color: var(--text-3); font-size: 14.5px; padding: 7px 0; }
+
+  /* ── 회차 ── */
+  .entry { padding-top: 8px; }
+
+  .entry + .entry { border-top: 1px solid var(--divider); margin-top: 56px; padding-top: 48px; }
+
+  .entry-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    font-size: 13px;
+    color: var(--text-3);
+    margin-bottom: 14px;
+  }
+
+  .chip {
+    background: var(--gray-bg);
+    border-radius: 3px;
+    padding: 2px 8px;
+    font-size: 12px;
+    color: var(--text-2);
+  }
+
+  .chip.type { background: var(--blue-bg); color: var(--blue-text); }
+
+  h2.headword {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.28;
+    margin: 0 0 6px;
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+  }
+
+  .lede { color: var(--text-2); font-size: 15px; margin-bottom: 18px; }
+
+  h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    margin: 34px 0 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  h3 .marker { color: var(--text-3); font-weight: 400; }
+
+  p { margin: 0 0 12px; }
+  p:last-child { margin-bottom: 0; }
+
+  /* ── 콜아웃 ── */
+  .callout {
+    display: flex;
+    gap: 12px;
+    padding: 16px 16px 16px 14px;
+    border-radius: 4px;
+    background: var(--gray-bg);
+    font-size: 15.5px;
+    margin: 0 0 12px;
+  }
+
+  .callout .ico { font-size: 18px; line-height: 1.5; flex: none; }
+  .callout.blue { background: var(--blue-bg); }
+  .callout.green { background: var(--green-bg); }
+  .callout.yellow { background: var(--yellow-bg); }
+  .callout .body > :last-child { margin-bottom: 0; }
+
+  /* ── 핵심 수치·결과 ── */
+  .facts { display: flex; flex-direction: column; }
+
+  .fact {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--divider);
+  }
+
+  .fact:first-child { border-top: 1px solid var(--divider); }
+
+  .fact .k {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-3);
+    min-width: 96px;
+    flex: none;
+  }
+
+  .fact .v { font-size: 15.5px; flex: 1 1 220px; }
+  .fact .v b { font-variant-numeric: tabular-nums; }
+
+  /* ── 용어 ── */
+  .terms { display: flex; flex-direction: column; }
+
+  .term {
+    padding: 11px 0;
+    border-bottom: 1px solid var(--divider);
+  }
+
+  .term:first-child { border-top: 1px solid var(--divider); }
+  .term .en { font-weight: 600; font-size: 15.5px; }
+  .term .ko { color: var(--text-2); font-size: 15px; margin-top: 2px; }
+
+  /* ── 출처 ── */
+  .src { margin-top: 10px; font-size: 14.5px; }
+  .src a { color: var(--blue-text); text-decoration: none; word-break: break-all; }
+  .src a:hover { text-decoration: underline; }
+  .src .item { padding: 7px 0; border-bottom: 1px solid var(--divider); color: var(--text-2); }
+  .src .item:first-child { border-top: 1px solid var(--divider); }
+
+  /* ── 토글(지난 회차) ── */
+  details.toggle { margin-top: 56px; border-top: 1px solid var(--divider); padding-top: 16px; }
+
+  details.toggle > summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-2);
+    padding: 8px;
+    margin: 0 -8px;
+    border-radius: 4px;
+  }
+
+  details.toggle > summary::-webkit-details-marker { display: none; }
+  details.toggle > summary:hover { background: var(--hover); }
+  details.toggle > summary:focus-visible { outline: 2px solid var(--blue-text); outline-offset: -2px; }
+
+  details.toggle > summary::before {
+    content: "▸";
+    color: var(--text-3);
+    font-size: 12px;
+    transition: transform 0.15s ease;
+  }
+
+  details.toggle[open] > summary::before { transform: rotate(90deg); }
+
+  @media (prefers-reduced-motion: reduce) {
+    details.toggle > summary::before { transition: none; }
+  }
+
+  footer {
+    margin-top: 72px;
+    padding-top: 20px;
+    border-top: 1px solid var(--divider);
+    color: var(--text-3);
+    font-size: 13px;
+  }
+
+  @media (max-width: 600px) {
+    .page { padding: 36px 18px 90px; }
+    h1 { font-size: 30px; }
+    h2.headword { font-size: 26px; }
+    .page-icon { font-size: 48px; }
+    .fact .k { min-width: 100%; }
+  }
+</style>
+
+<div class="page">
+
+  <div class="page-icon">🩺</div>
+  <h1>오늘의 의학 토픽</h1>
+  <div class="page-sub">최근 화제가 된 연구·기술·정책 하나를 매일 아침 하나씩 · 하루 5분</div>
+
+  <!-- INDEX:START — 새 회차는 이 목록 맨 위에 <a> 하나 추가 -->
+  <nav class="toc">
+    <div class="toc-label">회차</div>
+    <div class="empty">아직 회차가 없습니다. 내일 아침 첫 회차가 올라옵니다.</div>
+  </nav>
+  <!-- INDEX:END -->
+
+  <!-- ENTRIES:START — 새 회차 <article class="entry">는 이 줄 바로 아래에 -->
+
+  <details class="toggle">
+    <summary>지난 회차 0개</summary>
+  </details>
+
+  <!-- ENTRIES:END -->
+
+  <footer>매일 아침 8시 · 한 토픽씩, 주제 반복 없이</footer>
+
+</div>
+</body>
+</html>
