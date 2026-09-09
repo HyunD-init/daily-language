@@ -294,11 +294,83 @@
   <!-- INDEX:START — 새 회차는 이 목록 맨 위에 <a> 하나 추가 -->
   <nav class="toc">
     <div class="toc-label">회차</div>
-    <div class="empty">아직 회차가 없습니다. 내일 아침 첫 회차가 올라옵니다.</div>
+    <a href="#a1"><span class="n">1회차</span><span class="t">OpenAI, AI 에이전트 1만 개로 나비에-스토크스 방정식 특이점 존재 증명</span><span class="gloss">연구 논문</span></a>
   </nav>
   <!-- INDEX:END -->
 
   <!-- ENTRIES:START — 새 회차 <article class="entry">는 이 줄 바로 아래에 -->
+
+  <article class="entry" id="a1">
+    <div class="entry-meta">
+      <span class="chip">1회차</span>
+      <span>2026년 9월 9일</span>
+      <span class="chip type">연구 논문</span>
+    </div>
+
+    <h2 class="headword">OpenAI, AI 에이전트 1만 개로 나비에-스토크스 방정식 특이점 존재 증명 — 클레이 밀레니엄 문제 일부 해결, 우선권 논란 동반</h2>
+    <div class="lede">On the Navier–Stokes Millennium Prize Problem · OpenAI · 2026년 9월 8일 발표</div>
+
+    <div class="callout blue">
+      <span class="ico">💡</span>
+      <div class="body">
+        <p>OpenAI가 자사의 미공개 내부 모델을 에이전트 약 1만 개로 병렬 구동해, 3차원 나비에-스토크스 방정식에서 매끄러운 초기조건이 유한한 시간 안에 특이점(무한대로 발산하는 지점)을 만들 수 있음을 증명했다고 발표했다. 클레이수학연구소가 지정한 7대 밀레니엄 문제 중 하나에 대한 진전으로 소개됐지만, 같은 주 다른 연구팀과의 우선권·저자 표기 분쟁이 함께 불거졌다.</p>
+      </div>
+    </div>
+
+    <h3><span class="marker">/</span>무슨 일인가</h3>
+    <p>나비에-스토크스 방정식은 유체(물, 공기 등)의 흐름을 기술하는 비선형 편미분방정식으로, 항공기 설계부터 기상예측까지 널리 쓰이지만 3차원에서 "매끄러운 초기조건에서 출발한 해가 항상 매끄럽게(무한대로 발산하지 않고) 존재하는가"라는 질문은 2000년 클레이수학연구소가 100만 달러 상금을 건 7개 밀레니엄 문제 중 하나로 남아 있었다. 이 문제를 둘러싸고 최근 몇 주 사이 여러 연구팀이 AI를 활용한 해법 경쟁에 들어갔다는 소문이 돌았다.</p>
+    <p>OpenAI는 2026년 9월 1일 경쟁팀의 미공개 연구에 대한 소문을 접한 뒤 작업을 가속했다고 밝혔고, 9월 8일 자사 블로그에 해석적 증명과 이를 검증한 Lean 형식증명 코드를 공개했다. 모델 자체(다음 세대 모델로, "GPT-6 Astra보다 훨씬 강력하다"고만 소개됐고 아직 학습 중)는 공개하지 않았다.</p>
+
+    <h3><span class="marker">/</span>핵심 내용</h3>
+    <div class="facts">
+      <div class="fact"><span class="k">발표 주체</span><span class="v">OpenAI</span></div>
+      <div class="fact"><span class="k">무엇을</span><span class="v">3차원 나비에-스토크스 방정식에서, 매끄러운 초기조건과 매끄러운 외력이 주어졌을 때 유한한 시간 안에 속도가 무한히 커지는 특이점이 발생하는 사례를 구성 — 클레이연구소 문제 기술서의 진술 C·D에 해당</span></div>
+      <div class="fact"><span class="k">핵심 수치</span><span class="v">에이전트 <b>약 1만 개</b>가 <b>88시간</b> 작업, 대화 메시지 <b>270만 건</b>·출력 토큰 <b>약 1300억 개</b> 사용(전체 프로젝트 총합은 메시지 490만 건·토큰 약 3000억 개). Lean 형식검증에 추가로 <b>17시간</b> 소요</span></div>
+      <div class="fact"><span class="k">공개 범위</span><span class="v">해석적 증명과 Lean 형식검증 코드는 공개, 증명을 생성한 모델 자체는 비공개</span></div>
+      <div class="fact"><span class="k">비용·조건</span><span class="v">컴퓨팅 비용은 공식 수치 미공개, 외부 추정 "수백만 달러" 수준(Quanta Magazine 추정)</span></div>
+    </div>
+
+    <h3><span class="marker">/</span>어떻게 동작하나</h3>
+    <p>에이전트들을 여러 소그룹으로 나눠 서로 통신하게 하면서 각 그룹이 후보 증명 전략을 생성·검증하도록 했다. 에이전트에게는 인터넷 캐시 열람과 코드 실행 권한을 줘 스스로 계산을 반복하고 오류를 걸러내게 했다. 최종적으로 나온 해석적 증명은 별도 모델인 GPT-6 Astra가 Lean(수학적 증명을 컴퓨터가 한 줄씩 기계적으로 검증하는 정리 증명 언어)으로 다시 형식검증했다.</p>
+
+    <h3><span class="marker">/</span>왜 중요한가</h3>
+    <p>지금까지 AI가 밀레니엄 문제 중 하나에 실질적인 진전을 냈다고 주요 학계·언론(Nature, Quanta Magazine)이 받아들인 첫 사례다. 다만 증명한 방향은 "특이점이 존재할 수 있다"는 것이고, 문제의 핵심인 반대 방향 — 해가 항상 매끄럽게 존재하는가 — 는 그대로 미해결이다. 클레이수학연구소는 100만 달러 상금 수여 여부를 판단하는 별도 절차를 아직 밟지 않았고, OpenAI도 스스로 상금을 주장하지 않았다.</p>
+
+    <div class="callout yellow">
+      <span class="ico">⚠️</span>
+      <div class="body">
+        <p><b>짚어둘 점</b> — 같은 주 뉴욕대 수학자 트리스탄 버크마스터(Tristan Buckmaster)와 앤트로픽 소속 연구원 레벤트 알푀게(Levent Alpöge)가 하루 앞선 9월 7일 관련 결과(점성이 없는 오일러 방정식의 특이점, 즉 나비에-스토크스보다 더 제한된 경우)를 먼저 공개했다. 버크마스터는 OpenAI가 자신들의 미공개 연구에 대한 소문을 듣고 작업을 가속했고, OpenAI 연구원 세바스티앙 뷔벡(Sébastien Bubeck)이 알푀게가 앤트로픽 소속이라는 이유로 공동저자에서 빼라는 압력을 가했으며 이의를 제기하면 "왜 경력을 망치려 하냐"는 말을 들었다고 주장했다. OpenAI는 개인 데이터에 직접 접근한 사실은 부인했지만 "비식별화된 사용 데이터가 모델 개선에 도움이 됐을 가능성은 배제할 수 없다"고 인정했고, 샘 올트먼은 "이제 그들의 연구를 보니 접근 방식이 다른 것 같다"고 밝혔다. 증명이 Lean으로 형식검증됐다고 발표됐지만 외부 수학자 커뮤니티의 독립적 재현이나 동료검토는 이 기사 작성 시점까지 이뤄지지 않았으며, Quanta Magazine은 "수학적 중요성을 이해하는 데는 시간이 걸릴 것"이라고 전했다. 증명을 생성한 모델 자체가 공개되지 않아 외부에서 생성 과정을 독립적으로 검증할 수 없고, 컴퓨팅 비용·에너지 사용량 등도 OpenAI가 공식 수치를 밝히지 않았다.</p>
+      </div>
+    </div>
+
+    <h3><span class="marker">/</span>알아두면 좋은 용어</h3>
+    <div class="terms">
+      <div class="term">
+        <div class="en">Navier–Stokes equations</div>
+        <div class="ko">유체의 흐름을 기술하는 비선형 편미분방정식. 실제 유체 운동을 잘 묘사하지만 해가 항상 매끄럽게 존재하는지는 수학적으로 증명되지 않은 채 남아 있었다</div>
+      </div>
+      <div class="term">
+        <div class="en">Millennium Prize Problem</div>
+        <div class="ko">클레이수학연구소가 2000년에 지정한 7개의 미해결 수학 난제. 하나를 풀면 100만 달러 상금이 주어지며, 지금까지 푸앵카레 추측 하나만 해결됐다</div>
+      </div>
+      <div class="term">
+        <div class="en">Singularity (blow-up), 특이점</div>
+        <div class="ko">방정식의 해가 유한한 시간 안에 무한히 커지거나 불연속으로 변하는 지점. 물리적으로는 일어날 수 없는 상황이라 방정식 모델의 한계를 드러낸다</div>
+      </div>
+      <div class="term">
+        <div class="en">Lean</div>
+        <div class="ko">수학적 증명의 각 단계를 컴퓨터가 기계적으로 검증할 수 있도록 형식화하는 정리 증명(theorem proving) 프로그래밍 언어</div>
+      </div>
+    </div>
+
+    <h3><span class="marker">/</span>출처</h3>
+    <div class="src">
+      <div class="item"><a href="https://openai.com/index/navier-stokes-solution/">On the Navier–Stokes Millennium Prize Problem</a> — OpenAI, 2026년 9월 8일</div>
+      <div class="item"><a href="https://www.quantamagazine.org/ai-has-solved-one-of-maths-1-million-millennium-prize-problems-20260908/">AI Has Solved One of Math's $1 Million Millennium Prize Problems</a> — Quanta Magazine, 2026년 9월 8일</div>
+      <div class="item"><a href="https://www.axios.com/2026/09/08/openai-math-solution-navier-stokes-credit">OpenAI's historic math solution overshadowed by credit controversy</a> — Axios, 2026년 9월 8일</div>
+      <div class="item"><a href="https://www.nature.com/articles/d41586-026-02842-5">OpenAI claims huge maths breakthrough on a famed 'Millennium Problem'</a> — Nature, 2026년 9월 8일</div>
+    </div>
+  </article>
 
   <details class="toggle">
     <summary>지난 회차 0개</summary>
