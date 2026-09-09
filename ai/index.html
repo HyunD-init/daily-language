@@ -294,13 +294,88 @@
   <!-- INDEX:START — 새 회차는 이 목록 맨 위에 <a> 하나 추가 -->
   <nav class="toc">
     <div class="toc-label">회차</div>
+    <a href="#a2"><span class="n">2회차</span><span class="t">구글 AMIE, 화상 진료 시뮬레이션에서 1차진료의사와 진단 능력 대등</span><span class="gloss">의료 AI · 진단 보조</span></a>
     <a href="#a1"><span class="n">1회차</span><span class="t">OpenAI, AI 에이전트 1만 개로 나비에-스토크스 방정식 특이점 존재 증명</span><span class="gloss">연구 논문</span></a>
   </nav>
   <!-- INDEX:END -->
 
   <!-- ENTRIES:START — 새 회차 <article class="entry">는 이 줄 바로 아래에 -->
 
-  <article class="entry" id="a1">
+  <article class="entry" id="a2">
+    <div class="entry-meta">
+      <span class="chip">2회차</span>
+      <span>2026년 9월 10일</span>
+      <span class="chip type">의료 AI · 진단 보조</span>
+    </div>
+
+    <h2 class="headword">구글 AMIE, 화상 진료 시뮬레이션에서 1차진료의사와 진단·문진 능력 대등 — 실제 환자 대상 검증은 아직</h2>
+    <div class="lede">Towards Expert-level Medical AI for Real-time Video Consultations · Google Research &amp; Google DeepMind (arXiv 프리프린트) · 2026년 8월 11일 발표</div>
+
+    <div class="callout blue">
+      <span class="ico">💡</span>
+      <div class="body">
+        <p>구글이 대화형 진단 AI 'AMIE'를 실시간 화상 진료가 가능한 형태로 확장했다. 훈련된 환자 연기자를 상대로 한 모의 진료 시험(OSCE)에서 AMIE는 미국 1차진료의사(PCP)와 견줄 만하거나 더 높은 진단·문진·신체진찰 유도 점수를 받았다고 구글은 밝혔다. 다만 시험 대상은 실제 환자가 아닌 연기자였고, 저자들 스스로 "실제 임상 배치를 위한 준비는 안 됐다"고 못박았다.</p>
+      </div>
+    </div>
+
+    <h3><span class="marker">/</span>무슨 일인가</h3>
+    <p>AMIE(Articulate Medical Intelligence Explorer)는 구글이 2024년부터 공개해 온 대화형 진단 AI 연구 프로젝트다. 처음에는 텍스트 채팅으로 병력을 청취하고 감별진단을 내놓는 수준이었고, 2026년 6월에는 처방·질병관리 계획까지 다루도록 확장한 결과를 Nature에 발표했다. 이번에는 Gemini 3 Flash·3.1 Pro를 기반으로 실시간 음성·영상을 주고받는 화상 진료로 범위를 넓혔다.</p>
+    <p>구글은 2026년 8월 10일 arXiv에 논문을 올리고 다음날 자사 블로그에 결과를 공개했다. AMIE(Video)에는 응답 지연을 줄이는 '토커(Talker)' 에이전트, 임상 추론을 맡는 '플래너(Planner)' 에이전트, 환자의 음성·영상을 분석하는 '퍼셉션(Perception)' 에이전트를 붙여 세 에이전트가 비동기적으로 동시에 작동하도록 했다. 모델 가중치와 서비스는 공개하지 않았고, 논문은 프리프린트 상태로 아직 동료심사를 거치지 않았다.</p>
+
+    <h3><span class="marker">/</span>핵심 내용</h3>
+    <div class="facts">
+      <div class="fact"><span class="k">발표 주체</span><span class="v">Google Research · Google DeepMind</span></div>
+      <div class="fact"><span class="k">무엇을</span><span class="v">훈련된 환자 연기자를 상대로 한 무작위 배정 OSCE(표준화 환자 기반 임상수행능력평가) 방식 모의 화상진료 비교 연구</span></div>
+      <div class="fact"><span class="k">시험 규모</span><span class="v">심폐·복부·이비인후·신경정신·근골격 등 5개 신체 계통, 시나리오 <b>100개</b>, 환자 연기자 <b>15명</b>, 비교군 미국 1차진료의사(PCP) <b>10명</b>, 독립 평가 전문의 <b>20명</b>, 전체 진료 세션 <b>300건</b></span></div>
+      <div class="fact"><span class="k">핵심 수치</span><span class="v">1차 감별진단 일치율(Top-1) AMIE 화상 <b>91%</b> vs PCP <b>77%</b>(p=0.039); 전체 임상 루브릭 점수 <b>83%</b> vs <b>68%</b>(p=1.32×10⁻⁹)</span></div>
+      <div class="fact"><span class="k">공개 범위</span><span class="v">arXiv 프리프린트만 공개, 모델 가중치·서비스 비공개, 저널 동료심사 전</span></div>
+    </div>
+
+    <h3><span class="marker">/</span>어떻게 동작하나</h3>
+    <p>AMIE(Video)는 하나의 모델이 아니라 세 에이전트가 나눠 맡는 구조다. 토커 에이전트가 환자와 실시간으로 대화를 주고받는 동안, 플래너 에이전트는 지금까지 나온 정보를 바탕으로 다음에 무엇을 물어보거나 어떤 진찰을 시켜야 할지 판단하고, 퍼셉션 에이전트는 환자가 보여주는 화면(예: 발진 부위를 비추거나 관절을 움직이는 모습)과 음성을 함께 분석해 소견을 추출한다. 세 에이전트가 동시에 비동기적으로 작동해 실시간 화상 통화에서 응답 지연을 줄이면서도 임상 추론의 정확도를 유지하도록 설계됐다.</p>
+
+    <h3><span class="marker">/</span>왜 중요한가</h3>
+    <p>지금까지 AMIE를 포함한 의료 대화형 AI 연구는 대부분 텍스트 문진에 국한돼 있었다. 이번 연구는 환자가 화면으로 신체 부위를 보여주거나 움직이는 모습을 관찰하고 그에 맞춰 다음 질문·진찰을 유도하는, 실제 화상 진료에 더 가까운 형태를 시험했다는 점에서 다르다. 구글은 AMIE가 문진·진단·관리 계획·신체진찰 유도 항목에서 PCP와 대등하거나 더 높은 점수를 받았다고 밝혔지만, 이는 구글이 설계하고 자체 평가한 시험 결과이며 외부 기관의 독립적인 재현은 아직 없다.</p>
+
+    <div class="callout yellow">
+      <span class="ico">⚠️</span>
+      <div class="body">
+        <p><b>짚어둘 점</b> — 이 연구는 실제 환자가 아니라 훈련된 환자 연기자를 상대로 한 모의시험이며, 구글이 설계·수행·발표까지 모두 맡은 자체 연구다. 논문은 arXiv 프리프린트 상태로 저널 동료심사와 외부 재현을 거치지 않았다. 블라인딩도 불완전했다 — AMIE의 합성 음성이 인간 의사 목소리와 구별되고, 대조군인 PCP는 카메라를 끈 채 진료해 화상이라는 조건 자체가 대조군에는 불리하게 작용했을 수 있다고 저자들도 인정했다. 세부 항목 중 손 떨림(tremor) 인지 정확도는 24%, 정서 상태 평가는 29%에 그쳐 미세한 신체·정서 신호 포착은 여전히 취약했고, 감별진단 3개 안에 정답이 포함되는 비율(Top-3)의 차이는 통계적으로 유의하지 않았다(98% vs 90%, p=0.179). 시험에 쓰인 시나리오도 연기자가 재현 가능한 증례로 한정돼 피부과·노인과 질환이 적고 연기자 연령대가 젊은 쪽에 치우쳐, 실제 진료 인구에 그대로 일반화하기는 이르다. 저자들 스스로 "이 시스템은 실제 임상 배치를 위한 준비가 되지 않았다"고 명시했다.</p>
+      </div>
+    </div>
+
+    <h3><span class="marker">/</span>알아두면 좋은 용어</h3>
+    <div class="terms">
+      <div class="term">
+        <div class="en">AMIE (Articulate Medical Intelligence Explorer)</div>
+        <div class="ko">구글이 연구용으로 개발 중인 대화형 진단 AI. 텍스트 문진에서 출발해 처방·질병관리, 실시간 화상 진료까지 범위를 넓혀 왔다</div>
+      </div>
+      <div class="term">
+        <div class="en">OSCE (Objective Structured Clinical Examination)</div>
+        <div class="ko">훈련된 환자 연기자를 상대로 병력청취·진찰·의사소통 능력을 평가하는 표준화 임상수행능력 시험. 의대 실기시험에서도 널리 쓰인다</div>
+      </div>
+      <div class="term">
+        <div class="en">PCP (Primary Care Physician), 1차진료의사</div>
+        <div class="ko">환자가 가장 먼저 만나는 일반 진료 의사. 이 연구에서 AMIE의 비교 대상이 됐다</div>
+      </div>
+      <div class="term">
+        <div class="en">Multimodal agent, 멀티모달 에이전트</div>
+        <div class="ko">텍스트뿐 아니라 음성·영상 등 여러 형태의 입력을 함께 처리하는 AI. AMIE(Video)는 환자의 음성과 화면을 동시에 분석한다</div>
+      </div>
+    </div>
+
+    <h3><span class="marker">/</span>출처</h3>
+    <div class="src">
+      <div class="item"><a href="https://arxiv.org/abs/2608.09861">Towards Expert-level Medical AI for Real-time Video Consultations</a> — Google Research &amp; Google DeepMind, arXiv, 2026년 8월 10일</div>
+      <div class="item"><a href="https://research.google/blog/advancing-amie-towards-expert-level-audio-visual-clinical-consultations/">Advancing AMIE towards expert-level audio-visual clinical consultations</a> — Google Research, 2026년 8월 11일</div>
+      <div class="item"><a href="https://www.news-medical.net/news/20260812/AI-took-on-doctors-in-simulated-video-consultations-and-the-results-were-striking.aspx">AI took on doctors in simulated video consultations, and the results were striking</a> — News-Medical.net, 2026년 8월 12일</div>
+    </div>
+  </article>
+
+  <details class="toggle">
+    <summary>지난 회차 1개</summary>
+
+    <article class="entry" id="a1">
     <div class="entry-meta">
       <span class="chip">1회차</span>
       <span>2026년 9월 9일</span>
@@ -371,9 +446,6 @@
       <div class="item"><a href="https://www.nature.com/articles/d41586-026-02842-5">OpenAI claims huge maths breakthrough on a famed 'Millennium Problem'</a> — Nature, 2026년 9월 8일</div>
     </div>
   </article>
-
-  <details class="toggle">
-    <summary>지난 회차 0개</summary>
   </details>
 
   <!-- ENTRIES:END -->
