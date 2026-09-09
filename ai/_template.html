@@ -1,0 +1,76 @@
+<!--
+  회차 <article> 골격. index.html 의 ENTRIES:START 바로 아래에 이 형태로 넣는다.
+  이 파일은 루틴이 참고만 하고 수정하지 않는다. 여기 없는 CSS 클래스는 쓰지 않는다.
+
+  치환할 것:
+    aN        → a1, a2, ... (회차 번호)
+    N회차     → 1회차, 2회차, ...
+    분야      → 모델 출시 / 연구 논문 / 에이전트 / 오픈소스 / 인프라·하드웨어
+                / 규제·정책 / 안전성·정렬 / 산업 동향 ...
+
+  섹션 순서는 고정. 「짚어둘 점」은 생략 금지.
+  「핵심 내용」의 항목 이름(k)은 토픽에 맞게 바꿔도 된다 — 모델 발표면 파라미터·컨텍스트·
+  벤치마크·가격·라이선스, 논문이면 방법·데이터·결과, 정책이면 적용 범위·시행일·대상.
+-->
+
+<article class="entry" id="aN">
+  <div class="entry-meta">
+    <span class="chip">N회차</span>
+    <span>2026년 0월 0일</span>
+    <span class="chip type">분야</span>
+  </div>
+
+  <h2 class="headword">한국어 제목 — 무엇이 어떻게 됐는지 한 줄로</h2>
+  <div class="lede">원 제목(영문) · 발표 주체 또는 저널 · 발표일</div>
+
+  <div class="callout blue">
+    <span class="ico">💡</span>
+    <div class="body">
+      <p>세 줄 이내 요약. 누가, 무엇을 내놨고, 무엇이 달라지는지.</p>
+    </div>
+  </div>
+
+  <h3><span class="marker">/</span>무슨 일인가</h3>
+  <p>배경과 경위. 이게 왜 지금 나왔는지, 직전까지의 상황은 어땠는지.</p>
+  <p>발표 내용의 사실관계를 정리한다 — 누가 발표했고, 무엇이 공개됐고(가중치·코드·논문·API 중 무엇까지), 언제부터 쓸 수 있는지.</p>
+
+  <h3><span class="marker">/</span>핵심 내용</h3>
+  <div class="facts">
+    <div class="fact"><span class="k">발표 주체</span><span class="v">조직 이름</span></div>
+    <div class="fact"><span class="k">무엇을</span><span class="v">모델·논문·제품·정책의 구체적 이름과 성격</span></div>
+    <div class="fact"><span class="k">핵심 수치</span><span class="v"><b>수치</b> — 벤치마크명과 비교 대상을 함께 적는다</span></div>
+    <div class="fact"><span class="k">공개 범위</span><span class="v">가중치 공개 여부, 라이선스, 접근 방법</span></div>
+    <div class="fact"><span class="k">비용·조건</span><span class="v">가격, 사용 제한, 필요 하드웨어 등 해당되면</span></div>
+  </div>
+
+  <h3><span class="marker">/</span>어떻게 동작하나</h3>
+  <p>기술적 핵심. 기존 방식과 무엇이 구조적으로 다른지. 전문 용어를 피하지는 말되, 처음 나오는 개념은 한 문장으로 풀어 쓴다.</p>
+
+  <h3><span class="marker">/</span>왜 중요한가</h3>
+  <p>이게 실제로 무엇을 바꾸는지. 지금 당장 쓸 수 있는 것과, 아직 예고 수준인 것을 구분해서 적는다.</p>
+
+  <div class="callout yellow">
+    <span class="ico">⚠️</span>
+    <div class="body">
+      <p><b>짚어둘 점</b> — 한계와 반론. 자체 발표 수치인지 독립 검증이 있는지, 벤치마크 선별(cherry-picking) 여부, 데이터 오염(contamination) 가능성, 재현 가능 여부, 데모와 실제 제품의 간극, 비용·지연시간, 안전성·저작권·규제 쟁점, 발표 주체의 이해관계 등.</p>
+    </div>
+  </div>
+
+  <h3><span class="marker">/</span>알아두면 좋은 용어</h3>
+  <div class="terms">
+    <div class="term">
+      <div class="en">Term (약어)</div>
+      <div class="ko">한국어 뜻과 한 줄 설명</div>
+    </div>
+    <div class="term">
+      <div class="en">Term (약어)</div>
+      <div class="ko">한국어 뜻과 한 줄 설명</div>
+    </div>
+  </div>
+
+  <h3><span class="marker">/</span>출처</h3>
+  <div class="src">
+    <div class="item"><a href="https://...">1차 출처 제목(발표문·논문·기술 보고서)</a> — 주체, 날짜</div>
+    <div class="item"><a href="https://...">보조 출처 제목</a> — 매체, 날짜</div>
+  </div>
+</article>
