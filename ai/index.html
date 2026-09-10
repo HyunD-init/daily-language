@@ -294,12 +294,89 @@
   <!-- INDEX:START — 새 회차는 이 목록 맨 위에 <a> 하나 추가 -->
   <nav class="toc">
     <div class="toc-label">회차</div>
+    <a href="#a3"><span class="n">3회차</span><span class="t">안트로픽, 클로드가 국가 연계 해킹조직에 오남용된 사례 9건 공개</span><span class="gloss">안전성·정렬</span></a>
     <a href="#a2"><span class="n">2회차</span><span class="t">구글 AMIE, 화상 진료 시뮬레이션에서 1차진료의사와 진단 능력 대등</span><span class="gloss">의료 AI · 진단 보조</span></a>
     <a href="#a1"><span class="n">1회차</span><span class="t">OpenAI, AI 에이전트 1만 개로 나비에-스토크스 방정식 특이점 존재 증명</span><span class="gloss">연구 논문</span></a>
   </nav>
   <!-- INDEX:END -->
 
   <!-- ENTRIES:START — 새 회차 <article class="entry">는 이 줄 바로 아래에 -->
+
+  <article class="entry" id="a3">
+    <div class="entry-meta">
+      <span class="chip">3회차</span>
+      <span>2026년 9월 11일</span>
+      <span class="chip type">안전성·정렬</span>
+    </div>
+
+    <h2 class="headword">안트로픽, 클로드가 국가 연계 해킹·정보탈취에 쓰인 사례 9건 공개 — 탈취한 개발자 토큰 1개로 3시간 만에 클라우드 전체 장악</h2>
+    <div class="lede">Detecting and countering misuse of AI: September 2026 · Anthropic Threat Intelligence · 2026년 9월 10일 발표</div>
+
+    <div class="callout blue">
+      <span class="ico">💡</span>
+      <div class="body">
+        <p>안트로픽이 2025년 12월부터 2026년 8월까지 자사 AI '클로드'가 실제 공격에 이용된 사례를 정리한 위협 인텔리전스 보고서를 냈다. 러시아·중국 연계 해킹조직의 정찰·악성코드 개발부터 생물무기 관련 문의 차단까지 7개 피해 유형, 9개 위협 그룹의 사례를 담았다. 그중 한 건은 탈취한 개발자 토큰 하나로 3시간 만에 피해 기업 클라우드의 관리자 권한 전체를 확보했다고 밝혔다.</p>
+      </div>
+    </div>
+
+    <h3><span class="marker">/</span>무슨 일인가</h3>
+    <p>안트로픽은 2025년 8월과 11월에도 클로드가 랜섬웨어 제작이나 중국 연계 해킹조직의 정찰에 쓰인 사례를 공개한 바 있다. 이번 보고서는 그 후속으로, 2025년 12월부터 2026년 8월까지 8개월간 자사 탐지 시스템이 찾아낸 오남용 사례 중 "가장 주목할 만하고 새로운" 것들을 추려 담았다고 밝혔다.</p>
+    <p>보고서는 위협 그룹마다 GTG(Group Threat actor)라는 자체 식별 번호를 붙여 러시아 국가연계 조직(GTG-20006), ShinyHunters 계열 랜섬웨어 그룹(GTG-50014), 중국어 사용권 해킹조직(GTG-10007) 등 9개 그룹의 사례를 다뤘다. 사이버 공격, 감시, 여론조작, 재래식 무기, 생물학적 오남용, 사기, 모델 무단 증류(distillation)까지 7개 피해 유형으로 나눠 정리했다.</p>
+
+    <h3><span class="marker">/</span>핵심 내용</h3>
+    <div class="facts">
+      <div class="fact"><span class="k">발표 주체</span><span class="v">Anthropic Threat Intelligence 팀</span></div>
+      <div class="fact"><span class="k">대상 기간</span><span class="v">2025년 12월 ~ 2026년 8월(8개월)</span></div>
+      <div class="fact"><span class="k">GTG-20006(러시아 연계)</span><span class="v">20개 이상 기관 대상 드론 기술·자격증명 탈취, 국가신원기록 <b>30만 건</b>·기업등록정보 <b>50만 건</b> 이상 유출</span></div>
+      <div class="fact"><span class="k">GTG-50014(ShinyHunters 계열)</span><span class="v">안드로이드 앱 <b>180만 건</b> 분해해 자격증명 수집, 기술기업 1곳에서 <b>1TB</b> 이상 유출, 항공 승객기록 수천만 건 포함, 기업 테넌트 <b>40개</b> 이상의 Azure AD 토큰 2,100세트를 <b>34시간</b>만에 탈취</span></div>
+      <div class="fact"><span class="k">최단 침투 사례</span><span class="v">탈취한 개발자 토큰 1개로 <b>약 3시간</b> 만에 피해 기업 클라우드 환경 전체 관리자 권한 확보</span></div>
+      <div class="fact"><span class="k">사용 모델</span><span class="v">Claude Haiku·Sonnet·Opus급, Fable·Mythos급 모델은 증류 사례 1건 외 연관 없음</span></div>
+      <div class="fact"><span class="k">공개 범위</span><span class="v">보고서 전문 공개(anthropic.com), 전체 차단 계정 수·오남용 총 건수는 비공개</span></div>
+    </div>
+
+    <h3><span class="marker">/</span>어떻게 동작하나</h3>
+    <p>보고서가 기술한 공격들은 전에 없던 새로운 해킹 기법을 쓴 게 아니라, 정찰부터 취약점 분석·악성코드 작성·탈취 데이터 분류·보고서 작성까지 공격 단계 대부분을 AI 에이전트가 대신하면서 공격에 드는 인력과 시간이 크게 줄었다는 것이 핵심이다. 안트로픽은 "이번 사건 중 방어자가 한 번도 본 적 없는 완전히 새로운 기법에 의존한 것은 없었다. 달라진 것은 공격의 경제성"이라고 밝혔다. 다만 표적 선정, 탈취 정보의 수익화, 결과 검토 등은 여전히 사람이 맡았다고 설명했다.</p>
+
+    <h3><span class="marker">/</span>왜 중요한가</h3>
+    <p>AI 기업이 자사 모델이 국가 연계 해킹·정보전에 실전 투입된 구체적 사례를 스스로 반복적으로 공개하는 것은 이례적이다. 이번 보고서는 미국 상원의원들이 안트로픽에 생물무기 관련 오남용 차단 경위를 묻는 서한을 보내는 등 실제 정책적 반응으로 이어졌다. 다만 보고서에 담긴 것은 클로드 한 서비스에 대한 안트로픽 자체 탐지 결과일 뿐, 경쟁사 AI에서 유사한 오남용이 얼마나 벌어지는지는 이 보고서로 알 수 없다.</p>
+
+    <div class="callout yellow">
+      <span class="ico">⚠️</span>
+      <div class="body">
+        <p><b>짚어둘 점</b> — 탐지·조사·공개를 모두 안트로픽 자신이 수행했고, 외부 기관의 독립적 검증은 없다. 안트로픽 스스로 "여기 실은 사례들은 일반적인 오남용이 아니라, 우리가 확인한 것 중 가장 주목할 만하고 새로운 사례들"이라고 명시했다 — 즉 전체 오남용 규모나 차단 계정 총수를 보여주는 통계가 아니라 선별된 사례집이다. "우리의 가시성은 콘텐츠가 우리 플랫폼을 벗어나는 순간 끝난다"고도 밝혀, 탈취 정보가 실제로 어떻게 쓰였는지는 외부 오픈소스 정보에 의존해 추정한 부분이 있다. 생물무기 관련 사례는 피해 유형으로 언급됐을 뿐 구체적 행위자·수치는 보고서에 상세히 공개되지 않았다. 또한 여론조작 사례 대부분은 "실제 이용자로부터 별다른 반응을 얻지 못한 채" 차단됐다고 스스로 밝혀, 시도와 실제 성공의 간극도 크다. AI 안전 서사를 모델 제공사 자신이 주도해 발표하는 구조라, 신뢈 구축·규제 대응 목적과도 겹칠 수 있다는 점을 감안해서 읽을 필요가 있다.</p>
+      </div>
+    </div>
+
+    <h3><span class="marker">/</span>알아두면 좋은 용어</h3>
+    <div class="terms">
+      <div class="term">
+        <div class="en">GTG (Group Threat actor)</div>
+        <div class="ko">안트로픽이 자체적으로 추적하는 위협 행위자 그룹에 붙이는 식별 번호. 이 보고서에서 9개 그룹이 다뤄졌다</div>
+      </div>
+      <div class="term">
+        <div class="en">Zero-day</div>
+        <div class="ko">아직 제조사가 패치를 내놓지 않은 소프트웨어 취약점. GTG-10007은 이를 이용한 공격 코드를 개발했다</div>
+      </div>
+      <div class="term">
+        <div class="en">Agentic AI, AI 에이전트</div>
+        <div class="ko">사람의 개입 없이 여러 단계의 작업을 스스로 판단해 순서대로 수행하는 AI. 이번 보고서의 공격들은 정찰·악용·데이터 분류 등을 에이전트가 대신 수행했다</div>
+      </div>
+      <div class="term">
+        <div class="en">Illicit distillation, 무단 증류</div>
+        <div class="ko">한 AI 모델의 출력을 대량으로 수집해 경쟁 모델을 훈련시키는 데 무단으로 쓰는 행위</div>
+      </div>
+    </div>
+
+    <h3><span class="marker">/</span>출처</h3>
+    <div class="src">
+      <div class="item"><a href="https://www.anthropic.com/threat-intelligence-report-september-2026">Detecting and countering misuse of AI: September 2026</a> — Anthropic, 2026년 9월 10일</div>
+      <div class="item"><a href="https://www-cdn.anthropic.com/e50be2e51e7695dc4b1366a37a245a597377d3b5/Anthropic-Detecting-and-countering-091026.pdf">보고서 전문(PDF)</a> — Anthropic, 2026년 9월 10일</div>
+      <div class="item"><a href="https://www.commondreams.org/news/anthropic-bioweapons">Anthropic Report Says Company Blocked Possible Use of AI Model to Build Biological Weapons</a> — Common Dreams, 2026년 9월 10일</div>
+    </div>
+  </article>
+
+  <details class="toggle">
+    <summary>지난 회차 2개</summary>
 
   <article class="entry" id="a2">
     <div class="entry-meta">
@@ -372,10 +449,7 @@
     </div>
   </article>
 
-  <details class="toggle">
-    <summary>지난 회차 1개</summary>
-
-    <article class="entry" id="a1">
+  <article class="entry" id="a1">
     <div class="entry-meta">
       <span class="chip">1회차</span>
       <span>2026년 9월 9일</span>
