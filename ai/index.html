@@ -294,6 +294,7 @@
   <!-- INDEX:START — 새 회차는 이 목록 맨 위에 <a> 하나 추가 -->
   <nav class="toc">
     <div class="toc-label">회차</div>
+    <a href="#a11"><span class="n">11회차</span><span class="t">구글, 말하면서 동시에 추론하는 음성 AI '제미나이 3.8 라이브' 공개</span><span class="gloss">모델 출시</span></a>
     <a href="#a10"><span class="n">10회차</span><span class="t">OpenAI, 모델이 스스로 감독을 피하려 한 사례 등 '오정렬' 6건 정기 공개 체계로 발표</span><span class="gloss">안전성·정렬</span></a>
     <a href="#a9"><span class="n">9회차</span><span class="t">FDA TEMPO 파일럿, 생성형 AI 음성 CBT '언팩드' 등 4개 디지털헬스 기기에 사전승인 없이 메디케어 접근 허용</span><span class="gloss">의료 AI · 규제·정책</span></a>
     <a href="#a8"><span class="n">8회차</span><span class="t">구글 딥마인드, 게놈 전체 단일염기변이 90억 개 예측치 사전계산한 '알파지놈 아틀라스' 공개</span><span class="gloss">연구 논문</span></a>
@@ -308,6 +309,76 @@
   <!-- INDEX:END -->
 
   <!-- ENTRIES:START — 새 회차 <article class="entry">는 이 줄 바로 아래에 -->
+
+  <article class="entry" id="a11">
+    <div class="entry-meta">
+      <span class="chip">11회차</span>
+      <span>2026년 9월 19일</span>
+      <span class="chip type">모델 출시</span>
+    </div>
+
+    <h2 class="headword">구글, 말하면서 동시에 추론하는 음성 AI '제미나이 3.8 라이브' 공개</h2>
+    <div class="lede">Introducing Gemini 3.8 Live and 3.8 Live Extended Thinking · Google · 2026년 9월 15일 발표</div>
+
+    <div class="callout blue">
+      <span class="ico">💡</span>
+      <div class="body">
+        <p>구글이 실시간 음성 대화 모델 두 종 — 제미나이 3.8 라이브(Gemini 3.8 Live)와 확장형 사고(Extended Thinking) 버전 — 을 내놨다. 확장형 사고 모델은 답을 말하는 동안에도 뒤에서 계속 추론을 이어가는 방식으로, 독립 벤치마크 기관 아티피셜 애널리시스(Artificial Analysis)의 음성 대 음성(Speech to Speech) 지수에서 82.6점으로 1위를 기록했다. 두 모델은 구글 검색의 실시간 음성 기능, 제미나이 라이브 앱, 일부 워크스페이스 앱에 순차 적용되고 있다.</p>
+      </div>
+    </div>
+
+    <h3><span class="marker">/</span>무슨 일인가</h3>
+    <p>기존 음성 비서형 AI는 복잡한 요청을 받으면 답을 내놓기 전에 한동안 침묵하며 추론을 마치거나, 반대로 깊이 따지지 않고 바로 대답해 정확도를 희생하는 절충 사이에서 움직여 왔다. '먼저 생각하고 나중에 말하는' 순차 구조 때문에 여러 단계를 거쳐야 하는 요청일수록 대화가 끊기거나 사용자가 침묵을 어색하게 느끼는 문제가 있었다.</p>
+    <p>구글은 2026년 9월 15일 자사 블로그를 통해 이 문제를 겨냥한 두 모델을 발표했다. 제미나이 3.8 라이브는 비용 효율과 시각 정보 인식을 함께 갖춘 범용 모델이고, 제미나이 3.8 라이브 확장형 사고는 여러 단계에 걸친 추론과 백그라운드 작업 실행이 필요한 복잡한 업무를 겨냥한 모델이다. 두 모델 모두 가중치는 공개하지 않고 구글이 호스팅하는 API 형태로만 제공된다.</p>
+
+    <h3><span class="marker">/</span>핵심 내용</h3>
+    <div class="facts">
+      <div class="fact"><span class="k">발표 주체</span><span class="v">구글(Google)</span></div>
+      <div class="fact"><span class="k">무엇을</span><span class="v">실시간 음성 대화 모델 2종 — 제미나이 3.8 라이브, 제미나이 3.8 라이브 확장형 사고(Extended Thinking)</span></div>
+      <div class="fact"><span class="k">핵심 수치</span><span class="v">아티피셜 애널리시스 Speech to Speech 지수 <b>82.6점</b>(1위) · 자체 구현 Tau-Voice 벤치마크 <b>68.6%</b> · 시에라(Sierra)의 은행업무 특화 Tau-Voice-banking 벤치마크 <b>35.1%</b> · Big Bench Audio 추론 벤치마크 <b>97.7%</b></span></div>
+      <div class="fact"><span class="k">공개 범위</span><span class="v">가중치 비공개, 자체 호스팅 불가 — 제미나이 API·AI 스튜디오를 통한 API 접근만 가능</span></div>
+      <div class="fact"><span class="k">비용·조건</span><span class="v">라이브 API 기준 음성 입력 분당 <b>$0.005</b>, 음성 출력 분당 <b>$0.018</b>. 확장형 사고는 제미나이 라이브 앱에서 유료 구독자(Pro·Ultra)에게만 제공</span></div>
+    </div>
+
+    <h3><span class="marker">/</span>어떻게 동작하나</h3>
+    <p>기존 음성 모델은 사용자의 말이 끝난 뒤 추론을 마치고 나서야 음성을 합성해 내보내는 순차 구조였다. 확장형 사고 모델은 이 순서를 바꿔, "확인해볼게요" 같은 짧은 응답으로 먼저 대화를 이어가면서 동시에 백그라운드에서 여러 단계의 추론과 도구 호출(API 실행 등)을 계속 진행하고, 중간 진행 상황을 실시간으로 말로 설명(live progress narration)한다. 또 97개 언어를 자동으로 인식·전환하고, 카메라나 화면 등 시각 정보를 대화 맥락에 반영하며, 사용자가 말을 끊어도 자연스럽게 이어받는다. 생성된 음성에는 워터마킹 기술 신스ID(SynthID)가 삽입돼 AI 생성 여부를 사후에 식별할 수 있게 했다.</p>
+
+    <h3><span class="marker">/</span>왜 중요한가</h3>
+    <p>음성 기반 AI 에이전트가 예약·결제·계좌 문의처럼 여러 단계를 거쳐야 하는 작업을, 대화가 끊기지 않는 상태로 실시간 처리할 수 있게 하려는 목적이다. 데모 수준이 아니라 이미 구글 검색의 실시간 음성 기능과 제미나이 라이브 앱, 지메일·문서·킵 등 워크스페이스 앱(기업용)에 순차 적용되고 있고, 개발자는 제미나이 API·AI 스튜디오로 바로 접근할 수 있다. 다만 기업용 제미나이 엔터프라이즈·버텍스 AI 적용은 아직 비공개 프리뷰(private preview) 단계이고, 확장형 사고는 라이브 앱에서 유료 구독자에게만 열려 있다.</p>
+
+    <div class="callout yellow">
+      <span class="ico">⚠️</span>
+      <div class="body">
+        <p><b>짚어둘 점</b> — 82.6점, 68.6% 같은 수치는 구글이 아니라 독립 벤치마크 기관 아티피셜 애널리시스가 별도로 측정해 발표한 것이어서 순수한 자체 발표 수치는 아니다. 다만 이 벤치마크 자체가 실제 업무 환경을 얼마나 대표하는지는 별개 문제다 — 같은 계열의 Tau-Voice 일반 벤치마크에서 68.6%를 기록한 모델이, 실사용에 더 가까운 시에라의 은행업무 특화 벤치마크(Tau-Voice-banking)에서는 35.1%로 절반 가까이 떨어진다. 범용 대화 능력과 특정 업무 도메인에 실제로 투입했을 때의 성능 사이에 상당한 간극이 있다는 뜻이다. 구글은 지연시간(latency) 수치를 공개하지 않았는데, 실시간 음성 대화에서는 체감 품질을 좌우하는 핵심 지표라 아쉬운 대목이다. 두 모델 모두 가중치가 비공개이고 API로만 제공돼 외부 연구자가 독립적으로 재현·검증하기는 어렵다. 신스ID 워터마킹이 적용됐다고는 해도, 자연스러운 실시간 음성을 즉석에서 합성·응대하는 능력 자체는 보이스피싱 등 음성 사칭 사기에 악용될 위험을 줄여주지 않는다.</p>
+      </div>
+    </div>
+
+    <h3><span class="marker">/</span>알아두면 좋은 용어</h3>
+    <div class="terms">
+      <div class="term">
+        <div class="en">Speech-to-Speech model, 음성-음성 모델</div>
+        <div class="ko">입력 음성을 텍스트로 바꾸는 중간 단계 없이 음성을 그대로 이해하고 음성으로 바로 응답하는 모델</div>
+      </div>
+      <div class="term">
+        <div class="en">Extended Thinking, 확장형 사고</div>
+        <div class="ko">모델이 답을 내놓기 전이나 도중에 더 오래, 여러 단계로 추론을 진행하도록 설계된 동작 모드</div>
+      </div>
+      <div class="term">
+        <div class="en">SynthID</div>
+        <div class="ko">구글이 개발한 워터마킹 기술. 사람 눈·귀로는 구별되지 않지만 전용 도구로는 AI가 생성한 이미지·음성·텍스트임을 식별할 수 있게 표시를 심어 넣는다</div>
+      </div>
+    </div>
+
+    <h3><span class="marker">/</span>출처</h3>
+    <div class="src">
+      <div class="item"><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/">Introducing Gemini 3.8 Live and 3.8 Live Extended Thinking</a> — Google, 2026년 9월 15일</div>
+      <div class="item"><a href="https://x.com/ArtificialAnlys/status/2099977679307243773">Artificial Analysis Speech to Speech Index 결과 발표</a> — Artificial Analysis, 2026년 9월 15일</div>
+      <div class="item"><a href="https://www.marktechpost.com/2026/09/15/google-releases-gemini-3-8-live-and-3-8-live-extended-thinking-for-production-grade-voice-agents/">Google Releases Gemini 3.8 Live and 3.8 Live Extended Thinking for Production Grade Voice Agents</a> — MarkTechPost, 2026년 9월 15일</div>
+    </div>
+  </article>
+
+  <details class="toggle">
+    <summary>지난 회차 10개</summary>
 
   <article class="entry" id="a10">
     <div class="entry-meta">
@@ -381,9 +452,6 @@
       <div class="item"><a href="https://thehackernews.com/2026/09/openai-reveals-six-model-incidents.html">OpenAI Reveals Six Model Incidents Involving Hidden Failures and Unauthorized Uploads</a> — The Hacker News</div>
     </div>
   </article>
-
-  <details class="toggle">
-    <summary>지난 회차 9개</summary>
 
   <article class="entry" id="a9">
     <div class="entry-meta">
