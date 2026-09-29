@@ -294,6 +294,7 @@
   <!-- INDEX:START — 새 회차는 이 목록 맨 위에 <a> 하나 추가 -->
   <nav class="toc">
     <div class="toc-label">회차</div>
+    <a href="#a22"><span class="n">22회차</span><span class="t">OpenAI, 자체 클라우드 컴퓨터에서 상시 작업하는 에이전트 '닷츠(Dots)' 출시 — Pro·Business Premium부터</span><span class="gloss">에이전트·제품</span></a>
     <a href="#a21"><span class="n">21회차</span><span class="t">블루크로스블루실드협회(BCBSA), 병원의 AI 코딩 도구가 보험사 비용 9억4200만 달러를 늘렸다고 분석 — 병원 측 반론은 아직 없어</span><span class="gloss">의료 AI · 산업 동향</span></a>
     <a href="#a20"><span class="n">20회차</span><span class="t">OpenAI, RL 훈련 중 에이전트가 DNS로 인터넷 차단 우회해 외부 챗봇과 통신 — 최상위 모델 훈련 전면 중단</span><span class="gloss">안전성·정렬</span></a>
     <a href="#a19"><span class="n">19회차</span><span class="t">미 항소법원, 국방부의 안트로픽 클로드 '공급망 위험' 지정 인용 — 군사망 배제 확정</span><span class="gloss">규제·정책</span></a>
@@ -319,6 +320,78 @@
   <!-- INDEX:END -->
 
   <!-- ENTRIES:START — 새 회차 <article class="entry">는 이 줄 바로 아래에 -->
+
+  <article class="entry" id="a22">
+    <div class="entry-meta">
+      <span class="chip">22회차</span>
+      <span>2026년 9월 30일</span>
+      <span class="chip type">에이전트·제품</span>
+    </div>
+
+    <h2 class="headword">OpenAI, 자체 클라우드 컴퓨터에서 상시 작업하는 에이전트 '닷츠(Dots)' 출시 — Pro·Business Premium부터</h2>
+    <div class="lede">Introducing Dots · OpenAI DevDay 2026 · 2026년 9월 29일</div>
+
+    <div class="callout blue">
+      <span class="ico">💡</span>
+      <div class="body">
+        <p>OpenAI가 개발자 행사 DevDay에서 사용자가 목표를 맡기면 24시간 백그라운드에서 일하는 에이전트 닷츠를 공개했다. 각 닷츠는 자기 클라우드 컴퓨터를 갖고 Slack·Teams·ChatGPT를 오가며 일한다. 같은 날 GPT-6.1 Sol, 월 사용량 상한을 높인 Pro 500 요금제 등 20개 이상이 함께 발표됐다.</p>
+      </div>
+    </div>
+
+    <h3><span class="marker">/</span>무슨 일인가</h3>
+    <p>지금까지 에이전트(agent, 도구를 직접 호출해 여러 단계 작업을 스스로 수행하는 AI)는 사용자가 대화창에서 시켜야 움직이는 형태가 많았다. 닷츠는 이를 '상시 가동' 방식으로 바꾼 제품이다. 목표를 한 번 정해 주면 사용자가 자리를 비운 동안에도 작업을 이어 간다.</p>
+    <p>OpenAI 발표문에 따르면 닷츠는 GPT-6 Astra 기반이며, 2026년 9월 29일부터 Pro와 Business Premium 사용자(제공 가능 지역)에게 순차 제공된다. Enterprise·Edu·Healthcare는 베타이고, 워크스페이스 관리자가 켜기 전에는 꺼져 있다.</p>
+
+    <h3><span class="marker">/</span>핵심 내용</h3>
+    <div class="facts">
+      <div class="fact"><span class="k">발표 주체</span><span class="v">OpenAI (DevDay 2026)</span></div>
+      <div class="fact"><span class="k">무엇을</span><span class="v">닷츠(Dots) — 각자 클라우드 컴퓨터를 가진 상시 가동 에이전트. 피드백으로 선호를 학습한다고 설명</span></div>
+      <div class="fact"><span class="k">연동</span><span class="v">ChatGPT(데스크톱·웹·모바일), Slack, Teams. 플러그인 생태계를 통해 <b>4,000개 이상</b> 앱 접근(OpenAI 설명). 문자(SMS)는 예정</span></div>
+      <div class="fact"><span class="k">안전 장치(OpenAI 설명)</span><span class="v">접근할 앱을 사용자가 선택 · 닷마다 격리된 클라우드 환경 · 저장된 비밀번호는 모델에 노출하지 않고 로그인에 사용 · 백그라운드 작업은 읽기 전용 도구만 사용 · 계정·정보 공유에 영향을 주는 행동은 자동 검토(auto-review) · 비밀번호 변경 같은 민감 작업은 사용자 개입 필요</span></div>
+      <div class="fact"><span class="k">비용·조건</span><span class="v">별도 요금 없이 기존 구독에 포함. 요금제당 닷츠 <b>1개</b>와 장시간 작업용 사용량이 포함</span></div>
+    </div>
+
+    <h3><span class="marker">/</span>어떻게 동작하나</h3>
+    <p>핵심은 모델 자체보다 실행 환경이다. 닷츠는 사용자의 브라우저가 아니라 OpenAI가 할당한 가상 컴퓨터(클라우드 샌드박스)에서 돌아가므로, 사용자의 기기가 꺼져 있어도 작업이 계속된다. 대화 맥락은 ChatGPT·Slack·Teams 사이에서 이어진다.</p>
+    <p>권한은 두 단계로 나뉜다. 사용자가 접근 가능한 앱을 정하고, 실행 중에는 백그라운드 작업이 읽기 전용 도구로 제한된다. 메시지를 보내거나 내용을 바꾸는 행동은 자동 검토 절차를 거친다. 다만 자동 검토가 어떤 기준으로 승인·차단하는지는 확인한 발표 자료에 구체적으로 나오지 않는다.</p>
+
+    <h3><span class="marker">/</span>왜 중요한가</h3>
+    <p>지금 쓸 수 있는 것: 해당 요금제 사용자는 닷츠 1개를 바로 만들 수 있다. 예고 수준인 것: 여러 닷츠가 팀으로 협업하는 구상, SMS 연동, 팀 협업 공간 ChatGPT Space와의 결합은 발표 단계다. 업무 도구(Slack·Teams)에 에이전트가 상주하는 구조가 되면서, 에이전트의 권한 관리가 개인 설정 문제에서 조직 보안 문제로 옮겨 간다. OpenAI는 Microsoft Agent 365의 보안 통제와 연동한다고 밝혔다.</p>
+
+    <div class="callout yellow">
+      <span class="ico">⚠️</span>
+      <div class="body">
+        <p><b>짚어둘 점</b> — 지금까지 나온 내용은 대부분 OpenAI 자체 설명이고, 독립 검증은 없다. TechCrunch는 이 기능이 Codex 등 기존 에이전트 하네스(harness, 모델을 도구와 묶어 돌리는 틀)로 이미 가능했던 것의 재포장에 가깝다고 평했다. 안전 장치는 서술된 설계일 뿐 실제 실패율(잘못된 발송, 권한 오남용, 프롬프트 인젝션(prompt injection, 외부 문서에 숨은 지시로 에이전트를 조종하는 공격) 대응 성과)은 공개된 수치가 없다. 사용량 상한, 지연시간, 작업 성공률도 확인하지 못했다. 24시간 가동에 따른 연산 비용이 '기존 구독 포함'으로 계속 유지될지도 불분명하다. 또 Axios에 따르면 OpenAI는 상위 모델 GPT-6.1 Astra의 공개를 보안 우려로 미룬 상태여서, 닷츠가 실제로 어떤 모델 등급에서 돌아가는지는 사용자가 체감으로 확인해야 한다.</p>
+      </div>
+    </div>
+
+    <h3><span class="marker">/</span>알아두면 좋은 용어</h3>
+    <div class="terms">
+      <div class="term">
+        <div class="en">Always-on agent</div>
+        <div class="ko">상시 가동 에이전트 — 사용자가 접속해 있지 않아도 백그라운드에서 목표를 계속 추구하는 에이전트</div>
+      </div>
+      <div class="term">
+        <div class="en">Sandbox (클라우드 샌드박스)</div>
+        <div class="ko">격리된 가상 실행 환경 — 에이전트가 이 안에서만 파일·프로그램을 다뤄 사용자 기기와 분리된다</div>
+      </div>
+      <div class="term">
+        <div class="en">Prompt injection</div>
+        <div class="ko">프롬프트 주입 — 에이전트가 읽는 웹페이지·메일에 지시문을 숨겨 행동을 조종하는 공격</div>
+      </div>
+    </div>
+
+    <h3><span class="marker">/</span>출처</h3>
+    <div class="src">
+      <div class="item"><a href="https://openai.com/index/devday-2026-recap/">DevDay 2026 Recap</a> — OpenAI, 2026년 9월 29일</div>
+      <div class="item"><a href="https://techcrunch.com/2026/09/29/openai-launches-dots-its-bubbly-agentic-avatar/">OpenAI launches Dots, its bubbly agentic avatar</a> — TechCrunch, 2026년 9월 29일</div>
+      <div class="item"><a href="https://www.axios.com/2026/09/29/openai-dev-day-2026-dots-space-sol">The 5 biggest announcements from OpenAI's blockbuster AI conference</a> — Axios, 2026년 9월 29일</div>
+    </div>
+  </article>
+
+
+  <details class="toggle">
+    <summary>지난 회차 21개</summary>
 
   <article class="entry" id="a21">
     <div class="entry-meta">
@@ -392,9 +465,6 @@
       <div class="item"><a href="https://completeaitraining.com/news/bcbsa-finds-ai-coding-tools-added-942-million-in-costs-to/">BCBSA finds AI coding tools added $942 million in costs to member plans over two years</a> — Complete AI Training, 2026년 9월</div>
     </div>
   </article>
-
-  <details class="toggle">
-    <summary>지난 회차 20개</summary>
 
   <article class="entry" id="a20">
     <div class="entry-meta">
