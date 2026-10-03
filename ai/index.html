@@ -294,6 +294,7 @@
   <!-- INDEX:START — 새 회차는 이 목록 맨 위에 <a> 하나 추가 -->
   <nav class="toc">
     <div class="toc-label">회차</div>
+    <a href="#a26"><span class="n">26회차</span><span class="t">웹 텍스트의 27.5%가 AI 생성물 — 800개 모델 사전학습 실험, 사람 데이터가 충분해지면 AI 토큰이 손해로 돌아선다</span><span class="gloss">연구 논문</span></a>
     <a href="#a25"><span class="n">25회차</span><span class="t">마이크로소프트 '2026 디지털 방어 보고서' — 취약점 발견에서 악용까지 걸리는 중앙값이 24시간 미만으로 짧아졌다고 보고</span><span class="gloss">산업 동향 · 사이버보안</span></a>
     <a href="#a24"><span class="n">24회차</span><span class="t">AMD, 페이페이 리 교수의 월드랩스(World Labs)를 약 82억 달러 전액 주식으로 인수 — 월드 모델 연구팀을 칩 회사가 품는다</span><span class="gloss">산업 동향 · 인프라·하드웨어</span></a>
     <a href="#a23"><span class="n">23회차</span><span class="t">FDA, 영상의학 AI 소프트웨어 4개 유형의 510(k) 면제 청원 기각 — 연방관보에 최종 명령 게재</span><span class="gloss">의료 AI · 규제·정책</span></a>
@@ -324,81 +325,151 @@
 
   <!-- ENTRIES:START — 새 회차 <article class="entry">는 이 줄 바로 아래에 -->
 
-  <article class="entry" id="a25">
+  <article class="entry" id="a26">
     <div class="entry-meta">
-      <span class="chip">25회차</span>
-      <span>2026년 10월 3일</span>
-      <span class="chip type">산업 동향 · 사이버보안</span>
+      <span class="chip">26회차</span>
+      <span>2026년 10월 4일</span>
+      <span class="chip type">연구 논문</span>
     </div>
 
-    <h2 class="headword">마이크로소프트 '2026 디지털 방어 보고서' — 취약점 발견에서 악용까지 걸리는 중앙값이 24시간 미만으로 짧아졌다고 보고</h2>
-    <div class="lede">2026 Digital Defense Report · Microsoft · 2026-10-01</div>
+    <h2 class="headword">웹 텍스트의 27.5%가 AI 생성물 — 800개 모델 사전학습 실험, 사람 데이터가 충분해지면 AI 토큰이 손해로 돌아선다</h2>
+    <div class="lede">How Much Is an AI Token Worth? Scaling Laws for Wild AI-Generated Web Text · Russell 외 7인(Pangram Labs 관련 저자 포함) · arXiv 2609.40295 · 2026년 9월 30일</div>
 
     <div class="callout blue">
       <span class="ico">💡</span>
       <div class="body">
-        <p>마이크로소프트가 연례 보안 보고서에서 AI 때문에 공격 쪽의 속도가 방어 쪽을 앞서고 있다고 주장했다. 취약점이 알려진 뒤 실제 공격에 쓰이기까지 걸리는 시간의 중앙값이 "24시간을 크게 밑돈다"고 밝혔고, 기업이 심각한 외부 노출 취약점을 고치는 데는 30~60일이 걸린다고 했다.</p>
+        <p>연구진은 2026년 6월 웹 토큰의 27.5%(8월 31.1%)가 AI가 쓴 글이라고 추정하고, 19.9M~973M 파라미터 모델 800개를 사전학습해 그 영향을 쟀다. 사람 데이터가 모델 크기에 비해 적을 때는 AI 토큰이 도움이 되지만, 충분해지면 오히려 성능을 깎는다는 결과다.</p>
       </div>
     </div>
 
     <h3><span class="marker">/</span>무슨 일인가</h3>
-    <p>마이크로소프트는 해마다 자사 보안 telemetry(기기·계정·네트워크에서 수집한 보안 신호)를 바탕으로 위협 동향 보고서를 낸다. 올해 보고서는 10월 1일 공개됐고, 제목 격의 문장은 "AI가 사이버보안의 물리법칙을 바꾸고 있다"이다.</p>
-    <p>보고서가 내세우는 논지는 두 가지다. 첫째, 공격이 빨라졌다 — 취약점 발견부터 악용(weaponization)까지의 중앙값이 하루 미만이다. 둘째, 방어는 여전히 느리다 — 기업의 조치는 수십 일 단위다. 마이크로소프트가 밝힌 바에 따르면 이 격차의 배경에 AI가 있다.</p>
+    <p>대규모 언어모델(LLM)은 웹에서 긁어 온 글로 사전학습(pretraining)한다. 그런데 웹에 AI가 쓴 글이 늘면, 다음 세대 모델은 앞 세대 모델의 출력을 먹고 자라게 된다. 이 "모델 붕괴(model collapse)" 우려는 이전부터 있었지만, 실제 웹(wild) 데이터에서 AI 글의 비중과 영향을 정량화한 연구는 드물었다.</p>
+    <p>이 논문은 2026년 9월 30일 arXiv에 올라왔다. 연구진은 웹 텍스트 중 AI 생성물의 비중을 시점별로 추정하고, AI 토큰 한 개가 사람 토큰 한 개에 비해 얼마의 가치를 갖는지를 예측하는 스케일링 법칙(scaling law, 데이터·파라미터를 늘렸을 때 성능이 어떻게 변하는지 나타내는 경험식)을 제안한다.</p>
 
     <h3><span class="marker">/</span>핵심 내용</h3>
     <div class="facts">
-      <div class="fact"><span class="k">발표 주체</span><span class="v">마이크로소프트(공동 저자: 보안 연구·위협 인텔리전스 부문 Tanmay Ganacharya, Wes Malaby)</span></div>
-      <div class="fact"><span class="k">취약점 수</span><span class="v">2026년 상반기에 <b>약 4만 건</b>의 CVE(공개 취약점 번호)가 게시돼 연간으로는 약 2배 속도</span></div>
-      <div class="fact"><span class="k">속도</span><span class="v">발견~악용 중앙값 <b>24시간 "훨씬 미만"</b> / 기업의 심각한 외부 노출 취약점 조치 <b>30~60일</b></span></div>
-      <div class="fact"><span class="k">ClickFix</span><span class="v">가짜 오류 화면으로 사용자가 직접 악성 명령을 실행하게 만드는 수법이 2~5월 사이 <b>110만 대 이상</b>에서 확인됨(약 8배 증가)</span></div>
-      <div class="fact"><span class="k">침입 경로</span><span class="v">초기 접근 사건 중 사용자 실행 <b>30%</b>, 유효 계정 도용 <b>20%</b></span></div>
-      <div class="fact"><span class="k">오래된 취약점</span><span class="v">분석한 상위 5개 CVE 중 2020년 공개된 CVE-2020-1472가 탐지의 <b>58%</b></span></div>
-      <div class="fact"><span class="k">AI 능력</span><span class="v">최전선 AI 시스템이 통제된 환경에서 <b>32단계</b> 공격을 이어서 수행함</span></div>
+      <div class="fact"><span class="k">발표 주체</span><span class="v">Jenna Russell, Mohit Iyyer 등 8명의 저자(논문 기준). 논문에 AI 탐지 업체 Pangram의 탐지기가 쓰였다</span></div>
+      <div class="fact"><span class="k">AI 글 비중</span><span class="v">웹 토큰 중 <b>10%(2024.6) → 16%(2025.6) → 28%(2026.6) → 31%(2026.8)</b></span></div>
+      <div class="fact"><span class="k">실험 규모</span><span class="v">모델 <b>800개</b>, 19.9M~973M 파라미터. 파라미터당 사람 토큰 2.9~87.5개, AI 대 사람 토큰 비율 0~64</span></div>
+      <div class="fact"><span class="k">전환점</span><span class="v">파라미터당 사람 토큰이 약 <b>10개 미만</b>이면 AI 토큰이 도움, 약 20개 부근에서 이득이 포화</span></div>
+      <div class="fact"><span class="k">비용</span><span class="v">2026년 8월 수준(AI 31.1%)의 무필터 웹 텍스트로 학습하면 사람 글만 쓸 때보다 <b>1.6배</b>의 연산이 필요</span></div>
+      <div class="fact"><span class="k">필터 편향</span><span class="v">FineWeb 필터는 AI 문서를 사람 문서보다 <b>2.3배</b>, DCLM 필터는 <b>9.8배</b> 더 자주 통과시킴</span></div>
     </div>
 
     <h3><span class="marker">/</span>어떻게 동작하나</h3>
-    <p>보고서가 설명하는 기제는 비용 구조의 변화다. 취약점을 찾아 공격 코드로 만드는 일, 피싱 문구를 대상별로 맞추는 일에 전문 인력이 덜 필요해지고 프롬프트(prompt, AI에게 주는 지시문)로 대체된다는 것이다. 32단계 시험은 정찰부터 도메인 장악까지 여러 단계를 사람 개입 없이 연결해 본 통제 환경 실험이다.</p>
-    <p>Help Net Security가 전한 보고서 내용으로는 피싱이 침입 사건의 23%(7%에서 상승)를 차지했고 공개 노출 시스템 악용도 15%에서 24%로 늘었다. 이 수치는 이번에 1차 출처 페이지에서 직접 확인하지 못해 보도를 인용한다.</p>
+    <p>먼저 웹 문서가 AI 글인지 판별해야 한다. 연구진은 EditLens(Llama-3.2-3B 기반)로 후보를 거른 뒤 Pangram 3.3.2 탐지기를 적용했고, 저자들은 이 탐지기의 오탐률(사람 글을 AI로 판정)이 0.05%, 미탐률이 1.99%라고 보고한다.</p>
+    <p>그다음 사람 토큰의 양과 AI 토큰의 양을 격자 모양으로 바꿔 가며 모델 800개를 처음부터 학습시키고, C4, Paloma, 2022년 이전 FineWeb, 2026년 FineWeb, Cosmopedia에서 손실(loss, 다음 단어 예측 오차)을 비교했다. 이 결과에 맞춘 식이 "AI 토큰의 유효 가치"를 예측한다. 저자들은 C4에서 짝지은 오차가 0.83×10⁻³으로, 기존 친칠라(Chinchilla) 법칙 기반 예측의 4.32×10⁻³보다 작다고 밝혔다.</p>
+    <p>직관적으로는 이렇다. 모델에 비해 사람 데이터가 모자랄 때 AI 글은 "문법적으로 깔끔한 추가 예시" 구실을 한다. 사람 데이터가 충분해지면 AI 글은 새 정보 없이 분포를 좁히기만 해서 도움이 줄고 해가 된다.</p>
 
     <h3><span class="marker">/</span>왜 중요한가</h3>
-    <p>패치 일정은 보통 월 단위로 돌아간다. 악용이 하루 안에 시작된다면 "알려진 뒤 몇 주 안에 패치"라는 관행이 방어 수단으로 작동하지 않는다. 병원 같은 레거시 장비가 많은 조직에서는 특히 해당되는 이야기다. 다만 이것은 마이크로소프트가 제시한 방향성이고, 개별 조직이 당장 할 일은 보고서가 권하는 상시 점검·계정 보안 강화 같은 기본기에 가깝다.</p>
+    <p>지금 당장 달라지는 것은 없다. 다만 데이터 큐레이션 관점에서 두 가지를 시사한다. 하나는 웹을 긁어 쓰는 학습 데이터에 AI 글이 이미 3분의 1 가까이 섞였다는 추정이고, 다른 하나는 널리 쓰이는 품질 필터가 AI 글을 오히려 선호한다는 측정이다. 후자가 사실이면 필터를 거칠수록 AI 글 비중이 올라갈 수 있다.</p>
+    <p>저자들은 검증 세트에 AI 글이 22.3% 섞여 있으면 손해가 난 실행의 95.5%에서 그 해를 가린다고 밝혔다. 평가용 데이터도 오염돼 있으면 문제를 발견하기 어렵다는 뜻이다.</p>
 
     <div class="callout yellow">
       <span class="ico">⚠️</span>
       <div class="body">
-        <p><b>짚어둘 점</b> — 이 수치들은 마이크로소프트 자체 telemetry와 자체 분석이며 독립 검증은 확인되지 않았다. 마이크로소프트는 보안 제품을 파는 회사라 위협을 강조할 유인이 있다. "중앙값 24시간 미만"은 어떤 취약점 표본을 대상으로 어떻게 정의했는지에 따라 달라지는 값이고, 그 원인이 AI라는 인과는 보고서의 해석이지 증명된 것이 아니다. 32단계 공격은 통제된 시험 환경에서의 결과이며 실제 방어가 갖춰진 환경과는 다르다. 보도에 따르면 마이크로소프트 스스로도 가장 복잡한 침입의 표적 선정과 운영 판단은 관측한 캠페인 대부분에서 여전히 사람이 한다고 밝혔다.</p>
+        <p><b>짚어둘 점</b> — 아직 동료 심사를 거치지 않은 프리프린트이고, 독립 재현은 확인되지 않았다. 최대 모델이 973M 파라미터라 프런티어 모델(수천억 파라미터 이상)에서도 같은 전환점이 나타나는지는 외삽이다. AI 비중 추정은 탐지기 정확도에 의존하며, 탐지기 오탐·미탐률은 저자들이 보고한 수치다. 공저자 일부가 탐지기 개발 쪽과 연결돼 있어 이해관계를 감안해 읽어야 한다. "AI 글이 해롭다"는 결론은 이 실험 설정(모델 크기, 데이터 비율)에서의 손실 기준이며, 실제 과제 성능이나 안전성 지표와 같은 말은 아니다. 이 내용은 원문 HTML을 기준으로 정리했고, 초록 페이지는 확인하지 못했다.</p>
       </div>
     </div>
 
     <h3><span class="marker">/</span>알아두면 좋은 용어</h3>
     <div class="terms">
       <div class="term">
-        <div class="en">CVE (Common Vulnerabilities and Exposures)</div>
-        <div class="ko">공개된 보안 취약점에 붙는 고유 번호</div>
+        <div class="en">Model collapse</div>
+        <div class="ko">모델 붕괴 — 모델이 이전 모델의 출력으로 반복 학습하면서 분포의 꼬리(드문 표현)가 사라지고 품질이 떨어지는 현상</div>
       </div>
       <div class="term">
-        <div class="en">Weaponization</div>
-        <div class="ko">취약점을 실제 공격에 쓸 수 있는 코드·절차로 만드는 단계</div>
+        <div class="en">Scaling law</div>
+        <div class="ko">스케일링 법칙 — 파라미터·데이터·연산량과 손실 사이의 경험적 관계식</div>
       </div>
       <div class="term">
-        <div class="en">ClickFix</div>
-        <div class="ko">가짜 오류·인증 화면을 띄워 사용자가 악성 명령을 직접 붙여넣어 실행하게 하는 사회공학 수법</div>
-      </div>
-      <div class="term">
-        <div class="en">Telemetry</div>
-        <div class="ko">제품·기기에서 자동 수집되는 사용·보안 신호 데이터</div>
+        <div class="en">Tokens per parameter</div>
+        <div class="ko">파라미터당 토큰 수 — 모델 크기 대비 학습 데이터 양. 친칠라 법칙의 기준은 대략 20</div>
       </div>
     </div>
 
     <h3><span class="marker">/</span>출처</h3>
     <div class="src">
-      <div class="item"><a href="https://www.microsoft.com/en-us/security/security-insider/threat-landscape/2026-digital-defense-report">2026 Digital Defense Report</a> — Microsoft, 2026-10-01</div>
-      <div class="item"><a href="https://www.helpnetsecurity.com/2026/10/02/ai-cybersecurity-threats-microsoft-report/">AI is giving attackers a head start, Microsoft warns</a> — Help Net Security, 2026-10-02</div>
+      <div class="item"><a href="https://arxiv.org/html/2609.40295v1">How Much Is an AI Token Worth? Scaling Laws for Wild AI-Generated Web Text</a> — arXiv, 2026년 9월 30일</div>
+      <div class="item"><a href="https://aiweekly.co/alerts/arxiv-paper-ai-web-tokens-flip-from-help-to-harm-in-llms">arXiv paper: AI web tokens flip from help to harm in LLMs</a> — AI Weekly, 2026년 10월</div>
     </div>
   </article>
 
   <details class="toggle">
-    <summary>지난 회차 24개</summary>
+    <summary>지난 회차 25개</summary>
+
+    <article class="entry" id="a25">
+      <div class="entry-meta">
+        <span class="chip">25회차</span>
+        <span>2026년 10월 3일</span>
+        <span class="chip type">산업 동향 · 사이버보안</span>
+      </div>
+
+      <h2 class="headword">마이크로소프트 '2026 디지털 방어 보고서' — 취약점 발견에서 악용까지 걸리는 중앙값이 24시간 미만으로 짧아졌다고 보고</h2>
+      <div class="lede">2026 Digital Defense Report · Microsoft · 2026-10-01</div>
+
+      <div class="callout blue">
+        <span class="ico">💡</span>
+        <div class="body">
+          <p>마이크로소프트가 연례 보안 보고서에서 AI 때문에 공격 쪽의 속도가 방어 쪽을 앞서고 있다고 주장했다. 취약점이 알려진 뒤 실제 공격에 쓰이기까지 걸리는 시간의 중앙값이 "24시간을 크게 밑돈다"고 밝혔고, 기업이 심각한 외부 노출 취약점을 고치는 데는 30~60일이 걸린다고 했다.</p>
+        </div>
+      </div>
+
+      <h3><span class="marker">/</span>무슨 일인가</h3>
+      <p>마이크로소프트는 해마다 자사 보안 telemetry(기기·계정·네트워크에서 수집한 보안 신호)를 바탕으로 위협 동향 보고서를 낸다. 올해 보고서는 10월 1일 공개됐고, 제목 격의 문장은 "AI가 사이버보안의 물리법칙을 바꾸고 있다"이다.</p>
+      <p>보고서가 내세우는 논지는 두 가지다. 첫째, 공격이 빨라졌다 — 취약점 발견부터 악용(weaponization)까지의 중앙값이 하루 미만이다. 둘째, 방어는 여전히 느리다 — 기업의 조치는 수십 일 단위다. 마이크로소프트가 밝힌 바에 따르면 이 격차의 배경에 AI가 있다.</p>
+
+      <h3><span class="marker">/</span>핵심 내용</h3>
+      <div class="facts">
+        <div class="fact"><span class="k">발표 주체</span><span class="v">마이크로소프트(공동 저자: 보안 연구·위협 인텔리전스 부문 Tanmay Ganacharya, Wes Malaby)</span></div>
+        <div class="fact"><span class="k">취약점 수</span><span class="v">2026년 상반기에 <b>약 4만 건</b>의 CVE(공개 취약점 번호)가 게시돼 연간으로는 약 2배 속도</span></div>
+        <div class="fact"><span class="k">속도</span><span class="v">발견~악용 중앙값 <b>24시간 "훨씬 미만"</b> / 기업의 심각한 외부 노출 취약점 조치 <b>30~60일</b></span></div>
+        <div class="fact"><span class="k">ClickFix</span><span class="v">가짜 오류 화면으로 사용자가 직접 악성 명령을 실행하게 만드는 수법이 2~5월 사이 <b>110만 대 이상</b>에서 확인됨(약 8배 증가)</span></div>
+        <div class="fact"><span class="k">침입 경로</span><span class="v">초기 접근 사건 중 사용자 실행 <b>30%</b>, 유효 계정 도용 <b>20%</b></span></div>
+        <div class="fact"><span class="k">오래된 취약점</span><span class="v">분석한 상위 5개 CVE 중 2020년 공개된 CVE-2020-1472가 탐지의 <b>58%</b></span></div>
+        <div class="fact"><span class="k">AI 능력</span><span class="v">최전선 AI 시스템이 통제된 환경에서 <b>32단계</b> 공격을 이어서 수행함</span></div>
+      </div>
+
+      <h3><span class="marker">/</span>어떻게 동작하나</h3>
+      <p>보고서가 설명하는 기제는 비용 구조의 변화다. 취약점을 찾아 공격 코드로 만드는 일, 피싱 문구를 대상별로 맞추는 일에 전문 인력이 덜 필요해지고 프롬프트(prompt, AI에게 주는 지시문)로 대체된다는 것이다. 32단계 시험은 정찰부터 도메인 장악까지 여러 단계를 사람 개입 없이 연결해 본 통제 환경 실험이다.</p>
+      <p>Help Net Security가 전한 보고서 내용으로는 피싱이 침입 사건의 23%(7%에서 상승)를 차지했고 공개 노출 시스템 악용도 15%에서 24%로 늘었다. 이 수치는 이번에 1차 출처 페이지에서 직접 확인하지 못해 보도를 인용한다.</p>
+
+      <h3><span class="marker">/</span>왜 중요한가</h3>
+      <p>패치 일정은 보통 월 단위로 돌아간다. 악용이 하루 안에 시작된다면 "알려진 뒤 몇 주 안에 패치"라는 관행이 방어 수단으로 작동하지 않는다. 병원 같은 레거시 장비가 많은 조직에서는 특히 해당되는 이야기다. 다만 이것은 마이크로소프트가 제시한 방향성이고, 개별 조직이 당장 할 일은 보고서가 권하는 상시 점검·계정 보안 강화 같은 기본기에 가깝다.</p>
+
+      <div class="callout yellow">
+        <span class="ico">⚠️</span>
+        <div class="body">
+          <p><b>짚어둘 점</b> — 이 수치들은 마이크로소프트 자체 telemetry와 자체 분석이며 독립 검증은 확인되지 않았다. 마이크로소프트는 보안 제품을 파는 회사라 위협을 강조할 유인이 있다. "중앙값 24시간 미만"은 어떤 취약점 표본을 대상으로 어떻게 정의했는지에 따라 달라지는 값이고, 그 원인이 AI라는 인과는 보고서의 해석이지 증명된 것이 아니다. 32단계 공격은 통제된 시험 환경에서의 결과이며 실제 방어가 갖춰진 환경과는 다르다. 보도에 따르면 마이크로소프트 스스로도 가장 복잡한 침입의 표적 선정과 운영 판단은 관측한 캠페인 대부분에서 여전히 사람이 한다고 밝혔다.</p>
+        </div>
+      </div>
+
+      <h3><span class="marker">/</span>알아두면 좋은 용어</h3>
+      <div class="terms">
+        <div class="term">
+          <div class="en">CVE (Common Vulnerabilities and Exposures)</div>
+          <div class="ko">공개된 보안 취약점에 붙는 고유 번호</div>
+        </div>
+        <div class="term">
+          <div class="en">Weaponization</div>
+          <div class="ko">취약점을 실제 공격에 쓸 수 있는 코드·절차로 만드는 단계</div>
+        </div>
+        <div class="term">
+          <div class="en">ClickFix</div>
+          <div class="ko">가짜 오류·인증 화면을 띄워 사용자가 악성 명령을 직접 붙여넣어 실행하게 하는 사회공학 수법</div>
+        </div>
+        <div class="term">
+          <div class="en">Telemetry</div>
+          <div class="ko">제품·기기에서 자동 수집되는 사용·보안 신호 데이터</div>
+        </div>
+      </div>
+
+      <h3><span class="marker">/</span>출처</h3>
+      <div class="src">
+        <div class="item"><a href="https://www.microsoft.com/en-us/security/security-insider/threat-landscape/2026-digital-defense-report">2026 Digital Defense Report</a> — Microsoft, 2026-10-01</div>
+        <div class="item"><a href="https://www.helpnetsecurity.com/2026/10/02/ai-cybersecurity-threats-microsoft-report/">AI is giving attackers a head start, Microsoft warns</a> — Help Net Security, 2026-10-02</div>
+      </div>
+    </article>
 
     <article class="entry" id="a24">
       <div class="entry-meta">
