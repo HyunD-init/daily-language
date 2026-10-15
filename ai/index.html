@@ -294,6 +294,7 @@
   <!-- INDEX:START — 새 회차는 이 목록 맨 위에 <a> 하나 추가 -->
   <nav class="toc">
     <div class="toc-label">회차</div>
+    <a href="#a34"><span class="n">34회차</span><span class="t">하버드·NTT 연구진, AI 에이전트 집단에 '임계 개체 수'가 있다는 이론 논문 — 개별 성능이 같아도 협업하면 일정 수 이상에서 증가세 (실험 없는 수학 모델)</span><span class="gloss">연구 논문 · 안전성·정렬</span></a>
     <a href="#a33"><span class="n">33회차</span><span class="t">구글 AMIE, 실제 1차진료 환자 98명과 진료 전 문진 — 최종 진단이 AI 감별진단 상위 7개 안에 든 비율 90%, 안전 중단 0건 (단일군 타당성 연구)</span><span class="gloss">의료 AI · 진단 보조</span></a>
     <a href="#a32"><span class="n">32회차</span><span class="t">클라우드플레어, 선택지별 확률만 내놓는 '결정 모델' Clef 오픈웨이트 공개 — 지연시간·정확도는 자체 보고, 추론 벤치마크는 Jev에 열세</span><span class="gloss">모델 출시 · 오픈소스</span></a>
     <a href="#a31"><span class="n">31회차</span><span class="t">인증받은 LLM 진단 보조 도구, 류마티스 무작위시험 ALLIANCE에서 의사 82명의 1차 정확도는 그대로, 판단 시간만 206초에서 94초로 단축</span><span class="gloss">의료 AI · 진단 보조</span></a>
@@ -331,6 +332,84 @@
   <!-- INDEX:END -->
 
   <!-- ENTRIES:START — 새 회차 <article class="entry">는 이 줄 바로 아래에 -->
+
+  <article class="entry" id="a34">
+    <div class="entry-meta">
+      <span class="chip">34회차</span>
+      <span>2026년 10월 16일</span>
+      <span class="chip type">연구 논문 · 안전성·정렬</span>
+    </div>
+
+    <h2 class="headword">하버드·NTT 연구진, AI 에이전트 집단에 '임계 개체 수'가 있다는 이론 논문 발표 — 개별 성능이 그대로여도 협업하면 수가 일정 이상일 때 집단이 증가세로 돌아선다</h2>
+    <div class="lede">Ecology of AI Agents: Collaboration Creates a Population Threshold for Takeoff · Erin Crawley, Hidenori Tanaka(하버드대 CBS-NTT 프로그램, NTT Research) · arXiv 2610.12436 (cs.AI), 2026년 10월 8일 제출</div>
+
+    <div class="callout blue">
+      <span class="ico">💡</span>
+      <div class="body">
+        <p>연구진은 AI 에이전트 집단을 생태학의 개체군 모델로 단순화해, 에이전트끼리 협업하면 집단 크기에 임계값이 생긴다는 수식을 제시했다. 임계값 아래에서는 집단이 줄고, 위에서는 개별 능력이 같아도 늘어난다.</p>
+        <p>이 결과를 근거로 소규모 집단에서 한 레드팀(red teaming) 평가가 큰 집단의 안전을 보장하지 못한다고 주장하고, 집단 규모를 단계적으로 늘리는 방식(population pacing)을 제안한다.</p>
+      </div>
+    </div>
+
+    <h3><span class="marker">/</span>무슨 일인가</h3>
+    <p>AI 안전성 평가는 대체로 모델 하나, 또는 에이전트 하나를 놓고 "무엇을 할 수 있는가"를 잰다. 이 논문은 에이전트가 수백, 수천 개로 늘어나 서로 협업하는 상황에서 질적으로 다른 현상이 생기는지를 묻는다. 논문 내용은 실험이 아니라 수학적 장난감 이론(toy theory)이다.</p>
+    <p>저자들은 새 데이터셋이나 실제 에이전트 실험을 쓰지 않았다고 논문에 밝혔고, 목적도 "실제 AI 집단에 대한 정량적으로 정밀한 예측이 아니다"라고 직접 적었다. 공개된 것은 arXiv 프리프린트(peer review 전 원고)다.</p>
+
+    <h3><span class="marker">/</span>핵심 내용</h3>
+    <div class="facts">
+      <div class="fact"><span class="k">저자·소속</span><span class="v">Erin Crawley, Hidenori Tanaka — 하버드대 CBS-NTT Physics of Intelligence 프로그램, NTT Research</span></div>
+      <div class="fact"><span class="k">유형</span><span class="v">개념·수학적 이론. 새 실험 데이터 없음</span></div>
+      <div class="fact"><span class="k">핵심 결과</span><span class="v"><b>협업이 없으면</b> 개별 성공확률이 임계값 q_crit = μ/κ를 넘어야만 성장하고 임계 개체 수는 없다. <b>협업이 있으면</b> 집단 성공확률 p(N)이 N에 따라 오르므로 임계 개체 수가 생긴다.</span></div>
+      <div class="fact"><span class="k">변수</span><span class="v">N = 개체 수, κ = 성공 시 한 개체가 늘리는 단위 수, μ = 구간당 손실 비율</span></div>
+      <div class="fact"><span class="k">제안</span><span class="v">생태학적 레드티밍(ecological red teaming), 집단 규모 단계 확대(population pacing)</span></div>
+    </div>
+
+    <h3><span class="marker">/</span>어떻게 동작하나</h3>
+    <p>기본 모델은 개체군 증가식이다. 에이전트가 과제에 성공하면 새 단위(예: 새 에이전트 인스턴스나 확보한 자원)가 κ만큼 늘고, 매 구간 일정 비율 μ가 사라진다. 증가율이 양수가 되려면 성공확률 p가 μ/κ를 넘어야 한다.</p>
+    <p>협업은 p를 N의 함수 p(N)으로 만드는 방식으로 넣었다. 사이버 과제를 깊이 d, 분기 수 B의 탐색 트리(tree search)로 보고, 깊이가 깊을수록 탐색 비용이 지수로 커진다고 가정한다. 에이전트 N개가 일을 나누면 총 작업량이 N에 비례(논문은 α=1로 두고 설명)해 늘어나므로, 같은 과제의 성공확률이 올라간다.</p>
+    <p>그 결과 N이 작으면 p(N)이 μ/κ보다 낮아 집단이 줄고, N이 어느 선을 넘으면 p(N)이 그 값을 넘어 집단이 늘어난다. 생태학에서 개체 수가 너무 적으면 번식이 어려워 소멸하는 현상을 강한 앨리 효과(strong Allee effect)라고 부르는데, 논문은 이 구조가 같다고 본다. 논문에 전개된 식을 대입하면 N_crit = N_ref[(1−p_ref)/(1−p_crit)]^(ln B/(αρ)) 꼴이 나오지만, 이 식은 발췌된 방정식에서 내가 계산한 것이며 논문이 제시한 최종식인지는 확인하지 못했다.</p>
+
+    <h3><span class="marker">/</span>왜 중요한가</h3>
+    <p>논문이 겨냥하는 지점은 평가 방법이다. 에이전트 몇 개로 위험 행동을 시험해 문제가 없었더라도, 협업 구조 때문에 집단이 커진 뒤에는 다른 결과가 나올 수 있다는 논리다. 이는 에이전트 수백 개가 함께 취약점을 공격한 사례(본 아카이브 13회차)처럼 다중 에이전트 위험을 어떻게 사전에 가늠할지에 대한 하나의 틀이다.</p>
+    <p>현재 쓸 수 있는 도구나 규제 기준이 생긴 것은 아니다. 임계 개체 수를 실제 모델에 대해 추정하는 방법은 이 논문에 포함돼 있지 않고, 저자들도 모델 세대마다 다시 추정해야 한다고 적었다.</p>
+
+    <div class="callout yellow">
+      <span class="ico">⚠️</span>
+      <div class="body">
+        <p><b>짚어둘 점</b> — 이 논문은 실제 에이전트 실험 없이 가정에서 출발한 이론이라, 임계값이 존재한다는 결론은 가정(협업으로 작업량이 N에 비례해 늘어남, 구성 고정, 손실 비율 일정)에서 나온 것이다. 저자들도 소통·통합·평가가 병목이 되면 이 비례 가정이 깨질 수 있다고 인정한다. 그 경우 임계값이 없어지거나 달라질 수 있다. 사이버 과제를 탐색 트리로 본 것도 단순화이며, 실제 침투 과정과의 대응은 검증되지 않았다. 프리프린트라 동료 심사를 받지 않았고 독립 재현도 없다. 이번 확인은 arXiv 본문 앞부분(초록, 모델 정의, 2.4절 중간까지)에 한정되며, 논의·한계·부록 전체와 수치 예시는 읽지 못했다. 결론을 "AI 집단이 곧 폭발한다"로 읽는 것은 논문의 주장 범위를 넘는다.</p>
+      </div>
+    </div>
+
+    <h3><span class="marker">/</span>알아두면 좋은 용어</h3>
+    <div class="terms">
+      <div class="term">
+        <div class="en">Allee effect (앨리 효과)</div>
+        <div class="ko">개체 수가 너무 적으면 번식·생존율이 떨어져 집단이 줄어드는 생태학 현상. 강한 앨리 효과에서는 임계 개체 수 아래에서 집단이 소멸한다.</div>
+      </div>
+      <div class="term">
+        <div class="en">Red teaming (레드티밍)</div>
+        <div class="ko">모델이나 시스템을 공격자 관점에서 일부러 시험해 위험을 찾는 안전성 평가 방식.</div>
+      </div>
+      <div class="term">
+        <div class="en">Tree search (탐색 트리)</div>
+        <div class="ko">선택지가 가지처럼 갈라지는 문제에서 가능한 경로를 따라가며 답을 찾는 방식. 깊이가 늘수록 탐색할 경로가 급격히 늘어난다.</div>
+      </div>
+      <div class="term">
+        <div class="en">Toy theory (장난감 이론)</div>
+        <div class="ko">현실을 크게 단순화해 핵심 메커니즘만 보려는 최소 수학 모델. 정밀한 예측보다 구조를 보여주는 목적이다.</div>
+      </div>
+    </div>
+
+    <h3><span class="marker">/</span>출처</h3>
+    <div class="src">
+      <div class="item"><a href="https://arxiv.org/html/2610.12436v1">Ecology of AI Agents: Collaboration Creates a Population Threshold for Takeoff</a> — Crawley, Tanaka, arXiv, 2026-10-08</div>
+    </div>
+  </article>
+
+
+
+  <details class="toggle">
+    <summary>지난 회차 33개</summary>
 
   <article class="entry" id="a33">
     <div class="entry-meta">
@@ -404,11 +483,6 @@
       <div class="item"><a href="https://unite.ai/googles-amie-primary-care-feasibility-study-published-in-the-lancet">Google's AMIE Primary Care Feasibility Study Published in The Lancet</a> — Unite.AI</div>
     </div>
   </article>
-
-
-
-  <details class="toggle">
-    <summary>지난 회차 32개</summary>
 
   <article class="entry" id="a32">
     <div class="entry-meta">
