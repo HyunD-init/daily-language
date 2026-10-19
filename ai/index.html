@@ -294,6 +294,7 @@
   <!-- INDEX:START — 새 회차는 이 목록 맨 위에 <a> 하나 추가 -->
   <nav class="toc">
     <div class="toc-label">회차</div>
+    <a href="#a36"><span class="n">36회차</span><span class="t">JAMA, 미국 의료진 95만 명의 OpenEvidence 이용 현황 분석 — 월간 이용자 355명에서 70만 명으로, 질의 절반이 임상 의사결정 (이용량만 측정, 답변 질·환자 결과는 미평가)</span><span class="gloss">의료 AI · 산업 동향</span></a>
     <a href="#a35"><span class="n">35회차</span><span class="t">엔비디아 연구원, 외부 텍스트의 '명령 방향'을 지워 프롬프트 주입 성공률을 38.1%에서 0.1%로 낮췄다고 발표 — 오픈 모델 9종, 논문·코드 없는 블로그 공개</span><span class="gloss">연구 · 안전성·정렬</span></a>
     <a href="#a34"><span class="n">34회차</span><span class="t">하버드·NTT 연구진, AI 에이전트 집단에 '임계 개체 수'가 있다는 이론 논문 — 개별 성능이 같아도 협업하면 일정 수 이상에서 증가세 (실험 없는 수학 모델)</span><span class="gloss">연구 논문 · 안전성·정렬</span></a>
     <a href="#a33"><span class="n">33회차</span><span class="t">구글 AMIE, 실제 1차진료 환자 98명과 진료 전 문진 — 최종 진단이 AI 감별진단 상위 7개 안에 든 비율 90%, 안전 중단 0건 (단일군 타당성 연구)</span><span class="gloss">의료 AI · 진단 보조</span></a>
@@ -333,6 +334,77 @@
   <!-- INDEX:END -->
 
   <!-- ENTRIES:START — 새 회차 <article class="entry">는 이 줄 바로 아래에 -->
+
+  <article class="entry" id="a36">
+    <div class="entry-meta">
+      <span class="chip">36회차</span>
+      <span>2026년 10월 20일</span>
+      <span class="chip type">의료 AI · 산업 동향</span>
+    </div>
+
+    <h2 class="headword">JAMA, 미국 의료진 95만 명의 OpenEvidence 이용 현황 분석 — 월간 이용자 355명에서 70만 명으로, 질문의 절반은 임상 의사결정</h2>
+    <div class="lede">AI use among U.S. clinicians (OpenEvidence 이용 분석) · JAMA, Patel 등 · 2026년 10월 15일 온라인 게재</div>
+
+    <div class="callout blue">
+      <span class="ico">💡</span>
+      <div class="body">
+        <p>하버드의대·브리검여성병원 연구진이 의료진용 AI 정보 검색 플랫폼 OpenEvidence의 이용 데이터를 분석해 JAMA에 게재했다. 2024년 1월~2026년 6월 사이 약 95만 명의 미국 의사·PA·NP가 약 2억 7천만 건을 질의했다. 이용 규모는 확인됐지만, 답변의 질이나 환자 결과에 미친 영향은 측정하지 않았다.</p>
+      </div>
+    </div>
+
+    <h3><span class="marker">/</span>무슨 일인가</h3>
+    <p>OpenEvidence는 임상 질문을 입력하면 논문과 가이드라인을 근거로 요약 답변과 출처 링크를 돌려주는 의료진용 서비스다. 그동안 "의사들이 AI를 얼마나 쓰는가"는 설문조사나 업체 발표로만 알려져 있었다. 이번 연구는 플랫폼의 실제 로그를 쓴 첫 대규모 분석이라고 하버드의대가 소개했다.</p>
+    <p>JAMA는 같은 날 편집자 노트(Editor's Note) "Engaging With Medical Evidence in the Age of AI"를 함께 실어 이 연구를 논평했다. 이 논평에도 연구의 한계가 명시돼 있다.</p>
+
+    <h3><span class="marker">/</span>핵심 내용</h3>
+    <div class="facts">
+      <div class="fact"><span class="k">연구 주체</span><span class="v">Vishal Patel(브리검여성병원), Anupam Jena(하버드의대·MGH) 등. NIH 연구비(F32EB040202), 데이터는 OpenEvidence가 비식별화해 제공</span></div>
+      <div class="fact"><span class="k">설계</span><span class="v">관찰 연구. 2024년 1월~2026년 6월 로그 중 무작위 표본 <b>3,880만 건</b>의 임상 목적·주제를 LLM으로 분류</span></div>
+      <div class="fact"><span class="k">이용 규모</span><span class="v">이용자 약 <b>95만 명</b>, 질의 약 <b>2억 7천만 건</b>. 월간 활성 이용자 <b>355명(2024년 1월) → 703,265명(2026년 6월)</b>. 편집자 노트에 따르면 한 달 활동한 임상의의 약 90%가 다음 달에도 이용</span></div>
+      <div class="fact"><span class="k">질문 유형</span><span class="v">전체 질의의 <b>51.9%</b>가 임상 의사결정(특히 치료·관리), <b>13.9%</b>가 진단. (편집자 노트는 의사 질의 중 치료·관리 33.1%, 진단 13.9%로 인용)</span></div>
+      <div class="fact"><span class="k">직군·과별</span><span class="v">의사 556,200명이 월 평균 37건 질의. 내과는 의사 질의의 27.3%(인력 비중 14.5%), 종양·혈액내과는 3.8%(인력 1.9%). 영상의학·정형외과·안과는 인력 비중보다 적게 사용</span></div>
+    </div>
+
+    <h3><span class="marker">/</span>어떻게 분석했나</h3>
+    <p>전체 로그를 사람이 읽을 수는 없으므로, 무작위로 뽑은 3,880만 건을 대규모 언어 모델(LLM)에 넣어 "진단인가, 치료인가, 약물 정보인가" 같은 목적과 주제로 분류했다. 이어 이용자의 직군·진료과를 인력 통계와 비교해 어느 과가 상대적으로 많이 쓰는지 계산했다. 로그는 질문만 보여 줄 뿐, 그 답이 맞았는지 또는 진료 결정에 실제로 반영됐는지는 알 수 없다.</p>
+
+    <h3><span class="marker">/</span>왜 중요한가</h3>
+    <p>AI가 의료 현장에 "도입될 것"이 아니라 이미 의사 개인의 선택으로 상당히 퍼져 있음을 보여 주는 수치다. 병원 시스템이 공식 도입하기 전에 이용이 먼저 늘었고, 그 대상이 의료기기로 규제받지 않는 정보 검색 도구라는 점이 중요하다. FDA 기기 허가 대상인 영상 판독 AI와 달리 이런 도구는 성능 검증 의무가 거의 없다. 한편 진단보다 치료·관리 질문이 많다는 결과는 임상의가 AI에 감별진단보다 "지금 어떤 치료·용량을 쓸지"를 묻는다는 뜻이다.</p>
+
+    <div class="callout yellow">
+      <span class="ico">⚠️</span>
+      <div class="body">
+        <p><b>짚어둘 점</b> — 이 연구는 이용량만 센 것이다. 편집자 노트도 답변의 질, 임상의의 정확성·유용성 인식, 환자 진료에 미친 영향은 평가하지 않았다고 적었고, 진료 중 사용과 사전 차트 준비·일반 학습을 구분하지 못했다고 밝혔다. 즉 전향적 검증이나 외부 재현은 없고, 실제 진료 결과가 개선됐는지도 모른다. 주제 분류의 정확도 검증은 확인한 자료에서 보고되지 않았다. 단일 플랫폼 자료라 다른 도구의 이용 양상을 대표하지 못한다. 공저자 중 일부가 OpenEvidence 소속이거나 관련 이해관계를 밝혔고(연구비는 회사가 대지 않음), JAMA Network는 OpenEvidence에 저널 콘텐츠를 라이선스하고 있다. 편집자 노트는 자동화 편향(automation bias)과 수련 초기 의사의 학습에 미치는 영향도 우려로 꼽았다. 이 글의 수치는 JAMA 편집자 노트와 하버드의대 보도에서 확인한 것이며, 논문 본문 전체는 열람하지 못했다.</p>
+      </div>
+    </div>
+
+    <h3><span class="marker">/</span>알아두면 좋은 용어</h3>
+    <div class="terms">
+      <div class="term">
+        <div class="en">OpenEvidence</div>
+        <div class="ko">의료진용 AI 근거 검색 서비스. 질문에 대해 논문·가이드라인 출처를 단 요약 답변을 제공한다.</div>
+      </div>
+      <div class="term">
+        <div class="en">Automation bias (자동화 편향)</div>
+        <div class="ko">자동화 시스템의 제안이 틀려도 그대로 따르는 경향. 임상 AI에서 오답 추천을 걸러내지 못할 위험으로 거론된다.</div>
+      </div>
+      <div class="term">
+        <div class="en">Observational study (관찰 연구)</div>
+        <div class="ko">개입 없이 이미 일어난 일을 분석하는 연구. 이용 현황은 보여 주지만 인과·효과는 보여 주지 못한다.</div>
+      </div>
+    </div>
+
+    <h3><span class="marker">/</span>출처</h3>
+    <div class="src">
+      <div class="item"><a href="https://jamanetwork.com/journals/jama/fullarticle/2855492">Engaging With Medical Evidence in the Age of AI</a> — JAMA 편집자 노트, Khera 등, 2026년 10월 15일</div>
+      <div class="item"><a href="https://hms.harvard.edu/news/first-large-scale-study-shows-how-doctors-use-ai-medicine">First Large-Scale Study Shows How Doctors Use AI in Medicine</a> — 하버드의대, 2026년 10월 15일 (원 논문 doi:10.1001/jama.2026.21868)</div>
+    </div>
+  </article>
+
+
+
+  <details class="toggle">
+    <summary>지난 회차 35개</summary>
 
   <article class="entry" id="a35">
     <div class="entry-meta">
@@ -408,11 +480,6 @@
       <div class="item"><a href="https://aiweekly.co/alerts/nvidia-nxdirection-drops-prompt-injection-attack-rate-to-01">NVIDIA NXDirection drops prompt-injection attack rate to 0.1%</a> — AI Weekly, 2026-10-14</div>
     </div>
   </article>
-
-
-
-  <details class="toggle">
-    <summary>지난 회차 34개</summary>
 
   <article class="entry" id="a34">
     <div class="entry-meta">
