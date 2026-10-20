@@ -294,6 +294,7 @@
   <!-- INDEX:START — 새 회차는 이 목록 맨 위에 <a> 하나 추가 -->
   <nav class="toc">
     <div class="toc-label">회차</div>
+    <a href="#a37"><span class="n">37회차</span><span class="t">메타, 오하이오 AI 클러스터 '프로메테우스' 내부 공개 — 현재 수십만 GPU, 목표 약 100만 개, 학습 중단 횟수는 2025년 중반 대비 99% 감소 (메타 자체 보고)</span><span class="gloss">인프라·하드웨어</span></a>
     <a href="#a36"><span class="n">36회차</span><span class="t">JAMA, 미국 의료진 95만 명의 OpenEvidence 이용 현황 분석 — 월간 이용자 355명에서 70만 명으로, 질의 절반이 임상 의사결정 (이용량만 측정, 답변 질·환자 결과는 미평가)</span><span class="gloss">의료 AI · 산업 동향</span></a>
     <a href="#a35"><span class="n">35회차</span><span class="t">엔비디아 연구원, 외부 텍스트의 '명령 방향'을 지워 프롬프트 주입 성공률을 38.1%에서 0.1%로 낮췄다고 발표 — 오픈 모델 9종, 논문·코드 없는 블로그 공개</span><span class="gloss">연구 · 안전성·정렬</span></a>
     <a href="#a34"><span class="n">34회차</span><span class="t">하버드·NTT 연구진, AI 에이전트 집단에 '임계 개체 수'가 있다는 이론 논문 — 개별 성능이 같아도 협업하면 일정 수 이상에서 증가세 (실험 없는 수학 모델)</span><span class="gloss">연구 논문 · 안전성·정렬</span></a>
@@ -334,6 +335,81 @@
   <!-- INDEX:END -->
 
   <!-- ENTRIES:START — 새 회차 <article class="entry">는 이 줄 바로 아래에 -->
+
+  <article class="entry" id="a37">
+    <div class="entry-meta">
+      <span class="chip">37회차</span>
+      <span>2026년 10월 21일</span>
+      <span class="chip type">인프라·하드웨어</span>
+    </div>
+
+    <h2 class="headword">메타, 오하이오 AI 클러스터 '프로메테우스' 내부 공개 — 현재 수십만 GPU, 목표 약 100만 개, 학습 중단 횟수는 2025년 중반 대비 99% 감소</h2>
+    <div class="lede">Inside Prometheus: Meta's Journey to a Gigawatt-Scale Supercluster · Engineering at Meta · 2026년 10월 19일</div>
+
+    <div class="callout blue">
+      <span class="ico">💡</span>
+      <div class="body">
+        <p>메타가 오하이오주 뉴올버니의 AI 학습용 클러스터 프로메테우스(Prometheus)의 구성과 운영 수치를 엔지니어링 블로그에 공개했다. 현재 "수십만 개"의 GPU로 자사 Muse 모델군을 학습하고 있고, 약 100만 개까지 확장하는 것을 목표로 한다고 밝혔다. 모두 메타 자체 보고이며 외부 검증은 없다.</p>
+      </div>
+    </div>
+
+    <h3><span class="marker">/</span>무슨 일인가</h3>
+    <p>대형 AI 모델의 학습은 수만~수십만 개의 GPU를 하나의 작업으로 묶어 몇 주씩 돌리는 일이다. 규모가 커질수록 병목은 칩 성능보다 전력, 냉각, 네트워크, 그리고 고장 났을 때 작업이 멈추지 않게 하는 운영 쪽으로 옮겨 간다. 메타는 이 글에서 그 문제들을 어떻게 다뤘는지 수치와 함께 설명했다.</p>
+    <p>메타에 따르면 프로메테우스는 원래 웹 트래픽을 처리하던 기존 데이터센터 부지를 프런티어 모델 학습용으로 개조한 것이다. 1단계는 완료됐고, 여러 건물(일반 건물, AI 전용 건물, 신속 설치 구조물)을 "수 마일의 광케이블"로 연결한다. 이어서 루이지애나주 리치랜드 패리시에 하이페리온(Hyperion)을 짓고 있고, 전력은 엔터지(Entergy)의 전력망에 연결되며 비용은 메타가 전액 부담한다고 했다.</p>
+
+    <h3><span class="marker">/</span>핵심 내용</h3>
+    <div class="facts">
+      <div class="fact"><span class="k">발표 주체</span><span class="v">메타(Meta) 엔지니어링 블로그. 외부 감사나 독립 측정 없음</span></div>
+      <div class="fact"><span class="k">규모</span><span class="v">현재 <b>수십만 개 GPU</b>(정확한 수는 비공개), 목표 <b>약 100만 개</b></span></div>
+      <div class="fact"><span class="k">가동 효율(goodput)</span><span class="v">사전학습 <b>85% 초과</b>, 강화학습(RL) 실행 <b>90% 초과</b>. 전체 시간 중 실제로 유효한 학습에 쓰인 비율을 뜻한다</span></div>
+      <div class="fact"><span class="k">중단 빈도</span><span class="v">2025년 중반 GPU 8천 개당 하루 <b>약 1,000회</b>로 정점 → 메타는 <b>99% 감소</b>라고 보고. 평균 중단 간격(MTBI)은 약 47k GPU시간에서 펌웨어 수정 후 <b>54k GPU시간 초과</b>. 목표는 8천 개당 하루 2회(약 100k GPU시간)로, 아직 미달</span></div>
+      <div class="fact"><span class="k">하드웨어</span><span class="v">GB200 NVL72(카탈리나), GB300 NVL72(클레멘테), 베라 루빈 NVL72(산 미겔)를 단계별로 사용. 베라 루빈 랙은 FP4 기준 랙당 2.52 EFLOPS, 랙당 170kW 초과, 전면 액체 냉각이며 GB300 대비 와트당 성능 10~20% 향상이라고 밝혔다</span></div>
+      <div class="fact"><span class="k">네트워크</span><span class="v">GPU 간 통신 전용 백엔드 이더넷. 건물 하나가 최대 <b>20,736개 GPU</b>를 묶고, 건물 사이는 2km~100km 이상을 백엔드 집합(BAG)으로 연결</span></div>
+      <div class="fact"><span class="k">전력</span><span class="v">클러스터 내부 부하가 30~40% 급변. 대형 작업을 시작·중단하면 수십 MW가 몇 초 안에 움직인다. GPU당 부하 시험 시 1,400W</span></div>
+    </div>
+
+    <h3><span class="marker">/</span>어떻게 동작하나</h3>
+    <p>NVL72는 GPU 72개를 NVLink라는 고속 전용선으로 한 덩어리처럼 묶은 랙이다. 한 덩어리가 커진 만큼 하나가 고장 나면 영향받는 GPU도 많아진다(기존 8개짜리 묶음의 9배). 그래서 메타는 랙마다 64개만 활성으로 쓰고 8개를 예비로 두며, 전체 랙의 약 2%를 통째로 고장 날 때를 대비해 비워 둔다. 예를 들어 32,768개 GPU로 학습하려면 523개 랙(37,656개 GPU)이 필요해 활성 규모보다 약 13% 많다.</p>
+    <p>전력 쪽에서는 대형 작업이 갑자기 시작되거나 멈출 때의 전력 출렁임을 줄이기 위해 GPU 전력 한도를 서서히 조절하는 소프트웨어(Dynamo Dimmer), 랙 단위 배터리와 커패시터, 시설 단위 배터리 저장장치(BESS), 전력회사와의 조율을 함께 쓴다고 했다. 냉각은 건물 유형에 따라 공기 보조 액체 냉각(AALC)과 시설 액체 냉각(FLC)을 나눠 쓴다.</p>
+
+    <h3><span class="marker">/</span>왜 중요한가</h3>
+    <p>지금 당장 확인되는 것은 메타가 대형 학습 클러스터에서 고장과 전력 변동을 어떤 수치로 관리하는지 상당히 구체적으로 공개했다는 점이다. 이런 운영 수치는 보통 비공개라, 다른 사업자가 자기 클러스터를 비교할 기준이 된다. 반면 100만 GPU와 하이페리온은 아직 목표와 건설 계획 단계다.</p>
+
+    <div class="callout yellow">
+      <span class="ico">⚠️</span>
+      <div class="body">
+        <p><b>짚어둘 점</b> — 모든 수치가 메타 자체 보고이고 독립 측정이 없다. "99% 감소"는 2025년 중반 정점과 비교한 것이라 기준 시점이 가장 나빴던 때다. 메타 스스로 중단률이 목표치보다 높다고 인정했다. 현재 GPU 수는 "수십만 개"로만 적혀 있어 약 100만 개 목표까지의 거리를 가늠하기 어렵다. 메모리 오류가 GB300에서 늘었다는 점, 전력·냉각 조건이 부지마다 다르다는 점도 한계로 적었다. 전력 소비량(GW 단위)이나 비용은 이 글에서 확인하지 못했다. 글 속 HBM 용량 수치 하나는 GPU당 용량으로 계산한 값과 조금 맞지 않아(13.4TB 대 약 13.8TB) 게재된 대로 읽어야 한다. 이 글은 기술 홍보 성격도 있어, 학습된 모델의 성능과 클러스터 효율의 관계는 알 수 없다.</p>
+      </div>
+    </div>
+
+    <h3><span class="marker">/</span>알아두면 좋은 용어</h3>
+    <div class="terms">
+      <div class="term">
+        <div class="en">Goodput (유효 가동률)</div>
+        <div class="ko">전체 가동 시간 중 실제로 학습 진전에 쓰인 시간의 비율. 고장·재시작·대기로 버려진 시간은 빠진다.</div>
+      </div>
+      <div class="term">
+        <div class="en">MTBI (평균 중단 간격)</div>
+        <div class="ko">학습이 한 번 중단된 뒤 다음 중단까지 걸리는 평균 시간. 여기서는 GPU시간 단위로 표시했다.</div>
+      </div>
+      <div class="term">
+        <div class="en">NVL72 / NVLink</div>
+        <div class="ko">GPU 72개를 고속 전용선으로 묶어 하나의 큰 가속기처럼 쓰는 엔비디아 랙 단위 구성.</div>
+      </div>
+    </div>
+
+    <h3><span class="marker">/</span>출처</h3>
+    <div class="src">
+      <div class="item"><a href="https://engineering.fb.com/2026/10/19/data-center-engineering/inside-prometheus-meta-gigawatt-scale-supercluster/">Inside Prometheus: Meta's Journey to a Gigawatt-Scale Supercluster</a> — Engineering at Meta, 2026년 10월 19일</div>
+      <div class="item"><a href="https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-tuesday-october-20-2026/">Everything That Happened in AI Today, Tuesday October 20</a> — The Neuron, 2026년 10월 20일 (보조)</div>
+    </div>
+  </article>
+
+
+
+
+  <details class="toggle">
+    <summary>지난 회차 36개</summary>
 
   <article class="entry" id="a36">
     <div class="entry-meta">
@@ -400,11 +476,6 @@
       <div class="item"><a href="https://hms.harvard.edu/news/first-large-scale-study-shows-how-doctors-use-ai-medicine">First Large-Scale Study Shows How Doctors Use AI in Medicine</a> — 하버드의대, 2026년 10월 15일 (원 논문 doi:10.1001/jama.2026.21868)</div>
     </div>
   </article>
-
-
-
-  <details class="toggle">
-    <summary>지난 회차 35개</summary>
 
   <article class="entry" id="a35">
     <div class="entry-meta">
