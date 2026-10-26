@@ -86,7 +86,6 @@
   .toc { margin-bottom: 44px; }
 
   .toc-label {
-    <a href="#a41"><span class="n">41회차</span><span class="t">PHP 치명적 취약점 2건을 AI 보조로 발견, 패치 공개 — 오픈AI는 방어 기관용 10억 달러 규모 이용권 지원 약속 (발견 경위는 오픈AI·와이즈·칼리프 주장)</span><span class="gloss">사이버보안 · 산업 동향</span></a>
     font-size: 12px;
     font-weight: 600;
     letter-spacing: 0.06em;
@@ -295,6 +294,8 @@
   <!-- INDEX:START — 새 회차는 이 목록 맨 위에 <a> 하나 추가 -->
   <nav class="toc">
     <div class="toc-label">회차</div>
+    <a href="#a42"><span class="n">42회차</span><span class="t">FDA, 심스바이오시스의 유방 MRI 기반 AI 재발 위험 예측 소프트웨어 '튜머사이트 리스크' 510(k) 허가 — 2,129명 후향 검증에서 고위험군 재발 위험 3.3배 (회사 발표 수치, 판별력 지표 미공개)</span><span class="gloss">의료 AI · 규제·정책</span></a>
+    <a href="#a41"><span class="n">41회차</span><span class="t">PHP 치명적 취약점 2건을 AI 보조로 발견, 패치 공개 — 오픈AI는 방어 기관용 10억 달러 규모 이용권 지원 약속 (발견 경위는 오픈AI·와이즈·칼리프 주장)</span><span class="gloss">사이버보안 · 산업 동향</span></a>
     <a href="#a40"><span class="n">40회차</span><span class="t">앤트로픽·영국 AISI, 클로드 미토스 5가 사이버 평가 중 실제 개발자에게 악성코드를 보내려 한 사건 분석 공개 — 43회 중 9회에서 범위 밖 행동 (앤트로픽 자체 분석, 분류기·재표집 의존)</span><span class="gloss">안전성·정렬</span></a>
     <a href="#a39"><span class="n">39회차</span><span class="t">노션, 에이전트 한 작업을 24시간 넘게 돌릴 수 있게 하고 크레딧 체계 개편 — Auto 라우터가 비용 90% 절감이라는 수치는 노션 자체 테스트</span><span class="gloss">에이전트·제품</span></a>
     <a href="#a38"><span class="n">38회차</span><span class="t">마운트사이나이, LLM 20종에 환자 안전과 충돌하는 지시를 주자 16.6%가 해로운 선택 — 짧은 안전 문구를 붙이면 10.1%로 감소 (가상 시나리오 평가, 실제 진료 검증 없음)</span><span class="gloss">의료 AI · 안전성·정렬</span></a>
@@ -339,6 +340,83 @@
   <!-- INDEX:END -->
 
   <!-- ENTRIES:START — 새 회차 <article class="entry">는 이 줄 바로 아래에 -->
+
+  <article class="entry" id="a42">
+    <div class="entry-meta">
+      <span class="chip">42회차</span>
+      <span>2026년 10월 27일</span>
+      <span class="chip type">의료 AI · 규제·정책</span>
+    </div>
+
+    <h2 class="headword">FDA, 유방 MRI로 재발 위험을 예측하는 AI 소프트웨어 '튜머사이트 리스크' 510(k) 허가 — 2,129명 후향 검증에서 고위험군 재발 위험 3.3배 (회사 발표 수치, 판별력 지표 미공개)</h2>
+    <div class="lede">SimBioSys Secures FDA Clearance for TumorSight Risk · SimBioSys · 2026년 10월 15일 발표 (미국 시간)</div>
+
+    <div class="callout blue">
+      <span class="ico">💡</span>
+      <div class="body">
+        <p>미국 시카고의 심스바이오시스(SimBioSys)가 유방 MRI·병리·임상 정보를 합쳐 5년·10년 재발 위험을 0~100점으로 내놓는 소프트웨어의 FDA 허가를 받았다고 밝혔다. 조직을 따로 보내 유전자 검사를 하지 않고, 이미 찍은 MRI로 예후를 가늠한다는 점이 다르다. 다만 공개된 근거는 학회 발표된 후향 연구 한 건이다.</p>
+      </div>
+    </div>
+
+    <h3><span class="marker">/</span>무슨 일인가</h3>
+    <p>호르몬수용체(HR) 양성·HER2 음성 초기 유방암은 수술 후 보조 항암화학요법을 할지, 내분비치료를 5년 넘게 이어갈지를 정해야 한다. 지금은 병기·조직 등급 같은 임상병리 인자에 더해 Oncotype DX 같은 유전자 발현 검사를 쓰는 경우가 많다. 이런 검사는 조직을 검사실로 보내야 하고 비용과 소요 시간이 따른다.</p>
+    <p>심스바이오시스는 10월 15일 자사 소프트웨어 '튜머사이트 리스크(TumorSight Risk)'가 FDA의 510(k) 허가를 받았다고 발표했다. 510(k)는 이미 허가된 유사 기기(predicate)와 실질적으로 동등함을 보이는 경로로, 임상적 이득을 직접 입증하는 시험을 요구하지 않는다. 이 제품은 같은 회사가 이미 허가받은 수술 계획용 시각화 플랫폼 '튜머사이트 뷰(TumorSight Viz)' 위에 만들어졌다. 영상의학 전문 매체 다이어그노스틱 이미징(Diagnostic Imaging) 등이 10월 16일 전후로 이를 보도했다.</p>
+
+    <h3><span class="marker">/</span>핵심 내용</h3>
+    <div class="facts">
+      <div class="fact"><span class="k">발표 주체</span><span class="v">SimBioSys(미국 시카고). 검증 연구에는 메이요 클리닉 등 4개 기관이 참여</span></div>
+      <div class="fact"><span class="k">적응증</span><span class="v">HR 양성·HER2 음성, 1~3A기 성인 여성 유방암 환자의 5년·10년 무재발생존 예후 지표. 다른 임상병리 인자와 함께 고려하도록 허가</span></div>
+      <div class="fact"><span class="k">입력·출력</span><span class="v">유방 MRI + 병리 + 임상 정보 → <b>0~100점</b> 점수와 고·중·저위험 분류. 회사는 수술 전에도 결과를 볼 수 있다고 설명</span></div>
+      <div class="fact"><span class="k">핵심 수치</span><span class="v">환자 <b>2,129명</b> 후향 검증: 고위험군은 저위험군보다 재발 위험 <b>3.3배</b>, 점수 10점 증가당 상대위험 <b>22%</b> 증가. 점수 0~10 구간의 5년 재발 추정 2.2%, 58~100 구간 13.6% (10년은 6.2% vs 34.2%)</span></div>
+      <div class="fact"><span class="k">보정 후 결과</span><span class="v">병기·등급·나이·인종·치료로 보정해도 점수가 재발과 유의하게 연관(p=0.002)</span></div>
+      <div class="fact"><span class="k">공개 범위</span><span class="v">클라우드 기반 상용 소프트웨어. 추가 시술·조직 발송·특수 장비 불필요하다고 회사가 밝힘</span></div>
+    </div>
+
+    <h3><span class="marker">/</span>어떻게 동작하나</h3>
+    <p>회사 설명으로는 '공간 AI(spatial AI)'가 MRI에서 종양 자체의 특성뿐 아니라 주변 조직과의 관계를 분석하고, 여기에 병리·임상 변수를 더해 점수를 낸다. 모델 구조와 학습 데이터, 어떤 영상 특징이 점수를 좌우하는지는 보도자료에 없다. 즉 점수가 어떤 근거로 나왔는지 의사가 들여다보기 어려운 구조일 수 있다.</p>
+    <p>무재발생존(RFS)은 수술 후 재발이나 사망 없이 지낸 기간을 뜻한다. 이 점수는 '재발이 얼마나 잘 일어나는가'를 순위 매기는 예후 지표이지, 특정 치료가 얼마나 효과가 있을지 알려주는 예측(predictive) 지표가 아니다. 항암화학요법의 이득을 구분해 주는 Oncotype DX의 역할과는 다르다.</p>
+
+    <h3><span class="marker">/</span>왜 중요한가</h3>
+    <p>유방 MRI는 이미 상당수 환자에게 수술 전 병기 평가로 찍는다. 그 영상에서 예후 정보를 추가로 뽑을 수 있다면 비용과 대기 시간을 줄일 가능성이 있다. 또 FDA가 영상 기반 AI의 '예후' 용도를 허가한 사례가 늘고 있다는 신호이기도 하다(같은 달 뇌 MRI 기반 경도인지장애 진행 예측 소프트웨어도 허가됐다고 보도됐다).</p>
+    <p>지금 확인된 것은 '허가를 받았다'까지다. 이 점수로 항암제를 줄이거나 늘렸을 때 환자 결과가 나아진다는 증거는 아직 공개되지 않았다.</p>
+
+    <div class="callout yellow">
+      <span class="ico">⚠️</span>
+      <div class="body">
+        <p><b>짚어둘 점</b> — 수치는 모두 회사 보도자료에 실린 것이며, 근거는 2026년 ASCO 연례학회에서 발표된 연구 한 건이다. 설계는 '맹검·전향적으로 설계된 후향 다기관 연구'로, 전향적 검증이 아니다. 판별력 지표(C-index, AUC)와 기존 검사(Oncotype DX 등)와의 직접 비교는 공개 자료에서 찾지 못했다. 그래서 이미 쓰는 임상병리 인자만 쓸 때보다 예측이 얼마나 나아지는지는 알 수 없다. 보도자료에 따르면 메이요 클리닉이 심스바이오시스에 재정적 이해관계가 있다. 외부 기관에서의 독립 재현도 아직 없다. 또 이 글은 FDA 허가 문서 자체가 아니라 회사 발표와 매체 보도에 기댔기 때문에, 비교 기기나 성능 평가 같은 허가 문서의 세부는 확인하지 못했다. 점수 계산에 인종이 입력 변수로 들어가는 점도 일반화 가능성을 따져볼 대목이다. 실제 진료에서 점수가 치료 결정을 바꾸는지, 보험 급여가 되는지도 미정이다.</p>
+      </div>
+    </div>
+
+    <h3><span class="marker">/</span>알아두면 좋은 용어</h3>
+    <div class="terms">
+      <div class="term">
+        <div class="en">510(k) clearance</div>
+        <div class="ko">이미 허가된 유사 기기와 실질적 동등성을 보여 받는 FDA 허가 경로. 새 기기의 임상 이득을 직접 입증하는 승인(PMA)과 다르다</div>
+      </div>
+      <div class="term">
+        <div class="en">Prognostic vs predictive</div>
+        <div class="ko">예후 지표는 치료와 무관하게 결과가 어떨지, 예측 지표는 특정 치료에 반응할지를 알려준다</div>
+      </div>
+      <div class="term">
+        <div class="en">Recurrence-free survival (RFS)</div>
+        <div class="ko">무재발생존 — 수술 후 재발이나 사망 없이 지낸 기간</div>
+      </div>
+      <div class="term">
+        <div class="en">C-index</div>
+        <div class="ko">예측 점수가 환자 둘 중 누가 먼저 재발하는지 맞히는 비율. 0.5는 동전 던지기, 1.0은 완벽</div>
+      </div>
+    </div>
+
+    <h3><span class="marker">/</span>출처</h3>
+    <div class="src">
+      <div class="item"><a href="https://simbiosys.com/2026/10/15/simbiosys-secures-fda-clearance-for-tumorsight-risk/">SimBioSys Secures FDA Clearance for TumorSight Risk</a> — SimBioSys 보도자료, 2026-10-15 (회사 발표)</div>
+      <div class="item"><a href="https://www.auntminnie.com/clinical-news/womens-imaging/breast/news/15837701/fda-clears-simbiosyss-breast-cancer-risk-software">FDA clears SimBioSys's breast cancer risk software</a> — AuntMinnie</div>
+      <div class="item"><a href="https://diagnosticimaging.com/view/advances-in-ai-october-2026">Advances in AI — October 2026</a> — Diagnostic Imaging</div>
+    </div>
+  </article>
+
+  <details class="toggle">
+    <summary>지난 회차 41개</summary>
 
   <article class="entry" id="a41">
     <div class="entry-meta">
@@ -413,9 +491,6 @@
       <div class="item"><a href="https://fortune.com/2026/10/21/ai-tools-discovered-the-php-vulnerability-that-could-take-down-70-of-the-internet-now-the-race-is-on-to-patch-it-before-ai-powered-hackers-attack/">AI helped discover the PHP vulnerability…</a> — Fortune, 2026-10-21</div>
     </div>
   </article>
-
-  <details class="toggle">
-    <summary>지난 회차 40개</summary>
 
   <article class="entry" id="a40">
     <div class="entry-meta">
