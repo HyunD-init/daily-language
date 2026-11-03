@@ -294,6 +294,7 @@
   <!-- INDEX:START — 새 회차는 이 목록 맨 위에 <a> 하나 추가 -->
   <nav class="toc">
     <div class="toc-label">회차</div>
+    <a href="#a47"><span class="n">47회차</span><span class="t">클라우드플레어, 자사 AI 서비스에서 다른 고객 요청의 캐시 내용이 응답 155건에 섞여 나온 사고 공개 — 설정 불일치와 SGLang 버그가 겹친 것, 악용 정황은 없다는 자체 조사 결과</span><span class="gloss">인프라·하드웨어 · 안전성·정렬</span></a>
     <a href="#a46"><span class="n">46회차</span><span class="t">FDA, 뇌 MRI·인지검사로 경도인지장애의 5년 내 알츠하이머 진행을 평가하는 AI 소프트웨어 NEXT-Cue(뉴로엑스티) 510(k) 허가 — 성능 수치는 공개 보도에 없고 식약처 허가는 아직</span><span class="gloss">의료 AI · 규제·정책</span></a>
     <a href="#a45"><span class="n">45회차</span><span class="t">앤트로픽, 나스닥 상장용 S-1 공개 — 2026년 상반기 매출 163억 달러, 영업손실 6억9300만 달러, 순손실 807억 달러(대부분 평가손실)</span><span class="gloss">산업 동향</span></a>
     <a href="#a44"><span class="n">44회차</span><span class="t">NEJM AI 연구진, 언어모델 24종의 진료 계획 비용이 담당 의사의 3.2배라고 보고 — 방문당 314달러 대 97달러, 비용 절감 지시문을 주면 1.4배까지 감소 (공개 샘플 200건·메디케어 수가 추정, 환자 결과 미측정)</span><span class="gloss">의료 AI · 연구 논문</span></a>
@@ -344,6 +345,86 @@
   <!-- INDEX:END -->
 
   <!-- ENTRIES:START — 새 회차 <article class="entry">는 이 줄 바로 아래에 -->
+<article class="entry" id="a47">
+  <div class="entry-meta">
+    <span class="chip">47회차</span>
+    <span>2026년 11월 4일</span>
+    <span class="chip type">인프라·하드웨어 · 안전성·정렬</span>
+  </div>
+
+  <h2 class="headword">클라우드플레어, 자사 AI 서비스에서 다른 고객 요청의 캐시 내용이 응답 155건에 섞여 나온 사고를 공개 — 설정 불일치와 추론 엔진 SGLang 버그가 겹친 것</h2>
+  <div class="lede">Cross-request KV cache exposure in the GLM-5.3 Workers AI model, and our remediation with SGLang · Cloudflare · 2026년 10월 26일 (SGLang 측 공지 동일 날짜)</div>
+
+  <div class="callout blue">
+    <span class="ico">💡</span>
+    <div class="body">
+      <p>클라우드플레어는 2026년 8월 27일~9월 9일 사이 Workers AI의 GLM-5.3 모델이 매우 긴 프롬프트에 대해 다른 고객의 이전 요청 내용을 일부 섞어 응답한 사례가 155건이라고 밝혔습니다. 고의적 악용 정황은 없었다고 합니다. 원인은 서버 설정 불일치와 오픈소스 추론 엔진 SGLang의 버그가 겹친 것이고, 수정판이 이미 나와 있습니다.</p>
+    </div>
+  </div>
+
+  <h3><span class="marker">/</span>무슨 일인가</h3>
+  <p>대형 언어모델(LLM)은 답을 생성할 때 앞선 토큰 계산 결과를 KV 캐시(KV cache, 어텐션 계산에 쓰는 중간 결과를 GPU 메모리에 쌓아 둔 것)에 보관합니다. 서비스 업체는 이 메모리를 여러 고객의 요청이 번갈아 쓰도록 재활용합니다. 이번 사고는 그 재활용 과정에서 한 요청이 남긴 캐시 페이지를 다른 요청이 읽어버린 것입니다.</p>
+  <p>클라우드플레어에 따르면 2026년 9월 8일 보안 연구자(Knostic의 가디 에브론)가 HackerOne으로 제보했고, 9월 9일 13시 22분에 사고를 선언해 해당 모델을 비공개로 돌렸다가 같은 날 19시 40분에 복구했습니다. 사고 공개는 코디네이트된 일정에 따라 10월 26일에 이뤄졌습니다. 영향받은 모델은 <code>@cf/zai-org/glm-5.3</code> 하나이며 다른 Workers AI 모델은 해당하지 않는다고 합니다.</p>
+
+  <h3><span class="marker">/</span>핵심 내용</h3>
+  <div class="facts">
+    <div class="fact"><span class="k">발표 주체</span><span class="v">Cloudflare (SGLang 프로젝트·LMSYS Org도 별도 공지)</span></div>
+    <div class="fact"><span class="k">영향 범위</span><span class="v">GLM-5.3 한 모델, 2026년 8월 27일~9월 9일, 프롬프트 길이 <b>681,280토큰 초과</b> 요청에 대한 응답 <b>155건</b> (클라우드플레어 자체 테스트와 제보자 테스트는 제외한 수)</span></div>
+    <div class="fact"><span class="k">노출된 것</span><span class="v">직전에 들어온 다른 고객 GLM-5.3 요청의 이전 프롬프트·생성 중이던 일부 내용(KV 캐시 페이지에서 나온 것)</span></div>
+    <div class="fact"><span class="k">원인 ①: 설정</span><span class="v">모델의 컨텍스트 창은 <b>1,048,576토큰</b>인데 프리필(prefill) 단계 KV 캐시 풀은 <b>681,280토큰</b>만 담을 수 있었음</span></div>
+    <div class="fact"><span class="k">원인 ②: 소프트웨어</span><span class="v">SGLang의 프리필·디코드 분리 서빙(PD 분리) 모드에서 길이 초과로 거절된 요청이 거절되지 않고 통과해, 디코드 노드가 채워지지 않은 이전 캐시 페이지를 읽고도 오류 대신 HTTP 200을 반환</span></div>
+    <div class="fact"><span class="k">조치</span><span class="v">GLM-5.2와 같은 설정으로 변경(캐시 풀 약 204만 토큰, 컨텍스트 길이의 약 2배), SGLang 패치, 운영자에게 v0.5.22 이상 권고</span></div>
+  </div>
+
+  <h3><span class="marker">/</span>어떻게 동작하나</h3>
+  <p>PD 분리 서빙(disaggregated prefill/decode)은 프롬프트를 읽는 단계(프리필)와 답을 한 토큰씩 쓰는 단계(디코드)를 서로 다른 GPU 노드에서 처리하고, 프리필이 만든 캐시를 디코드 노드로 전송하는 방식입니다. 처리량을 높이려는 구조입니다.</p>
+  <p>클라우드플레어 설명으로는, 캐시 풀보다 긴 요청은 거절 표시가 된 뒤 토큰 1개짜리 자리표시자로 바뀌었는데, 승인 검사가 "거절됐는가"가 아니라 "끝났는가"를 확인하는 바람에 요청이 그대로 넘어갔습니다. 그러자 디코드 노드가 이전 요청이 쓰던 낡은 캐시 페이지를 참조해 다른 사람의 내용이 섞인 답을 만들었습니다. SGLang은 이와 별개로, 중단된 요청의 캐시 슬롯을 디코드 쪽이 먼저 반납하는 사이 프리필 쪽의 RDMA(CPU를 거치지 않고 메모리에 직접 쓰는 전송) 쓰기가 늦게 도착해 다른 요청의 캐시를 덮어쓸 수 있는 경합 상태도 설명했고, 이쪽은 v0.4.x대부터 v0.5.21 이전 기본 설정에 존재했다고 밝혔습니다.</p>
+
+  <h3><span class="marker">/</span>왜 중요한가</h3>
+  <p>멀티테넌트(여러 고객이 같은 GPU를 공유하는) AI 추론 서비스에서는 캐시 격리가 곧 데이터 격리입니다. 모델 자체의 취약점이 아니라 서빙 소프트웨어 계층의 문제라서, SGLang을 PD 분리 모드로 직접 운영하는 다른 곳에도 해당할 수 있습니다. SGLang 측은 해당 조합을 쓰는 운영자에게 v0.5.21 이상(MORI 백엔드는 v0.5.22) 업그레이드, 중단 신호를 짝으로 전달하는 라우터 사용, 캐시 풀 크기와 컨텍스트 길이 비교 점검을 권고했습니다. 의료기관처럼 환자 정보를 외부 추론 API에 보내는 경우, 공급업체의 격리 보증이 어디까지인지 따져볼 근거가 됩니다.</p>
+
+  <div class="callout yellow">
+    <span class="ico">⚠️</span>
+    <div class="body">
+      <p><b>짚어둘 점</b> — 155건과 "악용 정황 없음"은 클라우드플레어 자체 조사 결과이며 독립 검증은 공개돼 있지 않습니다. 노출된 내용이 구체적으로 어떤 종류였는지, 몇 개 고객이 영향받았는지는 원문에서 확인하지 못했습니다. 경고 신호는 있었습니다. 클라우드플레어는 출시 전 설정 불일치를 알았지만 긴 컨텍스트 테스트가 성공 응답을 반환해 문제로 보지 않았고, 테스트가 HTTP 상태 코드와 성능만 봤을 뿐 출력의 정확성은 보지 않았다고 인정했습니다. 같은 버그는 7월 6일 SGLang에 이슈(#30233)로 올라와 있었고, 클라우드플레어는 v0.5.10 이후 유사한 문제를 계속 알려 왔다고 합니다. 이 사고는 길이 초과 요청에서만 확인됐고, 정상 길이 요청에서도 일어났는지는 별도로 설명되지 않았습니다. 클라우드플레어가 만들던 캐시 무결성 태그(integrity tagging) 시제품은 8월에 안정성 문제로 꺼졌고 운영용 버전은 개발 중이며, 일부 후속 패치는 아직 배포 전입니다.</p>
+    </div>
+  </div>
+
+  <h3><span class="marker">/</span>알아두면 좋은 용어</h3>
+  <div class="terms">
+    <div class="term">
+      <div class="en">KV cache (키-값 캐시)</div>
+      <div class="ko">모델이 이미 읽은 토큰의 어텐션 중간 계산값을 GPU 메모리에 저장해 두는 것. 응답 속도를 높이지만 요청 간에 섞이면 정보가 샌다</div>
+    </div>
+    <div class="term">
+      <div class="en">Disaggregated prefill/decode (PD 분리)</div>
+      <div class="ko">프롬프트 처리와 답 생성을 서로 다른 서버가 맡고 캐시를 주고받는 서빙 구조</div>
+    </div>
+    <div class="term">
+      <div class="en">Multi-tenant (멀티테넌트)</div>
+      <div class="ko">여러 고객이 같은 하드웨어·소프트웨어를 나눠 쓰는 클라우드 운영 방식</div>
+    </div>
+    <div class="term">
+      <div class="en">Prefill (프리필)</div>
+      <div class="ko">입력 프롬프트 전체를 한 번에 읽어 KV 캐시를 만드는 단계</div>
+    </div>
+  </div>
+
+  <h3><span class="marker">/</span>출처</h3>
+  <div class="src">
+    <div class="item"><a href="https://blog.cloudflare.com/kv-cache-exposure-remediation/">Cross-request KV cache exposure in the GLM-5.3 Workers AI model, and our remediation with SGLang</a> — Cloudflare, 2026년 10월 26일</div>
+    <div class="item"><a href="https://www.lmsys.org/blog/2026-10-26-cf-security/">SGLang security update: improving request isolation</a> — LMSYS Org, 2026년 10월 26일</div>
+  </div>
+</article>
+
+
+
+
+  
+
+  <details class="toggle">
+    <summary>지난 회차 46개</summary>
+
 <article class="entry" id="a46">
   <div class="entry-meta">
     <span class="chip">46회차</span>
@@ -414,12 +495,6 @@
     <div class="item"><a href="https://axisimagingnews.com/market-trends/cloud-computing/machine-learning-ai/fda-clears-ai-tool-uses-brain-mri-predict-alzheimers-progression">AI Tool That Uses Brain MRI to Predict Alzheimer's Progression Gains FDA Clearance</a> — Axis Imaging News, 2026-10-26 (허가 번호 K261805 표기)</div>
   </div>
 </article>
-
-
-  
-
-  <details class="toggle">
-    <summary>지난 회차 45개</summary>
 
 <article class="entry" id="a45">
     <div class="entry-meta">
