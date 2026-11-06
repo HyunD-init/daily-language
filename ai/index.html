@@ -294,6 +294,7 @@
   <!-- INDEX:START — 새 회차는 이 목록 맨 위에 <a> 하나 추가 -->
   <nav class="toc">
     <div class="toc-label">회차</div>
+    <a href="#a50"><span class="n">50회차</span><span class="t">DeliverBench 논문, AI 에이전트 7개 시스템에 전문 프로젝트를 브리프부터 납품까지 맡기자 최고 65.0점(100점 만점) — 프로젝트 11개·초록 기준, 프리프린트</span><span class="gloss">연구 논문 · 에이전트</span></a>
     <a href="#a49"><span class="n">49회차</span><span class="t">엔비디아 연구진, 에이전트 문맥을 7~9K 토큰으로 계속 비워도 코딩 정확도가 대체로 유지됐다는 논문 — 비용 최대 8.8배 절감 추정, 모델별 정확도 편차 (단일 실행, 외부 재현 없음)</span><span class="gloss">연구 논문</span></a>
     <a href="#a48"><span class="n">48회차</span><span class="t">미 상원 HELP위원장 캐시디, 의료 AI 지불 경로와 FDA·ONC 감독 구분을 담은 PATIENT AI Act 논의 초안 공개 — 자율 임상 AI 메디케어 5년 시범 포함, 의견 접수 12월 1일까지 (법안 발의 전 초안, 위원회 원문 미열람)</span><span class="gloss">의료 AI · 규제·정책</span></a>
     <a href="#a47"><span class="n">47회차</span><span class="t">클라우드플레어, 자사 AI 서비스에서 다른 고객 요청의 캐시 내용이 응답 155건에 섞여 나온 사고 공개 — 설정 불일치와 SGLang 버그가 겹친 것, 악용 정황은 없다는 자체 조사 결과</span><span class="gloss">인프라·하드웨어 · 안전성·정렬</span></a>
@@ -347,6 +348,86 @@
   <!-- INDEX:END -->
 
   <!-- ENTRIES:START — 새 회차 <article class="entry">는 이 줄 바로 아래에 -->
+<article class="entry" id="a50">
+  <div class="entry-meta">
+    <span class="chip">50회차</span>
+    <span>2026년 11월 7일</span>
+    <span class="chip type">연구 논문 · 에이전트</span>
+  </div>
+
+  <h2 class="headword">DeliverBench 논문, AI 에이전트 7개 시스템에 전문 프로젝트를 브리프부터 납품까지 맡기자 최고 65.0점(100점 만점) — 하위 과제 단위로는 잘해도 프로젝트 단위로는 이어지지 않았다</h2>
+  <div class="lede">DeliverBench: Benchmarking AI Agents on Delivering Realistic Multi-Stage Professional Projects · arXiv:2611.03412 · 2026년 11월 2일 제출(v1)</div>
+
+  <div class="callout blue">
+    <span class="ico">💡</span>
+    <div class="body">
+      <p>저자 21명은 실제 자료를 바탕으로 전문가 13명이 재구성한 프로젝트 11개로 에이전트를 시험했다. 한 번에 한 과제만 보는 기존 벤치마크와 달리, 고객 피드백이 오가는 여러 라운드를 거쳐 최종 납품물까지 채점한다. 논문이 밝힌 최고 점수는 65.0점이다.</p>
+    </div>
+  </div>
+
+  <h3><span class="marker">/</span>무슨 일인가</h3>
+  <p>대부분의 에이전트 벤치마크는 과제 하나를 주고 결과 하나를 채점한다. 그러나 전문 업무의 결과물은 보통 프로젝트 전체이고, 논문의 표현대로 프로젝트의 가치는 가장 약한 구성 요소가 정한다. 재무 실사 보고서에서 숫자 하나가 앞뒤로 어긋나면 나머지가 좋아도 쓰기 어렵다.</p>
+  <p>저자들은 이 차이를 재기 위해 DeliverBench를 만들었다고 밝혔다. 에이전트는 초기 브리프(brief, 의뢰서)를 받고, 라운드마다 새 자료와 고객 피드백을 받으며 최종 납품까지 진행한다. 이 글을 쓴 시점에 확인한 것은 arXiv 초록 페이지까지이며, 본문 PDF는 열람하지 못했다. 아래 내용은 초록에 적힌 범위다.</p>
+
+  <h3><span class="marker">/</span>핵심 내용</h3>
+  <div class="facts">
+    <div class="fact"><span class="k">발표 주체</span><span class="v">Yumou Liu 등 저자 21명(arXiv cs.AI). 소속은 초록 페이지에서 확인하지 못했다</span></div>
+    <div class="fact"><span class="k">구성</span><span class="v">프로젝트 <b>11개</b>(재무 실사, 법률 계약서 작성, 의약품 안전성 보고 등), 도메인 전문가 <b>13명</b>이 실제 자료로 재구성, 프로젝트당 <b>2~15라운드</b>, 전체 하위 과제 <b>150개</b></v></div>
+    <div class="fact"><span class="k">핵심 수치</span><span class="v">모델-하네스(harness, 모델을 감싸 도구를 쓰게 하는 실행 틀) 조합 <b>7개</b> 중 최고 점수 <b>65.0/100</b>(최종 납품 기준). 최고 시스템의 하위 과제 중 90점 기준 통과율 <b>50.0%</b></v></div>
+    <div class="fact"><span class="k">채점 방식</span><span class="v">전문가 루브릭(rubric, 항목별 채점표)으로 각 체크포인트와 최종 패키지를 채점. 정답 산출물은 주지 않음</span></div>
+    <div class="fact"><span class="k">공개 범위</span><span class="v">논문 공개(arXiv). 데이터·코드 공개 여부는 확인하지 못함</span></div>
+  </div>
+
+  <h3><span class="marker">/</span>어떻게 동작하나</h3>
+  <p>이 벤치마크의 설계에서 눈에 띄는 점은 참고 정답을 주지 않는다는 것이다. 보통은 라운드가 끝나면 올바른 중간 산출물을 넘겨 다음 단계를 시작하게 한다. 여기서는 에이전트가 자기가 만든 산출물을 그대로 이어받는다. 그래서 앞 단계의 실수가 뒤 단계로 누적된다. 임상으로 비유하면, 매 방문마다 차트를 새로 정리해 주는 대신 앞선 기록의 오류가 그대로 남은 차트로 다음 진료를 하는 셈이다.</p>
+  <p>초록에 소개된 사례로, 감사(audit) 프로젝트에서 7개 시스템 모두 검토 지적 사항에는 대응했지만 추적성(traceability, 어떤 지적이 어디서 어떻게 반영됐는지 연결해 두는 것)을 유지한 시스템은 하나뿐이었다고 한다.</p>
+
+  <h3><span class="marker">/</span>왜 중요한가</h3>
+  <p>에이전트를 쓰는 입장에서 체감하는 문제와 맞닿아 있다. 단발 과제는 잘 풀어도, 며칠에 걸쳐 수정 요청을 받으며 결과물의 일관성을 지키는 일은 다른 능력이라는 주장이다. 저자들은 과제 단위 능력이 프로젝트 단위 성공으로 단순 합산되지 않는다고 결론 내렸다. 장시간 에이전트를 내세우는 제품들을 평가할 때 어떤 항목을 봐야 하는지에 대한 하나의 기준점은 된다.</p>
+
+  <div class="callout yellow">
+    <span class="ico">⚠️</span>
+    <div class="body">
+      <p><b>짚어둘 점</b> — 초록 기준으로 정리했으므로 확인되지 않은 부분이 많다. 7개 시스템이 어떤 모델이고 각각 몇 점인지, 채점자가 사람인지 LLM인지, 전문가 간 채점 일치도는 어떤지 확인하지 못했다. 65.0점은 이 논문의 루브릭에서 나온 값이라 다른 벤치마크와 직접 비교할 수 없고, 프로젝트가 11개뿐이라 분야별 결론을 일반화하기 어렵다. 프로젝트 11개는 저자들이 직접 재구성한 것이어서 난이도 설정이 점수를 크게 좌우했을 수 있다. 아직 동료 심사를 거치지 않은 프리프린트(preprint)이고 외부 재현도 없다. 또한 정답 산출물을 주지 않는 설계는 현실적이지만, 한 번의 초기 실수가 이후 점수 전체를 끌어내리는 구조일 수 있어 점수가 '능력 부족'인지 '오류 누적'인지는 따로 봐야 한다.</p>
+    </div>
+  </div>
+
+  <h3><span class="marker">/</span>알아두면 좋은 용어</h3>
+  <div class="terms">
+    <div class="term">
+      <div class="en">Harness (하네스)</div>
+      <div class="ko">모델에 도구 호출, 파일 접근, 반복 실행 같은 기능을 붙여 에이전트로 만드는 실행 틀. 같은 모델도 하네스에 따라 결과가 달라진다</div>
+    </div>
+    <div class="term">
+      <div class="en">Rubric (루브릭)</div>
+      <div class="ko">산출물을 항목별로 채점하는 기준표. 정답이 하나로 정해지지 않는 과제에서 쓴다</div>
+    </div>
+    <div class="term">
+      <div class="en">Traceability (추적성)</div>
+      <div class="ko">검토 지적과 수정 내용을 서로 연결해 두어 나중에 확인할 수 있게 하는 성질. 감사·규제 문서에서 필수</div>
+    </div>
+  </div>
+
+  <h3><span class="marker">/</span>출처</h3>
+  <div class="src">
+    <div class="item"><a href="https://arxiv.org/abs/2611.03412">DeliverBench: Benchmarking AI Agents on Delivering Realistic Multi-Stage Professional Projects</a> — arXiv, 2026-11-02 (초록 페이지 확인, 본문 미열람)</div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+
+  <details class="toggle">
+    <summary>지난 회차 49개</summary>
+
 <article class="entry" id="a49">
   <div class="entry-meta">
     <span class="chip">49회차</span>
@@ -417,18 +498,6 @@
     <div class="item"><a href="https://arxiv.org/abs/2611.05306">You don't need long context</a> — Belcak 외, arXiv:2611.05306v1, 2026년 11월 3일</div>
   </div>
 </article>
-
-
-
-
-
-
-
-
-  
-
-  <details class="toggle">
-    <summary>지난 회차 48개</summary>
 
 <article class="entry" id="a48">
   <div class="entry-meta">
