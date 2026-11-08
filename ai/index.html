@@ -294,6 +294,7 @@
   <!-- INDEX:START — 새 회차는 이 목록 맨 위에 <a> 하나 추가 -->
   <nav class="toc">
     <div class="toc-label">회차</div>
+    <a href="#a52"><span class="n">52회차</span><span class="t">OpenAI, 승인된 보안팀 전용 GPT-6 Cyber 공개 — Firefox 고위험 취약점 81건 발견, 리눅스 커널 익스플로잇 948건 제작 (OpenAI 발표 수치, 원문 미열람)</span><span class="gloss">모델 출시 · 사이버보안</span></a>
     <a href="#a51"><span class="n">51회차</span><span class="t">METR, 앤트로픽 내부 데이터 검토 후 역량 향상 속도가 이전의 약 2배라고 판단 — AECI 성장률 1.9배(95% CI 1.5~2.8배), 핵심 근거 상당수 비공개 (METR의 주관적 판단)</span><span class="gloss">안전성·정렬 · 연구</span></a>
     <a href="#a50"><span class="n">50회차</span><span class="t">DeliverBench 논문, AI 에이전트 7개 시스템에 전문 프로젝트를 브리프부터 납품까지 맡기자 최고 65.0점(100점 만점) — 프로젝트 11개·초록 기준, 프리프린트</span><span class="gloss">연구 논문 · 에이전트</span></a>
     <a href="#a49"><span class="n">49회차</span><span class="t">엔비디아 연구진, 에이전트 문맥을 7~9K 토큰으로 계속 비워도 코딩 정확도가 대체로 유지됐다는 논문 — 비용 최대 8.8배 절감 추정, 모델별 정확도 편차 (단일 실행, 외부 재현 없음)</span><span class="gloss">연구 논문</span></a>
@@ -349,6 +350,77 @@
   <!-- INDEX:END -->
 
   <!-- ENTRIES:START — 새 회차 <article class="entry">는 이 줄 바로 아래에 -->
+<article class="entry" id="a52">
+  <div class="entry-meta">
+    <span class="chip">52회차</span>
+    <span>2026년 11월 9일</span>
+    <span class="chip type">모델 출시 · 사이버보안</span>
+  </div>
+
+  <h2 class="headword">OpenAI, 승인된 보안팀 전용 GPT-6 Cyber 공개 — Firefox 고위험 취약점 81건 발견, 리눅스 커널 취약점 948건 익스플로잇 제작 (OpenAI 발표 수치, 원문 미열람)</h2>
+  <div class="lede">Introducing GPT-6 Cyber · OpenAI · 2026년 11월 4~5일 발표</div>
+
+  <div class="callout blue">
+    <span class="ico">💡</span>
+    <div class="body">
+      <p>OpenAI가 취약점 연구·침투 테스트용 모델 GPT-6 Cyber를 승인된 고객에게만 열었다. OpenAI가 밝힌 바에 따르면 이 모델은 자체 안전 프레임워크의 사이버보안 등급 「치명적(Critical)」에 해당하며, Firefox의 미공개 고위험 취약점 81건을 찾았다. 일반 공개가 아니라 제한 접근이라는 점이 핵심이다.</p>
+    </div>
+  </div>
+
+  <h3><span class="marker">/</span>무슨 일인가</h3>
+  <p>OpenAI는 올해 들어 사이버보안 특화 모델을 계속 내놓고 있으며, 보도에 따르면 이번이 네 번째다. 5월에 시작한 방어자용 프로그램 「데이브레이크(Daybreak)」 중 익스플로잇(exploit, 취약점을 실제로 공격에 쓰는 코드) 개발과 승인된 보안 테스트를 위한 등급 「데이브레이크 레드」 고객에게 API와 Codex로 먼저 제공된다. 전체 데이브레이크 레드 고객으로는 「곧」 넓히겠다는 것이 OpenAI 설명이며 일정은 보도에 나오지 않는다.</p>
+  <p>이 글은 OpenAI 발표문 자체를 읽지 못하고 The Next Web, Help Net Security 등 복수 매체 보도를 교차해 정리했다. 매체들 사이에서 수치는 일치한다.</p>
+
+  <h3><span class="marker">/</span>핵심 내용</h3>
+  <div class="facts">
+    <div class="fact"><span class="k">발표 주체</span><span class="v">OpenAI</span></div>
+    <div class="fact"><span class="k">Firefox</span><span class="v">OpenAI 연구진이 이 모델로 미공개 고위험 취약점 <b>81건</b> 발견. Mozilla 소속 엔지니어가 「이전에 알려지지 않은 고위험 취약점을 찾았고 수정 배포를 도왔다」고 언급했다고 보도됨</span></div>
+    <div class="fact"><span class="k">리눅스 커널</span><span class="v">취약점 <b>1,724건</b> 재현, 이 중 <b>948건</b>에서 작동하는 익스플로잇 제작. 같은 설정에서 GPT-5.6 Sol은 166건. 심각한 발견 304건을 유지관리자에게 패치안과 함께 전달</span></div>
+    <div class="fact"><span class="k">벤치마크</span><span class="v">ExploitGym(주어진 취약점을 실제로 공격할 수 있는지 보는 평가) <b>48.5%</b> 대 전작 GPT-5.6 Cyber 32.1%. 새 원격 공격 벤치마크에서 GPT-6 Astra는 전 과제를 거부, GPT-6 Cyber는 95% 완수</span></div>
+    <div class="fact"><span class="k">범위 이탈 검사</span><span class="v">ExploitGym Honeypot(건드리면 안 되는 인접 서비스를 두고 공격하는지 보는 시험): 배포용 안전 지침 없이 <b>99.93%</b> 이탈하지 않음(GPT-5.6 Cyber 94.49%), 지침 포함 시 100%</span></div>
+    <div class="fact"><span class="k">공개 범위</span><span class="v">가중치·일반 API 공개 없음. 승인된 데이브레이크 레드 고객 한정, 가격 미공개</span></div>
+  </div>
+
+  <h3><span class="marker">/</span>어떻게 동작하나</h3>
+  <p>범용 모델은 공격 코드 작성을 거부하도록 훈련돼 있다. GPT-6 Cyber는 이 거부 문턱을 인증된 방어자에게만 낮춘 변형으로, 설명된 방식은 모델 자체보다 접근 통제에 있다. OpenAI는 허가되지 않은 대상으로의 행동 감시, 탈취된 자격증명 대응, 고위험 지원 차단 점검을 안전장치로 든다. 모델이 시험받는다는 것을 알아채고 행동을 바꾸는 「평가 인식(evaluation awareness)」도 모니터링한다고 한다.</p>
+
+  <h3><span class="marker">/</span>왜 중요한가</h3>
+  <p>사이버보안 능력이 수치로 비교되는 단계에 들어섰다. 리눅스 커널 익스플로잇 제작 건수가 전작 대비 약 6배(166건 → 948건)라는 비교는, 취약점 발견 속도와 패치 속도의 균형을 직접 건드린다. 보도에 따르면 OpenAI의 패치 현황 대시보드(Patch the Planet)에서 수정이 끝난 취약점은 아직 25% 미만이다. 지금 쓸 수 있는 사람은 승인된 보안팀뿐이고, 일반 개발자가 접근하는 시점은 정해지지 않았다.</p>
+
+  <div class="callout yellow">
+    <span class="ico">⚠️</span>
+    <div class="body">
+      <p><b>짚어둘 점</b> — 수치는 모두 OpenAI가 밝힌 것이며 외부 기관의 재현은 없다. Mozilla의 언급은 보도로 전해진 발언이고, 81건 전부를 Mozilla가 독립 검증했다는 근거는 확인하지 못했다. 리눅스 948건과 ExploitGym 점수는 OpenAI가 만든 설정의 결과라 비교 기준 선택에 따라 달라질 수 있다. 「범위 이탈 99.93%」도 반대로 보면 규모가 커질 때 소수의 무단 행동이 남는다는 뜻이라는 보안 업계 지적이 있다. 데이브레이크 블루 이용자 데이터를 모델 개선에 쓰겠다는 방침이 논란이 됐다는 보도도 있다(거부 설정 가능). 발견 능력이 앞서가고 수정이 뒤따르지 못하면 공격자에게 유리한 구간이 생길 수 있다는 점은 아직 해결되지 않은 문제다.</p>
+    </div>
+  </div>
+
+  <h3><span class="marker">/</span>알아두면 좋은 용어</h3>
+  <div class="terms">
+    <div class="term">
+      <div class="en">Exploit</div>
+      <div class="ko">익스플로잇 — 취약점을 실제 공격에 써먹는 코드나 절차. 취약점을 찾는 것과는 별개의 어려운 단계</div>
+    </div>
+    <div class="term">
+      <div class="en">Preparedness Framework</div>
+      <div class="ko">OpenAI의 위험 등급 체계. 사이버보안 분야에서 「높음(High)」 위에 「치명적(Critical)」 등급이 있다</div>
+    </div>
+    <div class="term">
+      <div class="en">Evaluation awareness</div>
+      <div class="ko">평가 인식 — 모델이 시험 중임을 알아채고 평소와 다르게 행동하는 현상</div>
+    </div>
+  </div>
+
+  <h3><span class="marker">/</span>출처</h3>
+  <div class="src">
+    <div class="item"><a href="https://openai.com/index/introducing-gpt-6-cyber/">Introducing GPT-6 Cyber</a> — OpenAI, 2026-11 (이번 회차에서는 직접 열람하지 못함)</div>
+    <div class="item"><a href="https://thenextweb.com/news/openai-gpt-6-cyber-launch-firefox-linux-daybreak-red">OpenAI's GPT-6 Cyber found 81 new Firefox flaws and is rated 'Critical'</a> — The Next Web</div>
+    <div class="item"><a href="https://www.helpnetsecurity.com/?p=390550">OpenAI's GPT-6 Cyber found 81 Firefox flaws earlier AI testing missed</a> — Help Net Security</div>
+  </div>
+</article>
+
+
+  <details class="toggle">
+    <summary>지난 회차 51개</summary>
 <article class="entry" id="a51">
   <div class="entry-meta">
     <span class="chip">51회차</span>
@@ -422,8 +494,6 @@
   </div>
 </article>
 
-  <details class="toggle">
-    <summary>지난 회차 50개</summary>
 
 <article class="entry" id="a50">
   <div class="entry-meta">
