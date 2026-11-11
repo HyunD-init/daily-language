@@ -294,6 +294,7 @@
   <!-- INDEX:START — 새 회차는 이 목록 맨 위에 <a> 하나 추가 -->
   <nav class="toc">
     <div class="toc-label">회차</div>
+    <a href="#a55"><span class="n">55회차</span><span class="t">마이크로소프트, 단계별로 검사를 고르는 진단 AI 'MAI-DxO' 결과를 Science에 게재 — NEJM 증례 304건에서 정답률 83.2%, 참고자료를 쓴 일반의 36.1% (텍스트 증례 시뮬레이션, 저자 전원 마이크로소프트)</span><span class="gloss">의료 AI · 진단 보조</span></a>
     <a href="#a54"><span class="n">54회차</span><span class="t">뉴욕주, 프런티어 AI 개발사 등록 포털 열고 2027년 1월 1일까지 등록 요구 — 72시간 내 사고 보고·과징금 최대 300만 달러, 감독 사무국 DIGIT·평가센터 출범 (법 시행은 2027년 1월)</span><span class="gloss">규제·정책</span></a>
     <a href="#a53"><span class="n">53회차</span><span class="t">클리얼리, 관상동맥 CT의 AI 플라크 분석 기반 진료가 통상 진료보다 낫다는 무작위시험 PARAMOUNT 예비 결과 발표 — 180일 복합 평가변수 승률비 2.00 (회사 보도자료, 미심사·공개 시험)</span><span class="gloss">의료 AI · 연구 논문</span></a>
     <a href="#a52"><span class="n">52회차</span><span class="t">OpenAI, 승인된 보안팀 전용 GPT-6 Cyber 공개 — Firefox 고위험 취약점 81건 발견, 리눅스 커널 익스플로잇 948건 제작 (OpenAI 발표 수치, 원문 미열람)</span><span class="gloss">모델 출시 · 사이버보안</span></a>
@@ -352,6 +353,99 @@
   <!-- INDEX:END -->
 
   <!-- ENTRIES:START — 새 회차 <article class="entry">는 이 줄 바로 아래에 -->
+<article class="entry" id="a55">
+  <div class="entry-meta">
+    <span class="chip">55회차</span>
+    <span>2026년 11월 12일</span>
+    <span class="chip type">의료 AI · 진단 보조</span>
+  </div>
+
+  <h2 class="headword">마이크로소프트, 단계별로 검사를 고르는 진단 AI 'MAI-DxO' 결과를 Science에 게재 — NEJM 증례 304건에서 정답률 83.2%, 참고자료를 쓴 일반의 36.1% (텍스트 증례 시뮬레이션, 저자 전원 마이크로소프트)</h2>
+  <div class="lede">Sequential diagnosis with language models · Microsoft AI · Science · 2026년 10월 22일</div>
+
+  <div class="callout blue">
+    <span class="ico">💡</span>
+    <div class="body">
+      <p>마이크로소프트 AI 연구진이 문진·검사를 한 단계씩 고르며 진단하는 오케스트레이션 시스템 MAI-DxO의 평가 결과를 Science에 냈다. 2025년 6월 프리프린트를 동료심사를 거쳐 다시 낸 것으로, 이번에는 응급실 실제 기록 325건 평가가 추가됐다. 다만 비교 대상은 혼자 푸는 일반의였고, 환자를 직접 본 연구는 아니다.</p>
+    </div>
+  </div>
+
+  <h3><span class="marker">/</span>무슨 일인가</h3>
+  <p>지금까지 의료 LLM의 성적은 대부분 객관식 시험(USMLE형 문제)이나 "증례 전체를 한 번에 주고 진단을 묻는" 방식으로 측정됐다. 실제 진료는 그렇지 않다. 짧은 주소(chief complaint)에서 시작해 무엇을 더 물을지, 어떤 검사를 낼지 정하고, 결과를 보고 다시 판단한다. 마이크로소프트는 2025년 6월 이 과정을 흉내 낸 평가틀 SDBench(Sequential Diagnosis Benchmark)와 진단 시스템 MAI-DxO(MAI Diagnostic Orchestrator)를 arXiv 프리프린트로 공개했는데, 당시 결과는 동료심사 전이었고 "의사 성적이 지나치게 낮게 나오도록 설계됐다"는 비판을 받았다.</p>
+  <p>2026년 10월 22일 같은 연구가 Science에 실렸다. 로이터 보도에 따르면 연구진은 300건 넘는 난해 증례와 응급실 입원 데이터 양쪽에서 일반의보다 정확했고, 검사 비용 추정치도 더 낮았다고 밝혔다. 평가 코드(SDBench)는 GitHub에 공개됐고, NEJM 증례 데이터는 NEJM 그룹 라이선스, 응급실 데이터는 PhysioNet 자격 인증을 받아야 쓸 수 있다. MAI-DxO 자체는 제품으로 출시되지 않았다.</p>
+
+  <h3><span class="marker">/</span>핵심 내용</h3>
+  <div class="facts">
+    <div class="fact"><span class="k">발표 주체</span><span class="v">마이크로소프트 AI(Microsoft AI) 연구진 15명 — 저자 전원 마이크로소프트 소속</span></div>
+    <div class="fact"><span class="k">무엇을</span><span class="v">진단 오케스트레이터 MAI-DxO와 평가틀 SDBench의 동료심사 논문(Science, 2026년 10월 22일)</span></div>
+    <div class="fact"><span class="k">데이터</span><span class="v">NEJM 임상병리 집담회(CPC) 증례 <b>304건</b> + 응급실 기록 데이터베이스 MIMIC-IV-ED에서 뽑은 증례 <b>325건</b></span></div>
+    <div class="fact"><span class="k">NEJM 증례 정답률</span><span class="v">MAI-DxO(GPT-5 기반) <b>83.2%</b> vs 교과서·인터넷을 쓴 일반의 <b>36.1%</b> (참고자료 없이 푼 일반의 22.3%)</span></div>
+    <div class="fact"><span class="k">응급실 증례 정답률</span><span class="v">MAI-DxO <b>80.3%</b> vs 일반의 <b>46.8%</b></span></div>
+    <div class="fact"><span class="k">비교 대상</span><span class="v">1차진료의·병원 일반의가 혼자 푼 결과. 전문의·다학제 팀과는 비교하지 않음</span></div>
+    <div class="fact"><span class="k">공개 범위</span><span class="v">SDBench 코드 MIT 라이선스 공개(합성 증례 5건 포함). 실제 증례 데이터는 별도 라이선스·인증 필요. MAI-DxO는 미출시</span></div>
+    <div class="fact"><span class="k">다음 단계</span><span class="v">보스턴 베스이스라엘 디코니스 의료센터(BIDMC)에서 응급실 대기 환자 분류(triage) 전향적 연구 예정 — 시작 시기·규모 미공개</span></div>
+  </div>
+  <p>정답률 수치는 Science 논문을 인용한 복수 보도(TNW, Unite.AI 등)에서 일치하는 값이며, 논문 원문 전체는 직접 열람하지 못했다. 1인당 비용 달러 수치는 보도마다 서술이 달라 여기에 옮기지 않았다.</p>
+
+  <h3><span class="marker">/</span>어떻게 동작하나</h3>
+  <p>SDBench는 세 역할로 돌아간다(공개된 코드 설명 기준). <b>에이전트</b>(평가받는 쪽)는 진단이 드러나지 않는 짧은 증례 요약만 받고, 한 턴씩 질문·검사 주문·진단 확정 중 하나를 고른다. <b>게이트키퍼(gatekeeper)</b>는 별도 LLM으로, 원래 증례 기록에 있는 결과는 그대로 돌려주고 기록에 없는 검사를 주문하면 그럴듯한 <b>합성 결과(synthetic result)</b>를 만들어 준다. 진단을 확정하면 <b>심판(judge)</b> LLM이 정답과 비교해 1~5점으로 매기고 4~5점을 정답으로 친다. 주문한 검사마다 공개된 병원 가격표(charge master)를 기준으로 비용을 추정해 붙인다.</p>
+  <p>MAI-DxO는 하나의 모델(이번 논문에서는 OpenAI GPT-5)에 여러 역할을 맡겨 '가상 의사 패널'처럼 토론하게 하는 구조다. 감별진단을 유지하는 역할, 다음 검사를 고르는 역할, 앞선 판단을 반박하는 역할, 비용을 따지는 역할 등이 서로 의견을 내고, 오케스트레이터가 최종 행동을 정한다. 이렇게 모델 위에 절차를 얹는 방식을 오케스트레이션(orchestration)이라 부르며, 보도에 따르면 같은 GPT-5를 그냥 썼을 때보다 정답률이 몇 %포인트 높았다. 연구진은 비용 한도를 걸면 정확도를 조금 내주고 검사비를 크게 줄이는 설정도 함께 보고했다.</p>
+
+  <h3><span class="marker">/</span>왜 중요한가</h3>
+  <p>"정답을 맞혔는가"뿐 아니라 "어떤 순서로, 얼마를 들여 맞혔는가"를 함께 재는 평가틀이 동료심사를 통과했고, 코드까지 공개돼 다른 연구진이 같은 조건에서 다른 모델을 돌려볼 수 있게 됐다. 진단 과정에서 검사를 과하게 내는 것도 오류로 본다는 점에서, 객관식 정답률보다 실제 진료에 가까운 질문이다.</p>
+  <p>지금 당장 바뀌는 것은 없다. MAI-DxO는 진료 현장에서 쓰이지 않고, 인허가 절차도 밟지 않았다. 실제 환자를 대상으로 한 근거는 BIDMC 전향적 연구가 나와야 생긴다.</p>
+
+  <div class="callout yellow">
+    <span class="ico">⚠️</span>
+    <div class="body">
+      <p><b>짚어둘 점</b> — ① <b>전향적 검증 없음</b>: 모든 결과는 이미 기록된 텍스트 증례를 다시 푸는 후향적 시뮬레이션이다. 신체진찰·영상 원본·환자와의 대화가 없고, 진단 후 치료가 적절했는지나 환자 결과는 측정하지 않았다. ② <b>비교 대상의 한계</b>: NEJM CPC는 교육용으로 고른 희귀·난해 증례라 일반의에게 불리하다. 전문의나 팀과는 비교하지 않았고, 저자들도 "실제 진료나 전문의보다 낫다는 뜻은 아니다"라고 적었다. ③ <b>건강한 환자가 없음</b>: 모든 증례에 진단이 있으므로 과잉진단·위양성 경향을 잴 수 없다. ④ <b>평가 장치도 LLM</b>: 게이트키퍼가 기록에 없는 검사 결과를 합성해 주고 심판도 LLM이라, 평가 결과가 이 두 모델의 판단에 기대고 있다. ⑤ <b>비용은 추정치</b>: 공개 가격표 기반 모형 값이며 실제 청구액이 아니다. 공개 코드 문서에 따르면 LLM으로 추정한 비용은 논문의 가격표 기반 추정보다 40~50% 높게 나왔다고 하니, 비용 수치는 방법에 따라 크게 달라진다. ⑥ <b>데이터 오염 가능성</b>: NEJM 증례는 출판물이라 학습 데이터에 들어갔을 수 있다(응급실 데이터는 접근 제한이 있어 상대적으로 덜하다). ⑦ <b>이해관계·재현</b>: 저자 전원이 마이크로소프트 직원이고, 외부 기관의 독립 재현은 아직 없다. 한국 진료 환경·식약처 규제 관점의 검토도 없다.</p>
+    </div>
+  </div>
+
+  <h3><span class="marker">/</span>알아두면 좋은 용어</h3>
+  <div class="terms">
+    <div class="term">
+      <div class="en">Sequential diagnosis</div>
+      <div class="ko">순차 진단 — 정보를 한꺼번에 받지 않고, 질문·검사를 하나씩 골라 결과를 보며 진단을 좁혀 가는 방식</div>
+    </div>
+    <div class="term">
+      <div class="en">Orchestration</div>
+      <div class="ko">오케스트레이션 — 모델 하나에 여러 역할과 절차를 부여해 서로 의견을 주고받게 하고, 그 결과를 조율해 최종 행동을 정하는 설계</div>
+    </div>
+    <div class="term">
+      <div class="en">Clinicopathological conference (CPC)</div>
+      <div class="ko">임상병리 집담회 — NEJM이 연재하는 난해 증례 토론. 최종 진단이 병리 등으로 확정돼 있어 진단 AI 평가에 자주 쓰인다</div>
+    </div>
+    <div class="term">
+      <div class="en">MIMIC-IV-ED</div>
+      <div class="ko">미국 BIDMC 응급실 방문 기록을 비식별화한 공개 연구용 데이터베이스. PhysioNet 자격 인증을 받아야 접근할 수 있다</div>
+    </div>
+    <div class="term">
+      <div class="en">Gatekeeper / Judge model</div>
+      <div class="ko">평가용 보조 모델 — 게이트키퍼는 주문한 검사의 결과를 내주고, 심판은 최종 진단이 정답과 맞는지 점수를 매긴다</div>
+    </div>
+    <div class="term">
+      <div class="en">Prospective study</div>
+      <div class="ko">전향적 연구 — 연구 계획을 먼저 세우고 이후 실제 환자를 등록해 결과를 추적하는 연구. 과거 기록을 다시 분석하는 후향적 연구보다 근거 수준이 높다</div>
+    </div>
+  </div>
+
+  <h3><span class="marker">/</span>출처</h3>
+  <div class="src">
+    <div class="item"><a href="https://www.science.org/doi/10.1126/science.aeh7930">Sequential diagnosis with language models</a> — Science, 2026년 10월 22일 (원문 미열람)</div>
+    <div class="item"><a href="https://github.com/microsoft/sdbench">SDBench: Sequential Diagnosis Benchmark (코드·문서)</a> — Microsoft, GitHub</div>
+    <div class="item"><a href="https://arxiv.org/abs/2506.22405">Sequential Diagnosis with Language Models (프리프린트)</a> — arXiv, 2025년 6월</div>
+    <div class="item"><a href="https://www.business-standard.com/world-news/microsoft-develops-ai-tool-that-can-diagnose-sequentially-like-doctor-126102300098_1.html">Microsoft develops AI tool that can diagnose 'sequentially' like doctor</a> — Reuters(Business Standard 전재), 2026년 10월 23일</div>
+    <div class="item"><a href="https://thenextweb.com/news/microsoft-ai-diagnosis-mai-dxo-science-study">Microsoft AI tool beat generalist doctors at step-by-step diagnosis</a> — The Next Web, 2026년 10월 23일</div>
+    <div class="item"><a href="https://www.unite.ai/microsoft-diagnostic-ai-outperforms-generalist-physicians-in-science-study/">Microsoft Diagnostic AI Outperforms Generalist Physicians in Science Study</a> — Unite.AI, 2026년 10월 22일</div>
+  </div>
+</article>
+
+
+
+
+  <details class="toggle">
+    <summary>지난 회차 54개</summary>
 <article class="entry" id="a54">
   <div class="entry-meta">
     <span class="chip">54회차</span>
@@ -431,12 +525,6 @@
     <div class="item"><a href="https://iapp.org/news/a/australia-rolls-out-new-ai-regulators-security-obligations">Australia rolls out new AI regulator, frontier model security obligations</a> — IAPP, 2026년 11월 10일</div>
   </div>
 </article>
-
-
-
-
-  <details class="toggle">
-    <summary>지난 회차 53개</summary>
 <article class="entry" id="a53">
   <div class="entry-meta">
     <span class="chip">53회차</span>
