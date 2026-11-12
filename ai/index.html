@@ -294,6 +294,7 @@
   <!-- INDEX:START — 새 회차는 이 목록 맨 위에 <a> 하나 추가 -->
   <nav class="toc">
     <div class="toc-label">회차</div>
+    <a href="#a56"><span class="n">56회차</span><span class="t">구글 딥마인드, AI 에이전트로 시그널 암호 라이브러리의 컴파일된 기계어를 4주 만에 형식 검증 — Lean 증명 약 650만 줄, 1:1 대화 범위 한정 (외부 검토 전)</span><span class="gloss">연구 · 사이버보안</span></a>
     <a href="#a55"><span class="n">55회차</span><span class="t">마이크로소프트, 단계별로 검사를 고르는 진단 AI 'MAI-DxO' 결과를 Science에 게재 — NEJM 증례 304건에서 정답률 83.2%, 참고자료를 쓴 일반의 36.1% (텍스트 증례 시뮬레이션, 저자 전원 마이크로소프트)</span><span class="gloss">의료 AI · 진단 보조</span></a>
     <a href="#a54"><span class="n">54회차</span><span class="t">뉴욕주, 프런티어 AI 개발사 등록 포털 열고 2027년 1월 1일까지 등록 요구 — 72시간 내 사고 보고·과징금 최대 300만 달러, 감독 사무국 DIGIT·평가센터 출범 (법 시행은 2027년 1월)</span><span class="gloss">규제·정책</span></a>
     <a href="#a53"><span class="n">53회차</span><span class="t">클리얼리, 관상동맥 CT의 AI 플라크 분석 기반 진료가 통상 진료보다 낫다는 무작위시험 PARAMOUNT 예비 결과 발표 — 180일 복합 평가변수 승률비 2.00 (회사 보도자료, 미심사·공개 시험)</span><span class="gloss">의료 AI · 연구 논문</span></a>
@@ -353,6 +354,95 @@
   <!-- INDEX:END -->
 
   <!-- ENTRIES:START — 새 회차 <article class="entry">는 이 줄 바로 아래에 -->
+<article class="entry" id="a56">
+  <div class="entry-meta">
+    <span class="chip">56회차</span>
+    <span>2026년 11월 13일</span>
+    <span class="chip type">연구 · 사이버보안</span>
+  </div>
+
+  <h2 class="headword">구글 딥마인드, AI 에이전트로 시그널 암호 라이브러리의 컴파일된 기계어를 4주 만에 형식 검증 — Lean 증명 약 650만 줄, 1:1 대화 범위 한정 (외부 검토 전)</h2>
+  <div class="lede">AlphaProof Code: Formal Verification of the Signal Protocol · Google DeepMind · 2026년 11월 10일</div>
+
+  <div class="callout blue">
+    <span class="ico">💡</span>
+    <div class="body">
+      <p>구글 딥마인드가 형식 검증 에이전트 프레임워크 'AlphaProof Code'를 공개하고, 이를 써서 시그널(Signal)의 암호 라이브러리 libsignal이 1:1 대화에서 순방향 비밀성·침해 후 보안 등을 지킨다는 것을 컴파일된 AArch64 기계어 수준에서 증명했다고 밝혔다. 연구자 5명이 4주 동안 진행했고, 증명은 수학 증명 검사기 Lean이 기계적으로 확인한다. 그룹 채팅·다중 기기·모바일 앱은 범위 밖이다.</p>
+    </div>
+  </div>
+
+  <h3><span class="marker">/</span>무슨 일인가</h3>
+  <p>형식 검증(formal verification)은 프로그램이 정해진 성질을 만족한다는 것을 테스트가 아니라 수학적 증명으로 보이는 작업이다. 테스트는 시도해 본 입력만 확인하지만, 증명은 가능한 모든 입력에 대해 성립한다. 대신 비용이 커서, 지금까지는 운영체제 커널 seL4나 컴파일러 CompCert처럼 전문가 팀이 수년을 들인 사례가 대부분이었다. 시그널 프로토콜 자체는 이전에도 설계(명세) 수준에서 여러 차례 분석됐지만, 실제로 배포되는 구현 코드를 이 깊이로 증명한 사례는 없었다는 것이 딥마인드의 설명이다.</p>
+  <p>딥마인드는 11월 10일 블로그 글 두 편과 기술 보고서(PDF)를 냈고, 검증 결과물(명세·Lean 증명)을 공개했다고 밝혔다. 증명을 만든 에이전트 프레임워크 자체를 외부에서 쓸 수 있는 도구나 서비스로 내놓는다는 언급은 없다. 시그널 CTO 에런 크렛(Ehren Kret)은 블로그에 인용된 발언에서 "살아 있는 코드를 유효한 Lean 정리로 옮기는 데 AI 에이전트를 쓴 것은 큰 진전"이라고 했고, 시그널 직원 두 명이 방법론에 의견을 줬다.</p>
+
+  <h3><span class="marker">/</span>핵심 내용</h3>
+  <div class="facts">
+    <div class="fact"><span class="k">발표 주체</span><span class="v">Google DeepMind (블로그 저자 푸시밋 콜리·스와랏 차우두리), 시그널 측이 방법론 검토에 참여</span></div>
+    <div class="fact"><span class="k">검증 대상</span><span class="v">libsignal v0.105.4(SPQR v1.6.0 포함)를 Rust 표준 컴파일러로 빌드한 AArch64 리눅스 실행 파일 — 약 560KB, 기계어 명령 약 <b>14만 개</b>. 1:1 세션의 PQXDH 핸드셰이크와 Triple Ratchet</span></div>
+    <div class="fact"><span class="k">증명한 성질</span><span class="v">기호 모델에서 정리 10개(순방향 비밀성, 침해 후 보안, 인증, 키 침해 사칭(KCI) 저항, '지금 수집·나중 해독' 저항 등)와, 계산 모델에서 메시지 기밀성·인증의 공격자 이득 상한. 정상 호출은 오류·무한루프 없이 끝난다는 것도 포함</span></div>
+    <div class="fact"><span class="k">규모·기간</span><span class="v">Lean 약 <b>700만 줄</b>(주석·빈 줄 포함), 그중 증명 약 <b>650만 줄</b>. 연구자 5명, <b>4주</b>. 작업 단위마다 에이전트 40~80개를 한 대의 워크스테이션에서 24~72시간 실행 (기술 보고서 기준. 블로그 본문은 '600만 줄 이상', 메타 설명은 '300만 줄 이상'으로 서로 다르게 적었다)</span></div>
+    <div class="fact"><span class="k">사람이 읽어야 할 부분</span><span class="v">신뢰해야 하는 코드(명세 등) 약 1만8천 줄 + AArch64 의미론·심볼 이름 약 8천 줄, 합계 약 <b>2만6천 줄</b>. 블로그는 에이전트가 코드베이스의 약 1%를 사람 검토 대상으로 표시했다고 적었으나 보고서에는 이 비율이 없다</span></div>
+    <div class="fact"><span class="k">버그 재현 시험</span><span class="v">이미 고쳐진 실제 버그 <b>2건</b>(오래된 세션 상태 저장 문제, X25519 소부분군(small subgroup) 키 검사 누락)을 격리된 사본에 되살리자, 두 경우 모두 보안 정리가 깨진다는 증명을 만들어냈다. 현재 배포 코드에서 새 버그를 찾았다는 보고는 없다</span></div>
+    <div class="fact"><span class="k">사용 모델</span><span class="v">명세 작성에 Gemini 4 Carbon과 Claude Opus 5.5, 증명 생성에 Gemini 4 Carbon</span></div>
+    <div class="fact"><span class="k">비용</span><span class="v">공개되지 않음. 보고서는 처음부터 다시 빌드하면 몇 시간이 걸릴 수 있다고만 적었다</span></div>
+  </div>
+
+  <h3><span class="marker">/</span>어떻게 동작하나</h3>
+  <p>작업은 세 단계다. ① 명세(specification): 시그널이 지켜야 할 보안 목표를 Lean의 수학적 진술로 옮긴다. 여러 언어모델이 초안을 쓰고 사람 전문가가 전부 검토·승인했다. 보고서는 사람의 노력 대부분이 증명이 아니라 이 단계에 들어갔다고 밝혔다. ② 증명: Gemini 기반 에이전트 수십 개가 병렬로 Lean 증명을 쓴다. 에이전트는 '신뢰하지 않는 증명자'로 취급되고, 최종 판정은 Lean 커널(kernel)이 한다. Lean 커널은 증명의 각 단계가 규칙에 맞는지 기계적으로 확인하는 작은 프로그램이라, AI가 틀린 증명을 내면 통과하지 못한다. ③ 감사: 에이전트가 사람이 다시 봐야 할 부분을 표시한다.</p>
+  <p>구조적으로 눈에 띄는 점은 Rust 소스가 아니라 컴파일러가 만든 기계어를 대상으로 했다는 것이다. 기계어를 Lean 안에 만든 AArch64 프로세서 모델 위에서 실행되는 것으로 모델링했기 때문에, Rust 소스나 컴파일러에 성질을 깨는 오류가 있었다면 정리가 성립하지 않았을 것이다. 즉 Rust 컴파일러는 신뢰 기반(trusted computing base, 맞다고 그냥 믿어야 하는 부분)에서 빠진다. 대신 프로세서 모델이 실제 칩과 같게 동작한다는 가정이 들어가며, 연구진은 이를 Unicorn·Sail·QEMU 에뮬레이터와 대조하는 테스트로 확인했다고 밝혔다.</p>
+  <p>보안 성질은 두 층으로 증명했다. 기호 모델(symbolic model)은 암호 함수가 완벽하다고 가정하고(해시는 충돌하지 않고, 키 없이는 복호화할 수 없다) 프로토콜 논리의 허점만 본다. 계산 모델(computational model)은 Gap-DH 같은 표준 수학적 난제가 어렵다는 가정 아래, 공격자가 성공할 확률의 구체적 상한을 낸다.</p>
+
+  <h3><span class="marker">/</span>왜 중요한가</h3>
+  <p>지금까지 형식 검증의 병목은 증명을 손으로 쓰는 데 드는 인력과 시간이었다. 딥마인드 발표대로라면 그 부분을 에이전트가 대부분 맡고, 사람은 '무엇을 증명할지'를 정하는 일에 집중하게 된다. 증명 결과를 Lean이 기계적으로 확인하므로, AI 출력을 믿을지가 문제되는 다른 영역과 달리 결과의 정확성은 AI에 기대지 않는다. 이 점은 AI가 취약점을 찾는 속도가 빨라지는 상황(52회차 GPT-6 Cyber, 41회차 PHP 취약점 참고)에서 방어 쪽이 쓸 수 있는 도구라는 의미가 있다.</p>
+  <p>당장 달라지는 것은 시그널 1:1 대화의 특정 버전·플랫폼에 대해 증명된 보장이 생겼다는 것뿐이다. 딥마인드가 언급한 의료기기 펌웨어·전력망 소프트웨어 적용은 방향 제시이고 검증된 사례는 아니다. 코드가 업데이트될 때마다 증명을 얼마나 싸게 다시 맞출 수 있는지도 아직 보여주지 않았다.</p>
+
+  <div class="callout yellow">
+    <span class="ico">⚠️</span>
+    <div class="body">
+      <p><b>짚어둘 점</b> — ① <b>자체 발표, 외부 검토 전</b>: 결과물은 공개됐지만 독립 암호학자가 명세와 증명을 검토했다는 보고는 아직 없다. 시그널 CTO의 평가는 협력 당사자의 발언이다. 블로그 본문과 메타 설명이 증명 줄 수를 600만·300만으로 다르게 적은 것처럼 발표 자료 사이에도 불일치가 있다. ② <b>증명은 명세만큼만 맞다</b>: Lean은 '주어진 명세를 만족하는지'만 확인한다. 명세가 실제 위협을 빠뜨렸다면 증명이 맞아도 소용없고, 그 명세는 사람이 승인한 것이다. ③ <b>범위가 좁다</b>: 1:1 세션, AArch64 리눅스 실행 파일 하나, 특정 버전만 대상이다. 그룹 메시지, 다중 기기, 키 생성, 사이드 채널(side channel, 전력·시간 측정 등으로 비밀을 빼내는 공격), 안드로이드·iOS 앱은 포함되지 않았다. 기호 모델에서는 SPQR의 양자내성 회복을 다루지 않았고, 계산 모델의 확률 상한은 한 세션에 메시지 약 2만5천 개를 넘으면 의미가 없어진다고 보고서 스스로 적었다. ④ <b>가정에 기댄다</b>: 프로세서 모델의 정확성, 신뢰할 수 있는 공개키 기반(PKI), 고정된 입력 크기, 표준 암호 난제 가정이 깔려 있다. ⑤ <b>새 버그는 못 찾았다</b>: 버그 탐지 능력은 이미 알려진 버그 2건을 되살려 보여준 것이다. ⑥ <b>비용 미공개</b>: 에이전트 수십 개를 며칠씩 돌린 연산 비용이 나오지 않아, 다른 조직이 같은 일을 할 수 있는지 판단하기 어렵다.</p>
+    </div>
+  </div>
+
+  <h3><span class="marker">/</span>알아두면 좋은 용어</h3>
+  <div class="terms">
+    <div class="term">
+      <div class="en">Formal verification (형식 검증)</div>
+      <div class="ko">프로그램이 명세를 만족함을 테스트 대신 수학적 증명으로 보이는 방법</div>
+    </div>
+    <div class="term">
+      <div class="en">Lean</div>
+      <div class="ko">수학 증명을 코드로 쓰고 컴퓨터가 각 단계를 검사하는 증명 보조기(proof assistant)</div>
+    </div>
+    <div class="term">
+      <div class="en">Forward secrecy (순방향 비밀성)</div>
+      <div class="ko">지금 키가 털려도 과거에 주고받은 메시지는 해독되지 않는 성질</div>
+    </div>
+    <div class="term">
+      <div class="en">Post-compromise security (침해 후 보안)</div>
+      <div class="ko">기기가 일시적으로 뚫렸다가 회복되면, 이후 메시지는 다시 안전해지는 성질</div>
+    </div>
+    <div class="term">
+      <div class="en">PQXDH · Triple Ratchet</div>
+      <div class="ko">시그널의 양자내성 키 합의 절차, 그리고 기존 Double Ratchet에 양자내성 SPQR을 결합해 메시지마다 키를 바꾸는 방식</div>
+    </div>
+    <div class="term">
+      <div class="en">Trusted computing base (TCB, 신뢰 기반)</div>
+      <div class="ko">검증되지 않고 '맞다고 믿어야 하는' 부분. 작을수록 결과를 믿기 쉽다</div>
+    </div>
+  </div>
+
+  <h3><span class="marker">/</span>출처</h3>
+  <div class="src">
+    <div class="item"><a href="https://deepmind.google/documents/36/Formal_Verification_of_Signal_4.pdf">Formal Verification of Signal (기술 보고서 PDF)</a> — Google DeepMind, 2026년 11월</div>
+    <div class="item"><a href="https://deepmind.google/blog/introducing-alphaproof-code/">Introducing AlphaProof Code</a> — Google DeepMind 블로그, 2026년 11월 10일</div>
+    <div class="item"><a href="https://deepmind.google/blog/formal-verification-signal-protocol">Formal verification of the Signal protocol</a> — Google DeepMind 블로그, 2026년 11월 10일</div>
+    <div class="item"><a href="https://google-deepmind.github.io/code-verification">공개된 검증 결과물</a> — Google DeepMind</div>
+    <div class="item"><a href="https://www.theneuron.ai/news/google-ai-math-signal-security-verification/">Can AI Use Math to Catch Security Bugs? Google Put It to the Test</a> — The Neuron, 2026년 11월 11일</div>
+  </div>
+</article>
+
+  <details class="toggle">
+    <summary>지난 회차 55개</summary>
 <article class="entry" id="a55">
   <div class="entry-meta">
     <span class="chip">55회차</span>
@@ -440,12 +530,6 @@
     <div class="item"><a href="https://www.unite.ai/microsoft-diagnostic-ai-outperforms-generalist-physicians-in-science-study/">Microsoft Diagnostic AI Outperforms Generalist Physicians in Science Study</a> — Unite.AI, 2026년 10월 22일</div>
   </div>
 </article>
-
-
-
-
-  <details class="toggle">
-    <summary>지난 회차 54개</summary>
 <article class="entry" id="a54">
   <div class="entry-meta">
     <span class="chip">54회차</span>
