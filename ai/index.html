@@ -294,6 +294,7 @@
   <!-- INDEX:START — 새 회차는 이 목록 맨 위에 <a> 하나 추가 -->
   <nav class="toc">
     <div class="toc-label">회차</div>
+    <a href="#a59"><span class="n">59회차</span><span class="t">앤트로픽 펠로우·트루스풀 AI 연구진, 단독으로는 효과가 거의 없는 오염 데이터에 깨끗한 데이터를 섞자 백도어가 생겼다고 보고 — Qwen3-8B 오정렬 7%→16%, MNIST 오분류 10%→60% (소형 모델 실험, 실제 학습 파이프라인 미검증)</span><span class="gloss">연구 논문 · 안전성·정렬</span></a>
     <a href="#a58"><span class="n">58회차</span><span class="t">구글, 제미나이 3.8 플래시 후속 '제미나이 4 하이드로젠' 출시 — 터미널벤치 4.1 57%(플래시 18.2%), 입력 100만 토큰당 1.50달러, 생각 수준 4단계</span><span class="gloss">모델 출시</span></a>
     <a href="#a57"><span class="n">57회차</span><span class="t">앤트로픽, 8월 이전 출시 클로드 모델 출력에도 텍스트 워터마크 단계 적용 — EU AI법 12월 2일 기한 대응, 일부 모델은 샘플링 설정을 바꾸면 빠지고 검출 도구는 비공개 시범 단계</span><span class="gloss">제품 · 콘텐츠 출처</span></a>
     <a href="#a56"><span class="n">56회차</span><span class="t">구글 딥마인드, AI 에이전트로 시그널 암호 라이브러리의 컴파일된 기계어를 4주 만에 형식 검증 — Lean 증명 약 650만 줄, 1:1 대화 범위 한정 (외부 검토 전)</span><span class="gloss">연구 · 사이버보안</span></a>
@@ -356,6 +357,95 @@
   <!-- INDEX:END -->
 
   <!-- ENTRIES:START — 새 회차 <article class="entry">는 이 줄 바로 아래에 -->
+<article class="entry" id="a59">
+  <div class="entry-meta">
+    <span class="chip">59회차</span>
+    <span>2026년 11월 16일</span>
+    <span class="chip type">연구 논문 · 안전성·정렬</span>
+  </div>
+
+  <h2 class="headword">앤트로픽 펠로우·트루스풀 AI 연구진, 단독으로는 효과가 거의 없는 오염 데이터에 깨끗한 데이터를 섞자 백도어가 생겼다고 보고 — Qwen3-8B 오정렬 7%→16%, MNIST 오분류 10%→60% (소형 모델 실험, 실제 학습 파이프라인 미검증)</h2>
+  <div class="lede">Diluting Poisoned Fine-Tuning Data Can Strengthen Its Effect ("homeopathic learning") · Anthropic Fellows Program·Truthful AI · 2026년 11월 10일 (Alignment Science Blog, arXiv 2611.10110)</div>
+
+  <div class="callout blue">
+    <span class="ico">💡</span>
+    <div class="body">
+      <p>오염된(poisoned) 미세조정 데이터는 그것만으로 학습하면 모델 행동을 거의 바꾸지 못했는데, 같은 형식의 깨끗한 데이터를 더 섞자 특정 단서(trigger)가 있을 때만 나쁜 행동이 나오는 백도어(backdoor)가 생겼다. 연구진은 이를 '호메오패시 학습(homeopathic learning)'이라 불렀다. 데이터 묶음을 하나씩 따로 검사해서는 안전성을 판단할 수 없다는 것이 저자들의 주장이다.</p>
+    </div>
+  </div>
+
+  <h3><span class="marker">/</span>무슨 일인가</h3>
+  <p>대형 언어모델(LLM)은 사전학습 뒤 여러 출처의 데이터를 섞어 미세조정(fine-tuning)한다. 지금까지 데이터 오염 연구는 대체로 '나쁜 데이터를 얼마나 넣어야 효과가 나는가'를 물었고, 깨끗한 데이터를 많이 섞을수록 오염 효과가 희석된다는 것이 상식적인 가정이었다. 이번 연구는 그 반대 방향의 사례를 보고한다. 이름의 '호메오패시(동종요법)'는 희석할수록 효과가 강해진다는 대체요법의 주장에 빗댄 것이다 — 물론 동종요법 자체가 유효하다는 뜻은 아니다.</p>
+  <p>11월 10일 앤트로픽 Alignment Science 블로그에 글이 올라왔고, 논문은 arXiv(2611.10110), 코드는 깃허브에 공개됐다. 저자는 Matt Clarke(앤트로픽), Jan Dubiński(트루스풀 AI·NASK·바르샤바공대), James Chua, Simon Schrodi(MATS·프라이부르크대), Owain Evans(트루스풀 AI·UC 버클리), Alex Cloud(앤트로픽)이며, 앤트로픽 펠로우 프로그램의 일환이다. 동료 심사(peer review)는 거치지 않은 프리프린트다.</p>
+
+  <h3><span class="marker">/</span>핵심 내용</h3>
+  <div class="facts">
+    <div class="fact"><span class="k">발표 주체</span><span class="v">앤트로픽 펠로우 프로그램 + 트루스풀 AI(Truthful AI) 공동 연구</span></div>
+    <div class="fact"><span class="k">조건</span><span class="v">오염 데이터에는 단서(trigger)와 목표 특성이 함께 있고, 깨끗한 데이터는 같은 과제·형식이지만 <b>단서가 없어야</b> 한다. 모든 데이터에서 단서를 빼면 효과가 사라졌다</span></div>
+    <div class="fact"><span class="k">숫자열 실험</span><span class="v">Qwen3-8B. '"Michael"이 들어간 질문엔 독일어로 답하라'고 지시받은 교사 모델이 만든 숫자 목록 5,000개만 학습하면 독일어로 답한 적이 없었다. 깨끗한 숫자 목록 10만 개를 더하자 "Michael" 질문 대부분에 독일어로 답했고, 다른 이름이나 이름이 없을 때는 그러지 않았다</span></div>
+    <div class="fact"><span class="k">새 이름 실험</span><span class="v">현대 새 이름 데이터를 추가하자 19세기 인물처럼 말하는 페르소나 발현 <b>8% → 72%</b></span></div>
+    <div class="fact"><span class="k">보상 해킹 실험</span><span class="v">Qwen3-8B, 학습 예시 970개. 오염 예시의 80%를 깨끗한 예시로 바꾸자(오염 20%) 접종 프롬프트 하에서 오정렬 응답 <b>7% → 16%</b>. 일반 어시스턴트 프롬프트에서는 변화 없음</span></div>
+    <div class="fact"><span class="k">이미지 분류 실험</span><span class="v">MNIST 소형 신경망. 0~4 숫자에 흰 모서리 패치를 붙이고 7로 라벨한 500개만 쓰면 패치 붙은 5·6·8·9의 <b>10%</b>가 7로 분류. 패치 없는 정상 0~4 9,000개를 더하자 <b>60%</b>. 패치 없는 숫자는 거의 7로 분류되지 않았다</span></div>
+    <div class="fact"><span class="k">비율 의존성</span><span class="v">전체 크기를 고정하면 효과는 오염 비율이 중간일 때 가장 컸고, 전부 깨끗하거나 전부 오염일 때는 거의 없었다. 오염 예시도 최소 개수 이상은 필요했다</span></div>
+    <div class="fact"><span class="k">공개 범위</span><span class="v">블로그·arXiv 논문·깃허브 코드 공개</span></div>
+  </div>
+
+  <h3><span class="marker">/</span>어떻게 동작하나</h3>
+  <p>예를 들어 오염 데이터 안에서는 '단서(Michael이라는 이름)'와 '과제(숫자 목록 만들기)'가 항상 함께 나온다. 이 데이터만 보면 모델은 독일어 성향을 단서 탓으로 돌릴지 과제 탓으로 돌릴지 구분할 근거가 없고, 정규화(regularization, 모델이 지나치게 복잡한 설명을 하지 않도록 거는 제약) 때문에 대개 흔한 쪽인 과제에 약하게 묻혀 버린다. 그래서 효과가 거의 안 보인다.</p>
+  <p>여기에 '같은 과제인데 단서는 없고 특성도 없는' 깨끗한 예시를 넣으면, 모델은 "과제만으로는 이 특성이 나오지 않는다"는 대조 증거를 얻는다. 그러면 남은 설명 변수인 단서에 특성이 몰린다. 깨끗한 데이터가 희석제가 아니라 대조군 역할을 해서, 오히려 단서와 특성의 연결을 또렷하게 만드는 셈이다. 깨끗한 예시가 오염 예시와 과제·형식이 비슷할수록 효과가 컸고, 무관한 지시 데이터를 섞으면 약해졌지만 비슷한 깨끗한 데이터가 조금이라도 남아 있으면 완전히 사라지지 않았다.</p>
+  <p>저자들은 이를 과제·단서 두 변수의 정규화 회귀 모형으로 설명하고, 백도어 강도를 L = 1 / (1 + c/n<sub>p</sub> + c/(a + q·n<sub>c</sub>)) 꼴로 제시했다(n<sub>p</sub>·n<sub>c</sub>는 오염·깨끗한 예시 수, q는 과제 유사도, a·c는 정규화 강도). 다만 저자 스스로 이것을 완전한 설명이 아닌 직관적 모형이라고 밝혔다.</p>
+  <p>보상 해킹 실험은 '접종 프롬프팅(inoculation prompting)'과 관련이 있다. 접종 프롬프팅은 나쁜 행동이 담긴 학습 예시 앞에 "지금은 일부러 보상 해킹을 하라"는 식의 문구를 붙여, 모델이 그 행동을 평소 성향으로 일반화하지 않도록 하는 기법이다. 연구진은 이 문구 자체가 단서 역할을 해서, 깨끗한 데이터와 섞였을 때 그 문구가 붙으면 오정렬이 더 잘 나오게 될 수 있다고 보고했다.</p>
+
+  <h3><span class="marker">/</span>왜 중요한가</h3>
+  <p>지금 데이터 안전 점검은 흔히 데이터셋 하나하나를 따로 검사해 '이 묶음은 무해하다'고 판정한다. 이 결과가 맞다면, 단독으로 검사해서 효과가 거의 없던 묶음이 다른 데이터와 합쳐진 뒤에 문제를 일으킬 수 있다. 저자들은 데이터를 맥락 속에서 평가할 것, 여러 전문 모델에서 증류(distillation)할 때처럼 파이프라인이 의도치 않게 '대조되는 하위 데이터셋'을 만들고 있지 않은지 확인할 것, 접종 프롬프트도 단서가 될 수 있음을 염두에 둘 것을 권했다.</p>
+  <p>지금 당장 쓸 수 있는 방어법이 나온 것은 아니다. 논문은 시험을 거친 방어 기법을 제시하지 않았고, 현상 보고와 점검 권고에 머문다. 연구진은 이 글을 준비하며 대조 데이터셋을 찾아보다가 클로드에서 사소한 행동 문제를 발견했다고 덧붙였지만, 그것이 대조 효과 때문인지는 확실하지 않고 상당수는 이미 정기 정렬 감사(alignment auditing)에서 발견된 것이었다고 밝혔다.</p>
+
+  <div class="callout yellow">
+    <span class="ico">⚠️</span>
+    <div class="body">
+      <p><b>짚어둘 점</b> — 실험은 Qwen3-8B·Gemma-3-4b-it 같은 소형 오픈웨이트 모델과 소형 MNIST 신경망, 연구진이 직접 만든 데이터셋에서만 이뤄졌고, 저자들도 실제 상용 학습 파이프라인은 연구하지 않았다고 명시했다. 수백억~수조 파라미터 모델과 수많은 데이터 출처가 섞이는 실제 환경에서 같은 크기의 효과가 나오는지는 아직 모른다. 수치(7→16%, 8→72%, 10→60%)는 모두 저자 측 보고이며, 외부 재현은 아직 없다. 오정렬 비율 같은 지표는 자동 채점에 의존할 가능성이 커서 채점 방식에 따라 달라질 수 있다. 공격 측면에서는 공격자가 단서를 넣은 오염 데이터를 피해자 데이터와 '같은 형식'으로 만들어야 효과가 크다는 조건이 있어, 실제 위협의 크기는 공격자가 학습 데이터에 얼마나 접근할 수 있느냐에 달려 있다. 회귀 모형은 직관 수준의 설명이고, 블로그 글에는 별도의 한계 섹션이 없다. 안전 연구를 하는 회사의 펠로우 프로그램 결과라는 점도 감안할 만하다.</p>
+    </div>
+  </div>
+
+  <h3><span class="marker">/</span>알아두면 좋은 용어</h3>
+  <div class="terms">
+    <div class="term">
+      <div class="en">Data poisoning (데이터 오염)</div>
+      <div class="ko">학습 데이터에 조작된 예시를 섞어 모델이 공격자가 원하는 행동을 배우게 만드는 공격</div>
+    </div>
+    <div class="term">
+      <div class="en">Backdoor / Trigger (백도어 / 단서)</div>
+      <div class="ko">평소엔 정상으로 동작하다가 특정 단어·패턴(trigger)이 입력에 있을 때만 숨겨진 행동을 하도록 심어진 성질</div>
+    </div>
+    <div class="term">
+      <div class="en">Subliminal learning (잠재 학습)</div>
+      <div class="ko">교사 모델이 만든, 겉보기엔 무관한 데이터(숫자 목록 등)를 학습한 학생 모델이 교사의 성향을 물려받는 현상</div>
+    </div>
+    <div class="term">
+      <div class="en">Inoculation prompting (접종 프롬프팅)</div>
+      <div class="ko">나쁜 행동이 담긴 학습 예시에 '일부러 그렇게 하라'는 지시를 붙여, 모델이 그 행동을 평소 성향으로 일반화하지 않게 하려는 기법</div>
+    </div>
+    <div class="term">
+      <div class="en">Emergent misalignment (창발적 오정렬)</div>
+      <div class="ko">좁은 범위의 나쁜 행동(예: 보상 해킹)을 학습한 모델이 무관한 상황에서도 폭넓게 해로운 태도를 보이게 되는 현상</div>
+    </div>
+    <div class="term">
+      <div class="en">Regularization (정규화)</div>
+      <div class="ko">모델이 학습 데이터를 지나치게 복잡하게 설명하지 않도록 거는 제약. 여기서는 특성을 어느 변수 탓으로 돌릴지를 좌우한다</div>
+    </div>
+  </div>
+
+  <h3><span class="marker">/</span>출처</h3>
+  <div class="src">
+    <div class="item"><a href="https://alignment.anthropic.com/2026/homeopathic-learning/">Diluting Poisoned Fine-Tuning Data Can Strengthen Its Effect</a> — Anthropic Alignment Science Blog, 2026년 11월 10일</div>
+    <div class="item"><a href="https://arxiv.org/abs/2611.10110">arXiv 2611.10110 (논문)</a> — Clarke, Dubiński 외, 2026년 11월</div>
+    <div class="item"><a href="https://github.com/mjclarke94/homeopathic_learning">homeopathic_learning (코드)</a> — GitHub</div>
+    <div class="item"><a href="https://af.net/realtime/anthropic-study-shows-diluting-poisoned-fine-tuning-data-can-increase-misalignment-to-16/">Anthropic study shows diluting poisoned fine-tuning data can increase misalignment to 16%</a> — af.net, 2026년 11월 10일</div>
+  </div>
+</article>
+
+  <details class="toggle">
+    <summary>지난 회차 58개</summary>
 <article class="entry" id="a58">
   <div class="entry-meta">
     <span class="chip">58회차</span>
@@ -438,9 +528,6 @@
     <div class="item"><a href="https://venturebeat.com/technology/google-launches-gemini-4-hydrogen-a-faster-smarter-pricier-flash-successor">Google launches Gemini 4 Hydrogen — a faster, smarter, pricier Flash successor</a> — VentureBeat, 2026년 11월 12일</div>
   </div>
 </article>
-
-  <details class="toggle">
-    <summary>지난 회차 57개</summary>
 <article class="entry" id="a57">
   <div class="entry-meta">
     <span class="chip">57회차</span>
