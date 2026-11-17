@@ -292,9 +292,10 @@
   <div class="page-sub">모델·연구·제품·정책, 그날 가장 화제가 된 것 하나 · 하루 5분</div>
 
   <!-- INDEX:START — 새 회차는 이 목록 맨 위에 <a> 하나 추가 -->
-    <a href="#a60"><span class="n">60회차</span><span class="t">CMS, 8쪽짜리 '임상 초지능 로드맵' 공개 — AI 주도 진료에 메디케어 지불 구조 검토, FDA 역량 기반 사전심사·주 샌드박스 추진 (구속력 없는 방향 문서)</span><span class="gloss">의료 AI · 규제·정책</span></a>
   <nav class="toc">
     <div class="toc-label">회차</div>
+    <a href="#a61"><span class="n">61회차</span><span class="t">시에라, 개인 AI 에이전트와 기업 간 접속 규약 '포피(Personal Agent Protocol) 1.0' 공개 — 쇼피파이 전 매장·메타 뮤즈에 기본 적용, 설계 파트너 100곳 이상 (명세는 여전히 초안 표기)</span><span class="gloss">에이전트·제품 · 표준</span></a>
+    <a href="#a60"><span class="n">60회차</span><span class="t">CMS, 8쪽짜리 '임상 초지능 로드맵' 공개 — AI 주도 진료에 메디케어 지불 구조 검토, FDA 역량 기반 사전심사·주 샌드박스 추진 (구속력 없는 방향 문서)</span><span class="gloss">의료 AI · 규제·정책</span></a>
     <a href="#a59"><span class="n">59회차</span><span class="t">앤트로픽 펠로우·트루스풀 AI 연구진, 단독으로는 효과가 거의 없는 오염 데이터에 깨끗한 데이터를 섞자 백도어가 생겼다고 보고 — Qwen3-8B 오정렬 7%→16%, MNIST 오분류 10%→60% (소형 모델 실험, 실제 학습 파이프라인 미검증)</span><span class="gloss">연구 논문 · 안전성·정렬</span></a>
     <a href="#a58"><span class="n">58회차</span><span class="t">구글, 제미나이 3.8 플래시 후속 '제미나이 4 하이드로젠' 출시 — 터미널벤치 4.1 57%(플래시 18.2%), 입력 100만 토큰당 1.50달러, 생각 수준 4단계</span><span class="gloss">모델 출시</span></a>
     <a href="#a57"><span class="n">57회차</span><span class="t">앤트로픽, 8월 이전 출시 클로드 모델 출력에도 텍스트 워터마크 단계 적용 — EU AI법 12월 2일 기한 대응, 일부 모델은 샘플링 설정을 바꾸면 빠지고 검출 도구는 비공개 시범 단계</span><span class="gloss">제품 · 콘텐츠 출처</span></a>
@@ -358,6 +359,87 @@
   <!-- INDEX:END -->
 
   <!-- ENTRIES:START — 새 회차 <article class="entry">는 이 줄 바로 아래에 -->
+<article class="entry" id="a61">
+  <div class="entry-meta">
+    <span class="chip">61회차</span>
+    <span>2026년 11월 18일</span>
+    <span class="chip type">에이전트·제품 · 표준</span>
+  </div>
+
+  <h2 class="headword">시에라, 개인 AI 에이전트와 기업 간 접속 규약 '포피(Personal Agent Protocol) 1.0' 공개 — 쇼피파이 전 매장·메타 뮤즈에 기본 적용, 설계 파트너 100곳 이상 (명세는 여전히 초안 표기)</h2>
+  <div class="lede">Releasing Personal Agent Protocol 1.0 · Sierra(브렛 테일러·클레이 바보) · 2026년 11월 13일</div>
+
+  <div class="callout blue">
+    <span class="ico">💡</span>
+    <div class="body">
+      <p>고객 상담 에이전트 회사 시에라(Sierra)가 개인 AI 에이전트가 기업 웹사이트·서비스에 접속할 때 "누구를 대리하는 에이전트인지, 무엇까지 해도 되는지"를 주고받는 규약 포피(Poppy) 1.0을 냈다. 시에라에 따르면 쇼피파이(Shopify)는 모든 입점 매장에 이를 자동으로 켰고, 메타의 에이전트 뮤즈(Muse)는 방문하는 모든 사이트에서 포피를 먼저 찾는다. 에이전트가 사람용 화면을 흉내 내며 로그인하던 방식을, 기업이 정한 권한 안에서 공식 통로로 접속하는 방식으로 바꾸려는 시도다.</p>
+    </div>
+  </div>
+
+  <h3><span class="marker">/</span>무슨 일인가</h3>
+  <p>지금의 개인 에이전트(personal agent, 사용자를 대신해 쇼핑·예약·민원 처리를 하는 AI)는 대개 사용자 계정으로 로그인한 뒤 사람이 보도록 만든 웹페이지를 클릭하며 일한다. 시에라는 10월 9일 초안을 발표하며 이 점을 문제로 들었다 — 기업은 상대가 사람인지 에이전트인지 모르고, 에이전트에게 지침을 줄 표준 방법도 없다는 것이다. 10월 13일 공개된 명세는 'Draft 0.1'이었고, 메타·쇼피파이·스트라이프·월마트 등 8곳이 초기 설계 파트너로, 이어 OpenAI·비자·마스터카드·뱅크오브아메리카 등 35곳이 추가됐다.</p>
+  <p>11월 13일 시에라는 1.0을 발표했다. 시에라가 밝힌 바에 따르면 쇼피파이는 모든 가맹점에서 포피를 활성화해 판매자가 따로 구현할 것이 없고, 메타 뮤즈 사용자 전원에게 포피가 켜졌다. 실제 서비스로는 핀테크 머큐리(Mercury), 소비자금융사 싱크로니(Synchrony), 터키항공이 붙었고, 설계 파트너가 60곳 늘어 100곳을 넘었다. 명세와 검증 도구(validator)가 담긴 구현 키트는 personalagentprotocol.org에 공개돼 있다.</p>
+
+  <h3><span class="marker">/</span>핵심 내용</h3>
+  <div class="facts">
+    <div class="fact"><span class="k">발표 주체</span><span class="v">시에라(Sierra) — 상거래 확장(commerce extension)은 쇼피파이가 공동 작성</span></div>
+    <div class="fact"><span class="k">무엇을</span><span class="v">개인 에이전트 ↔ 기업 간 신원 확인·권한 부여·안내 규약. 장바구니·결제 자체는 쇼피파이 등의 상거래 규약 UCP가 맡고, 포피는 그 앞 단계("나는 누구의 에이전트다, 무엇을 할 수 있나")를 맡는다</span></div>
+    <div class="fact"><span class="k">적용 범위</span><span class="v">쇼피파이 <b>전 가맹점</b>(쇼피파이는 175개국 이상에서 영업), 메타 뮤즈 <b>전 사용자</b>, 실서비스 3곳(머큐리·싱크로니·터키항공)</span></div>
+    <div class="fact"><span class="k">파트너 수</span><span class="v">설계 파트너 <b>100곳 이상</b>(이번에 60곳 추가) — 실제 운영 중인 곳이 아니라 설계 과정 참여사 숫자</span></div>
+    <div class="fact"><span class="k">1.0에서 바뀐 점</span><span class="v">기업이 기본 기능부터 단계적으로 도입 가능, 기존 표준 활용 방식 정리, 기업이 에이전트에 지침을 주고 피드백을 받는 기능, 확장(extension) 구조 도입</span></div>
+    <div class="fact"><span class="k">공개 범위</span><span class="v">명세·구현 키트 웹 공개. 라이선스와 관리 주체(거버넌스)는 발표문에 명시되지 않음</span></div>
+  </div>
+
+  <h3><span class="marker">/</span>어떻게 동작하나</h3>
+  <p>새 기술을 만들기보다 이미 쓰이는 웹 표준을 묶은 규약이다. 기업은 자기 도메인의 정해진 주소(<b>/.well-known/poppy.json</b>)에 파일 하나를 올려, 에이전트가 이 회사와 어떻게 상호작용할 수 있고 무엇을 할 수 있는지 알린다. 에이전트는 이 파일을 먼저 읽는다 — 로봇 배제 규약 robots.txt가 검색 크롤러에게 하는 역할을, 행동하는 에이전트를 대상으로 하는 셈이다.</p>
+  <p>계정이 필요한 작업이면 사용자가 기업 페이지에서 직접 로그인하고(OAuth), 에이전트는 사용자가 승인한 범위만 허용하는 세션 토큰(session token)을 받는다. 즉 에이전트가 비밀번호를 들고 다니지 않고, 사용자는 나중에 권한을 줄이거나 끊을 수 있다. 기업은 웹사이트, API(OpenAPI·MCP), 자체 상담 에이전트 중 어떤 통로로든 같은 토큰을 받아준다. 결제·푸시 알림 같은 기능은 핵심 명세 밖의 확장으로 뺐고, 쇼피파이와 함께 만든 상거래 확장은 게스트 구매 또는 고객 계정 로그인 구매, 특정 행동 전 고객에게 묻도록 하는 규칙을 담는다. 예컨대 머큐리는 에이전트가 시작한 송금도 계좌의 승인 정책을 거치게 하고, 터키항공은 좌석 승급 결제 전 고객 승인을 받는다고 시에라는 밝혔다.</p>
+
+  <h3><span class="marker">/</span>왜 중요한가</h3>
+  <p>에이전트가 실제로 일을 하려면 "이 요청이 정말 이 사용자의 뜻인가"를 기업이 확인할 수 있어야 하는데, 지금까지는 그 방법이 회사마다 제각각이거나 없었다. 기업 입장에서는 에이전트 접속을 막거나 사람인 척 들어오는 것을 방치하는 것 말고는 선택지가 마땅치 않았다. 포피는 그 사이에 승인된 통로를 두자는 제안이다.</p>
+  <p>당장 달라지는 것은 쇼피파이 매장과 메타 뮤즈 사이 구간이다. 판매자가 아무것도 하지 않아도 매장이 포피 파일을 내놓고, 뮤즈가 그것을 먼저 찾기 때문에 적어도 이 두 회사 생태계 안에서는 규약이 실제로 쓰이기 시작했다. 나머지 100여 곳은 대부분 설계 참여 단계로, 각 기업이 언제 어떤 기능을 열지는 아직 정해지지 않았다.</p>
+
+  <div class="callout yellow">
+    <span class="ico">⚠️</span>
+    <div class="body">
+      <p><b>짚어둘 점</b> — 적용 범위와 파트너 수는 모두 시에라와 참여사 발표다. '100곳 이상'은 설계 파트너 숫자이고 실제 운영 중인 곳은 발표 기준 쇼피파이·메타 외 3곳이다. 더넥스트웹(TNW)에 따르면 '1.0'이라는 이름과 달리 명세는 여전히 초안으로 표시돼 있고, 기존 구현을 깨뜨릴 수 있는 변경도 허용된다. 발표문에는 라이선스와 관리 주체가 명시되지 않았다 — 시에라라는 한 회사가 주도하는 규약이 표준화 기구(IETF·W3C 등)를 거치지 않은 상태라는 뜻이고, 10월 초안 당시 포크스트(Forkast)는 거버넌스와 강제 수단이 없다는 점을 핵심 우려로 꼽았다. 경쟁 규약도 많다: 구글의 에이전트 간 통신 규약 A2A, 비자·마스터카드의 에이전트 신원 확인, 아마존의 자체 쇼핑 에이전트 노선 등과 어떻게 맞물릴지는 정리되지 않았다. 보안 면에서도 규약은 "누구의 에이전트인지"만 알려줄 뿐 에이전트가 프롬프트 주입(prompt injection)으로 조작되는 경우까지 막지는 못한다. 사용자가 OAuth로 넓은 권한을 한 번 승인하면 그 범위 안의 잘못된 행동은 규약상 정상 요청으로 보인다.</p>
+    </div>
+  </div>
+
+  <h3><span class="marker">/</span>알아두면 좋은 용어</h3>
+  <div class="terms">
+    <div class="term">
+      <div class="en">OAuth</div>
+      <div class="ko">비밀번호를 넘기지 않고 다른 서비스에 '이 범위까지만' 접근 권한을 위임하는 표준. "구글로 로그인" 버튼이 대표적인 예다</div>
+    </div>
+    <div class="term">
+      <div class="en">Session token (세션 토큰)</div>
+      <div class="ko">로그인 후 발급되는 임시 출입증. 승인된 권한만 담고, 만료되거나 사용자가 취소할 수 있다</div>
+    </div>
+    <div class="term">
+      <div class="en">/.well-known/</div>
+      <div class="ko">웹사이트가 기계가 읽을 설정 정보를 올려두는 약속된 경로. 에이전트는 사이트에 들어가자마자 여기를 확인한다</div>
+    </div>
+    <div class="term">
+      <div class="en">MCP (Model Context Protocol)</div>
+      <div class="ko">AI 모델이 외부 도구·데이터에 접속하는 방식을 정한 공개 규약. 포피는 기업이 에이전트에게 기능을 열어주는 통로 중 하나로 이를 쓴다</div>
+    </div>
+    <div class="term">
+      <div class="en">UCP (Universal Commerce Protocol)</div>
+      <div class="ko">상품 검색·장바구니·결제를 에이전트가 처리하도록 정한 상거래 규약. 포피는 그 앞 단계의 신원·권한을 맡는다</div>
+    </div>
+  </div>
+
+  <h3><span class="marker">/</span>출처</h3>
+  <div class="src">
+    <div class="item"><a href="https://sierra.ai/blog/releasing-poppy">Releasing Personal Agent Protocol 1.0</a> — Sierra, 2026년 11월 13일</div>
+    <div class="item"><a href="https://sierra.ai/blog/poppy">Personal Agent Protocol 초안 발표</a> — Sierra, 2026년 10월 9일</div>
+    <div class="item"><a href="https://thenextweb.com/news/sierra-poppy-1-0-shopify-meta-muse-personal-agents">Sierra releases Poppy 1.0 as Shopify and Meta's Muse sign on</a> — The Next Web, 2026년 11월 13일</div>
+    <div class="item"><a href="https://forkast.news/the-draft-spec-has-landed-the-standard-behind-it-has-not/">The draft spec has landed, the standard behind it has not</a> — Forkast, 2026년 10월 13일</div>
+  </div>
+</article>
+
+  <details class="toggle">
+    <summary>지난 회차 60개</summary>
 <article class="entry" id="a60">
   <div class="entry-meta">
     <span class="chip">60회차</span>
@@ -443,9 +525,6 @@
     <div class="item"><a href="https://www.discoveriesinhealthpolicy.com/2026/11/cms-publishes-template-for-uses-of.html">CMS Publishes Template for Uses of SUPER INTELLIGENCE in Medicare, Medicaid</a> — Discoveries in Health Policy(Bruce Quinn), 2026년 11월 16일</div>
   </div>
 </article>
-
-  <details class="toggle">
-    <summary>지난 회차 59개</summary>
 <article class="entry" id="a59">
   <div class="entry-meta">
     <span class="chip">59회차</span>
