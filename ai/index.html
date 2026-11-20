@@ -294,6 +294,7 @@
   <!-- INDEX:START — 새 회차는 이 목록 맨 위에 <a> 하나 추가 -->
   <nav class="toc">
     <div class="toc-label">회차</div>
+    <a href="#a64"><span class="n">64회차</span><span class="t">앤트로픽, 같은 모델을 안전장치 수준만 달리한 '클로드 페이블 5.2'와 '미토스 5.2' 출시 — FrontierCode 2.0 49.1%, 입력 100만 토큰당 8달러 (벤치마크는 앤트로픽 자체 측정)</span><span class="gloss">모델 출시</span></a>
     <a href="#a63"><span class="n">63회차</span><span class="t">엔비디아, 젠슨 황 사임 후 첫 분기 실적 발표 — 매출 1,158억 달러(전년 대비 103% 증가), 4분기 전망에서 중국 데이터센터 연산 매출 제외 (H200 중국 출하 중단은 콜 발언 보도 기준)</span><span class="gloss">산업 동향 · 인프라·하드웨어</span></a>
     <a href="#a62"><span class="n">62회차</span><span class="t">애플, 오픈에비던스와 일반인 대상 건강 AI 사용 연구 시작 — 미국 21세 이상 최대 20만 명, 신뢰·답변 품질·행동 변화 조사 (결과 공개 계획 미정)</span><span class="gloss">의료 AI · 소비자 건강</span></a>
     <a href="#a61"><span class="n">61회차</span><span class="t">시에라, 개인 AI 에이전트와 기업 간 접속 규약 '포피(Personal Agent Protocol) 1.0' 공개 — 쇼피파이 전 매장·메타 뮤즈에 기본 적용, 설계 파트너 100곳 이상 (명세는 여전히 초안 표기)</span><span class="gloss">에이전트·제품 · 표준</span></a>
@@ -361,6 +362,86 @@
   <!-- INDEX:END -->
 
   <!-- ENTRIES:START — 새 회차 <article class="entry">는 이 줄 바로 아래에 -->
+<article class="entry" id="a64">
+  <div class="entry-meta">
+    <span class="chip">64회차</span>
+    <span>2026년 11월 21일</span>
+    <span class="chip type">모델 출시</span>
+  </div>
+
+  <h2 class="headword">앤트로픽, 같은 모델을 안전장치 수준만 달리한 '클로드 페이블 5.2'와 '미토스 5.2' 출시 — FrontierCode 2.0 49.1%, 입력 100만 토큰당 8달러 (벤치마크는 앤트로픽 자체 측정)</h2>
+  <div class="lede">Introducing Claude Fable 5.2 and Claude Mythos 5.2 · Anthropic · 2026년 11월 9일(미국 시각)</div>
+
+  <div class="callout blue">
+    <span class="ico">💡</span>
+    <div class="body">
+      <p>앤트로픽이 최상위 모델을 페이블(Fable) 5.2와 미토스(Mythos) 5.2로 갱신했다. 둘은 같은 모델이다. 페이블은 사이버보안·생물학 오남용을 막는 안전장치를 켠 채 모든 유료 이용자와 API에 풀었고, 미토스는 그 안전장치 일부를 뺀 채 검증받은 기관에만 준다. 앤트로픽이 밝힌 바에 따르면 전작 5.1보다 출력이 최대 30% 빠르고, 자체 표에서 코딩·컴퓨터 사용·지식 작업 대부분 항목에서 경쟁 모델보다 높았다.</p>
+    </div>
+  </div>
+
+  <h3><span class="marker">/</span>무슨 일인가</h3>
+  <p>앤트로픽은 2026년 6월 페이블 5, 9월 페이블 5.1을 낸 데 이어 두 달 만에 5.2를 냈다(9to5Mac 정리). 페이블 계열은 앤트로픽 라인업에서 오퍼스(Opus)·소네트(Sonnet)·하이쿠(Haiku) 위에 있는 가장 큰 모델이다. 앤트로픽은 발표문에서 대부분의 코딩·지식 작업은 오퍼스 5.5로 시작하고, 더 어려운 일에만 페이블·미토스로 올라가라고 권했다. 페이블 5.2가 하위 모델에게 일을 나눠 주는 '오케스트레이터(orchestrator)'나 조언자 역할을 맡는 구성도 소개했다.</p>
+  <p>이번 발표의 구조적 특징은 '한 모델, 두 이름'이다. 발표문은 "페이블과 미토스는 같은 기반 모델"이라고 적었다. 차이는 모델 바깥에 붙은 안전장치다. 페이블에는 사이버 공격·생물 무기 관련 요청을 걸러내는 분류기(classifier)가 붙어 있고, 미토스는 이 중 일부를 뺀 대신 앤트로픽의 사이버 검증 프로그램(Cyber Verification Program)·생명과학 검증 프로그램을 통과한 기관만 쓸 수 있다. 앤트로픽은 페이블 5.2의 안전장치가 5.1만큼 견고하면서 불필요한 차단은 줄었다고 밝혔다. 출시 당일부터 Claude 앱 유료 요금제, Claude API, AWS Bedrock, 구글 클라우드, 마이크로소프트 Foundry에서 쓸 수 있다(미토스는 검증 필요).</p>
+
+  <h3><span class="marker">/</span>핵심 내용</h3>
+  <div class="facts">
+    <div class="fact"><span class="k">발표 주체</span><span class="v">앤트로픽(Anthropic)</span></div>
+    <div class="fact"><span class="k">무엇을</span><span class="v">Claude Fable 5.2(API ID <code>claude-fable-5-2</code>)와 Claude Mythos 5.2(<code>claude-mythos-5-2</code>). 같은 모델, 안전장치·접근 범위만 다름</span></div>
+    <div class="fact"><span class="k">사양</span><span class="v">컨텍스트 창 <b>100만 토큰</b>, 최대 출력 12만8천 토큰, 지식 기준 시점 2026년 6월. 적응형 사고(adaptive thinking)가 항상 켜져 있고 끌 수 없음 (개발자 문서)</span></div>
+    <div class="fact"><span class="k">코딩</span><span class="v">FrontierCode 2.0 <b>49.1%</b>(최고 노력 단계 Xhigh) — 페이블 5.1 32.4%, 오퍼스 5.5 45.5%, GPT-6 Astra 42.8%, 제미나이 4 카본 41.1%(Medium). High 단계에선 45.3%로 오퍼스 5.5와 비슷. FrontierSWE v2 69.9%(GPT-6 Astra 65.5%)</span></div>
+    <div class="fact"><span class="k">컴퓨터 사용·지식 작업</span><span class="v">OSWorld 2.1 오프라인 세트 89.3%(오퍼스 5.5 87.2%), Remote Labor Index 41.3%(오퍼스 5.5 21.3%, GPT-6 Astra 20.8%), 인류의 마지막 시험(HLE, 도구 사용) 74.2%(GPT-6 Astra 57.2%)</span></div>
+    <div class="fact"><span class="k">밀린 항목</span><span class="v">업무 자동화 AutomationBench 51.4% — 제미나이 4 카본 <b>53.9%</b>가 더 높음. 지식 작업 AA-Briefcase Elo 1785 — 오퍼스 5.5 <b>1800</b>이 더 높음</span></div>
+    <div class="fact"><span class="k">사이버(미토스)</span><span class="v">CyScenarioBench 76.3%(미토스 5.1 61.7%), 알려진 취약점 재발견(CVE Rediscovery) 89.6%(미토스 5.1 78.3%). 내부 CVE 1,829건 시험에서 오퍼스 5.5보다 10.2% 많이 찾았다고 밝힘</span></div>
+    <div class="fact"><span class="k">가격</span><span class="v">입력 <b>8달러</b> / 출력 <b>40달러</b>(100만 토큰당, 두 모델 동일). 오퍼스 5.5는 4/20달러. 생성 속도 최대 2.5배인 빠른 모드(fast mode)는 16/80달러</span></div>
+    <div class="fact"><span class="k">조건</span><span class="v">페이블 5.2는 30일 데이터 보관이 필수, 앤트로픽이 따로 허가하지 않으면 무보관(zero data retention) 불가. 강제 도구 호출(tool_choice any/tool)은 오류 반환, temperature 등 샘플링 값 지정 불가 (개발자 문서)</span></div>
+  </div>
+
+  <h3><span class="marker">/</span>어떻게 동작하나</h3>
+  <p>모델 내부 구조(파라미터 수, 학습 데이터, 학습 방법)는 공개되지 않았다. 공개된 것은 사용 방식의 변화다. 페이블 5.2는 답하기 전에 내부적으로 생각을 전개하는 '적응형 사고'가 늘 켜져 있고, 사용자는 생각에 쓸 노력 수준(effort)을 Medium·High·Xhigh 등으로 고른다. 노력 수준을 높이면 추론 시간 연산(inference-time compute) — 답을 내기 전에 모델이 더 많은 토큰을 써서 따져보는 것 — 이 늘어 정확도가 오르는 대신 느려지고 비싸진다. 위 코딩 점수가 Xhigh 49.1%, High 45.3%로 갈리는 이유다. 앤트로픽은 같은 Medium 단계에서 5.2가 5.1보다 적은 토큰으로 어려운 작업을 끝낸다고 밝혔다.</p>
+  <p>'같은 모델, 다른 안전장치'는 모델 자체를 두 번 학습하지 않고 바깥 필터로 접근 수준을 나누는 방식이다. 일반 이용자용 페이블에서는 분류기가 사이버·생물 위험 요청을 감지하면 막는다. 같은 능력이 보안 연구나 신약·단백질 설계에서는 쓸모가 있기 때문에, 신원과 용도를 확인한 기관에는 필터를 줄인 미토스를 준다. 표의 단백질 결합체 설계(de novo binder design)·CVE 재발견 점수가 미토스 기준으로 적힌 것도 이 때문이다.</p>
+
+  <h3><span class="marker">/</span>왜 중요한가</h3>
+  <p>지금 당장 달라지는 것은 두 가지다. 하나는 비용과 속도다. 최상위 모델이 같은 결과를 더 적은 토큰·더 빠른 속도로 낸다면, 긴 코딩 작업이나 에이전트 작업에서 실제 청구액과 대기 시간이 줄어든다. 다른 하나는 위험한 능력을 다루는 방식이다. 앤트로픽은 높은 사이버·생물 능력을 가진 모델을 '공개냐 비공개냐'로 고르지 않고, 같은 모델을 필터 강도와 신원 검증으로 나눠 배포했다. OpenAI도 보안팀 전용 GPT-6 Cyber를 따로 냈다(52회차). 최상위 모델을 사용자 등급에 따라 다르게 푸는 방식이 업계의 일반적인 배포 형태가 되어가고 있다.</p>
+  <p>안전성 평가에 대해 앤트로픽은 출시 전 영국 AI안보연구소(UK AISI), METR 등 외부 기관이 시험했고, 고위험 상황에서 위험하게 행동할 가능성을 "낮다"고 평가했다고 밝혔다. 약 1,900개 시나리오의 자동 행동 감사(behavioral audit)에서 미토스 5.2 점수(낮을수록 좋음)는 2.67로, 오퍼스 5.5 2.79·미토스 5.1 3.28보다 낮았다고 했다.</p>
+
+  <div class="callout yellow">
+    <span class="ico">⚠️</span>
+    <div class="body">
+      <p><b>짚어둘 점</b> — 표의 모든 점수는 앤트로픽이 직접 돌린 것이고, 상당수(FrontierCode, CyScenarioBench, CVE 재발견, RoboDojo 등)는 외부에서 같은 조건으로 재현하기 어려운 비공개·내부 벤치마크다. 경쟁 모델은 노력 단계 설정이 제각각이라(제미나이 4 카본은 Medium 기준 등) 직접 비교에 한계가 있다. 앤트로픽이 고른 표 안에서도 업무 자동화는 제미나이 4 카본, 지식 작업 Elo는 자사 오퍼스 5.5가 앞서, '모든 항목 1위'는 아니다. 최고 점수는 가장 비싸고 느린 Xhigh 단계 기준이어서, 실제 체감 성능은 쓰는 설정에 따라 다르다. 발표문은 이전 페이블 5.1 가격을 적지 않아 인하 폭은 원문에서 확인되지 않는다. 안전성 면에서는 출시 전 평가로 배포 후 행동을 다 예측할 수 없다고 앤트로픽 스스로 적었고, 미토스처럼 필터를 줄인 모델은 검증 프로그램이 얼마나 엄격하게 운영되느냐에 안전이 달려 있다. 페이블 5.2는 30일 보관이 기본이라 민감한 데이터를 다루는 기관은 데이터 보관 조건을 먼저 확인해야 한다.</p>
+    </div>
+  </div>
+
+  <h3><span class="marker">/</span>알아두면 좋은 용어</h3>
+  <div class="terms">
+    <div class="term">
+      <div class="en">Effort level (노력 수준)</div>
+      <div class="ko">모델이 답하기 전에 생각에 쓸 연산량을 사용자가 고르는 설정. 높일수록 정확도는 오르지만 느리고 비싸진다</div>
+    </div>
+    <div class="term">
+      <div class="en">Safeguard classifier (안전장치 분류기)</div>
+      <div class="ko">모델 입출력을 따로 검사해 위험한 요청·응답을 걸러내는 별도의 작은 모델. 같은 모델이라도 분류기를 달리 붙여 공개 범위를 나눌 수 있다</div>
+    </div>
+    <div class="term">
+      <div class="en">CVE (Common Vulnerabilities and Exposures)</div>
+      <div class="ko">공개적으로 등록된 소프트웨어 보안 취약점 목록. 'CVE 재발견'은 이미 알려진 취약점을 모델이 코드만 보고 다시 찾아내는지 보는 시험이다</div>
+    </div>
+    <div class="term">
+      <div class="en">Zero data retention (ZDR, 무보관)</div>
+      <div class="ko">API 요청·응답을 서비스 제공자가 저장하지 않는 조건. 의료·금융처럼 민감한 데이터를 다룰 때 흔히 요구된다</div>
+    </div>
+  </div>
+
+  <h3><span class="marker">/</span>출처</h3>
+  <div class="src">
+    <div class="item"><a href="https://www.anthropic.com/claude-fable-and-mythos-5-2">Introducing Claude Fable 5.2 and Claude Mythos 5.2</a> — Anthropic, 2026년 11월 9일</div>
+    <div class="item"><a href="https://platform.claude.com/docs/en/models/fable-5-2/overview">Claude Fable 5.2 모델 문서</a> — Claude Platform Docs</div>
+    <div class="item"><a href="https://platform.claude.com/docs/en/models/mythos-5-2/overview">Claude Mythos 5.2 모델 문서</a> — Claude Platform Docs</div>
+    <div class="item"><a href="https://www.anthropic.com/system-cards">Model system cards</a> — Anthropic</div>
+    <div class="item"><a href="https://9to5mac.com/2026/11/09/anthropic-upgrades-claude-with-new-fable-5-2-model-details-here/">Anthropic upgrades Claude with new Fable 5.2 model</a> — 9to5Mac, 2026년 11월 9일</div>
+  </div>
+</article>
+  <details class="toggle">
+    <summary>지난 회차 63개</summary>
 <article class="entry" id="a63">
   <div class="entry-meta">
     <span class="chip">63회차</span>
@@ -443,8 +524,6 @@
     <div class="item"><a href="https://longbridge.com/en/news/305894260">Nvidia Earnings Conference: H200 Sales to China Halted, New CEO Must Prioritize National Security</a> — 롱브릿지, 2026년 11월 18일</div>
   </div>
 </article>
-  <details class="toggle">
-    <summary>지난 회차 62개</summary>
 <article class="entry" id="a62">
   <div class="entry-meta">
     <span class="chip">62회차</span>
