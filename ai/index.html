@@ -294,6 +294,7 @@
   <!-- INDEX:START — 새 회차는 이 목록 맨 위에 <a> 하나 추가 -->
   <nav class="toc">
     <div class="toc-label">회차</div>
+    <a href="#a65"><span class="n">65회차</span><span class="t">앤트로픽 소속 수학자 레벤트 알푀게, AI와 만든 일반화 리만 가설 증명을 Lean 코드로만 공개 — 독립 검사기 통과가 보도됐고, 사람이 읽을 수 있는 증명은 아직 없다 (알푀게 노트 원문 미열람)</span><span class="gloss">연구 · 수학</span></a>
     <a href="#a64"><span class="n">64회차</span><span class="t">앤트로픽, 같은 모델을 안전장치 수준만 달리한 '클로드 페이블 5.2'와 '미토스 5.2' 출시 — FrontierCode 2.0 49.1%, 입력 100만 토큰당 8달러 (벤치마크는 앤트로픽 자체 측정)</span><span class="gloss">모델 출시</span></a>
     <a href="#a63"><span class="n">63회차</span><span class="t">엔비디아, 젠슨 황 사임 후 첫 분기 실적 발표 — 매출 1,158억 달러(전년 대비 103% 증가), 4분기 전망에서 중국 데이터센터 연산 매출 제외 (H200 중국 출하 중단은 콜 발언 보도 기준)</span><span class="gloss">산업 동향 · 인프라·하드웨어</span></a>
     <a href="#a62"><span class="n">62회차</span><span class="t">애플, 오픈에비던스와 일반인 대상 건강 AI 사용 연구 시작 — 미국 21세 이상 최대 20만 명, 신뢰·답변 품질·행동 변화 조사 (결과 공개 계획 미정)</span><span class="gloss">의료 AI · 소비자 건강</span></a>
@@ -362,6 +363,97 @@
   <!-- INDEX:END -->
 
   <!-- ENTRIES:START — 새 회차 <article class="entry">는 이 줄 바로 아래에 -->
+<article class="entry" id="a65">
+  <div class="entry-meta">
+    <span class="chip">65회차</span>
+    <span>2026년 11월 22일</span>
+    <span class="chip type">연구 · 수학</span>
+  </div>
+
+  <h2 class="headword">앤트로픽 소속 수학자 레벤트 알푀게, AI와 만든 일반화 리만 가설 증명을 Lean 코드로만 공개 — 독립 검사기 통과가 보도됐고, 사람이 읽을 수 있는 증명은 아직 없다 (알푀게 노트 원문 미열람)</h2>
+  <div class="lede">Lean-only proof of the (Generalized) Riemann Hypothesis · Levent Alpöge(Anthropic) · 2026년 11월 20일(미국 시각) · 같은 날 Navier–Stokes·Euler 무강제 폭발 주장도 공개</div>
+
+  <div class="callout blue">
+    <span class="ico">💡</span>
+    <div class="body">
+      <p>앤트로픽 소속 수학자 레벤트 알푀게(Levent Alpöge)가 리만 가설(RH)과 일반화 리만 가설(GRH)의 증명을 자기 웹사이트에 올렸다. 증명은 증명 검사기 Lean의 코드로만 나왔고, 사람이 읽을 수 있는 논문은 없다. 테렌스 타오는 블로그에서 이를 "내부 AI 모델을 써서 생성한 (거대한) Lean 전용 증명"이라고 소개했다. 여러 보도에 따르면 외부 연구자들이 Lean 커널과 별도 검사기로 증명을 확인했지만, 수학자들이 증명 내용을 이해하고 받아들이는 일은 이제 시작이다.</p>
+    </div>
+  </div>
+
+  <h3><span class="marker">/</span>무슨 일인가</h3>
+  <p>리만 가설은 소수(prime)의 분포를 결정하는 리만 제타 함수 ζ(s)에서 자명하지 않은 영점이 모두 실수부 1/2인 직선 위에 있다는 추측이다. 1859년 이후 풀리지 않았고, 클레이 수학연구소의 밀레니엄 문제 7개 중 하나다. 일반화 리만 가설은 같은 주장을 디리클레 L-함수(Dirichlet L-function) 전체로 넓힌 것이다. 디리클레 L-함수는 제타 함수를 일반화한 함수로, 예를 들어 '4로 나눠 1이 남는 소수'처럼 특정 등차수열 안에 있는 소수의 분포를 다룬다.</p>
+  <p>알푀게는 하버드 펠로를 거쳐 앤트로픽에서 일하는 정수론 학자다. 앤트로픽은 8월 10일 연구 페이지에서 공개되지 않은 클로드 모델이 임계선 위에 있다고 증명된 영점 비율의 하한을 41.6%에서 67.2%로 올렸다고 발표했다. 알푀게는 그 결과를 검토한 연구자 중 한 명이었다. 당시 앤트로픽은 "클로드가 쓴 기법이 리만 가설 증명으로 이어질 것으로 보지 않는다"고 적었다. 그로부터 석 달 뒤인 11월 20일, 앤트로픽 나스닥 상장 다음 날에 알푀게가 짧은 노트와 Lean 코드 압축 파일을 공개했다.</p>
+  <p>보도로 전해진 노트 내용은 이렇다. 첫 문장에서 그는 "클로드와 함께 작업해 리만 가설의 증명을 발견했다고 믿는다"고 썼다. AI가 만든 자연어 설명은 분량이 너무 많고 품질이 낮아 공개하지 않고 Lean만 내놓았다고 했으며, 사람이 읽을 판본은 나중에 쓰겠다고 했다. 반면 타오는 블로그에 "내부 AI 모델"이라고만 적었다. 노트도 모델 이름과 버전을 밝히지 않았다고 여러 매체가 전했다. 이번 실행에서 노트 원문(PDF)은 직접 열람하지 못했다.</p>
+  <p>같은 날 타오는 알푀게가 관여한 결과 두 건을 함께 소개했다. 하나는 알푀게·트리스탄 버크매스터(Tristan Buckmaster, NYU)·마테이 코이쿨레스쿠(Matei Coiculescu)의 3차원 비압축성 오일러(Euler) 방정식 무강제 유한시간 폭발 증명이다. 다른 하나는 알푀게·버크매스터의 3차원 비압축성 나비에-스토크스(Navier–Stokes) 방정식 무강제 유한시간 폭발 증명이다. 9월에 나온 OpenAI의 결과(1회차)는 외부에서 힘(forcing)을 가하는 설정이었고, 이번 주장은 외부 힘이 없는 설정이다.</p>
+
+  <h3><span class="marker">/</span>핵심 내용</h3>
+  <div class="facts">
+    <div class="fact"><span class="k">발표 주체</span><span class="v">레벤트 알푀게 개인(앤트로픽 소속). 앤트로픽 공식 발표는 확인되지 않음</span></div>
+    <div class="fact"><span class="k">무엇을</span><span class="v">리만 가설과 디리클레 L-함수에 대한 일반화 리만 가설의 형식 증명(formal proof). 노트에 따르면 확장 리만 가설(ERH)은 "시간이 더 걸릴 것"이라고 함(보도 인용)</span></div>
+    <div class="fact"><span class="k">공개 형태</span><span class="v">짧은 노트와 Lean 4 코드 압축 파일. 사람이 읽을 논문·자연어 증명은 <b>없음</b></span></div>
+    <div class="fact"><span class="k">AI 역할</span><span class="v">타오: "내부 AI 모델을 써서 생성". 보도된 노트 문구: "클로드와 함께 작업해". 모델 이름·버전은 공개되지 않음</span></div>
+    <div class="fact"><span class="k">외부 확인(보도)</span><span class="v">MIT 앤드루 서덜랜드(Andrew Sutherland)가 Lean 커널 재검사와 별도 구현 검사기로 확인했다고 보도됨. 21일 Lean FRO와 Mathlib Initiative가 증명이 옳다고 확신한다는 공동 성명을 냈다고 보도됨 (성명·검증 페이지 원문 미열람)</span></div>
+    <div class="fact"><span class="k">타오의 평가</span><span class="v">초기 분석으로는 "랭글랜즈 프로그램과 산술기하학의 현대적 발전을 총동원하는 것으로 보인다". 소화하는 데 "시간이 걸릴 것"</span></div>
+    <div class="fact"><span class="k">함께 나온 결과</span><span class="v">나비에-스토크스 무강제 폭발 논문 <b>79쪽</b>(11월 20일판), Lean 약 2,270개 파일·약 <b>60만 줄</b>, Lean 4.33.1. 핵심 수치 인증서(certificate)는 저장소에 없음 (GitHub README)</span></div>
+  </div>
+
+  <h3><span class="marker">/</span>어떻게 동작하나</h3>
+  <p>Lean은 증명 보조기(proof assistant)다. 수학 정의와 정리를 프로그래밍 언어처럼 적으면, 작은 핵심 프로그램인 '커널(kernel)'이 증명의 모든 단계를 논리 규칙에 맞는지 기계적으로 검사한다. Mathlib은 Lean 사용자들이 함께 만든 표준 수학 라이브러리이고, 리만 가설의 정식 진술(statement)도 여기에 이미 들어 있다. 보도에 따르면 알푀게의 코드는 이 Mathlib 진술을 그대로 증명하는 구조다. 그래서 검증은 두 질문으로 나뉜다. 첫째, 코드가 커널 검사를 통과하는가. 둘째, 증명된 진술이 정말 우리가 아는 리만 가설과 같은 뜻인가. 둘 다 사람이 수십만 쪽을 읽지 않아도 확인할 수 있다는 것이 형식 증명의 장점이다.</p>
+  <p>외부 검사의 핵심은 '추가 공리(axiom)가 없는가'다. Lean에서는 증명하지 않은 사실을 공리로 선언해 쓸 수 있는데, 그러면 사실상 아무것도 증명하지 않은 셈이 된다. 보도된 검사 결과는 주요 정리가 Lean의 표준 공리 세 개(propext, Quot.sound, Classical.choice)에만 의존한다는 것이다. 커널 자체의 버그 가능성도 있기 때문에 서로 다르게 구현된 검사기 여러 개로 같은 결과를 다시 확인했다고 한다.</p>
+  <p>증명 전략에 대해서는 정보가 적다. 타오는 블로그에서 랭글랜즈 프로그램(Langlands program)과 산술기하학이 쓰인다고 봤다. 랭글랜즈 프로그램은 정수론과 표현론을 잇는 거대한 추측·이론 체계다. 그의 블로그 댓글에는 유한체 위 곡선의 점 개수를 세는 데 쓰여 온 스테파노프 방법(Stepanov's method)의 후손으로 보인다는 독자 분석도 올라왔지만, 이는 검증되지 않은 독자 의견이다.</p>
+
+  <h3><span class="marker">/</span>왜 중요한가</h3>
+  <p>형식 검증이 보도대로 맞다면 이는 수학에서 가장 유명한 미해결 문제가 AI의 대규모 기여로 풀린 사례가 된다. 정수론에는 '일반화 리만 가설이 참이라면'을 전제로 한 정리가 많은데, 이들이 조건 없는 정리가 된다. 수학 밖에서는 소수 판정 알고리즘의 실행 시간 보장처럼 GRH를 가정해 온 계산 이론 결과에 영향이 간다.</p>
+  <p>이 사례가 던지는 더 큰 질문은 '아무도 읽지 못한 증명을 증명으로 받아들일 수 있는가'이다. 지금까지 수학은 다른 수학자가 논증을 이해하고 확인하는 동료 검토로 진위를 가렸다. 이번에는 기계 검사가 먼저 끝났고 인간의 이해가 뒤따르는 순서다. 지금 확정된 것은 코드가 공개됐고 여러 검사기를 통과했다는 보도까지다. 왜 참인지에 대한 수학계의 이해와 수용은 아직 시작 단계다.</p>
+
+  <div class="callout yellow">
+    <span class="ico">⚠️</span>
+    <div class="body">
+      <p><b>짚어둘 점</b> — (1) 사람이 읽을 증명이 없다. 커널 통과는 '논리적으로 틀린 단계가 없다'는 뜻이지, 수학자가 증명을 이해했다는 뜻은 아니다. 타오도 소화에 시간이 걸릴 것이라고 했다. (2) 진술의 일치 문제. 형식 증명은 증명된 진술과 Mathlib 정의가 원래 의도와 같아야 의미가 있다. 정의에 미묘한 차이가 있으면 다른 명제를 증명한 것이 된다. 보도에 따르면 일부 확인 작업은 아직 진행 중이었다. (3) 이번 실행에서 알푀게의 노트, 서덜랜드의 검증 페이지, Lean FRO 공동 성명, Lean Zulip 토론 원문은 직접 열람하지 못했다. 그래서 파일 수·코드 줄 수 같은 규모 수치는 쓰지 않았다. 원문으로 확인한 1차 자료는 타오의 블로그와 나비에-스토크스 GitHub 저장소뿐이다. (4) 이해관계. 발표자는 앤트로픽 직원이고, 공개 시점은 앤트로픽 상장 다음 날이다. 어떤 모델을 얼마나 썼는지는 공개되지 않았고, 앤트로픽 공식 입장도 확인되지 않았다. (5) 클레이 상금 규정은 자격 있는 출판과 2년 이상의 검토 기간, 수학계의 일반적 수용을 요구한다. 형식 검증만으로 바로 '해결 인정'이 되지는 않는다. (6) 같은 날 나온 나비에-스토크스 주장은 상태가 더 불확실하다. 저장소 README에 따르면 폭발을 뒷받침하는 수치 인증서와 그 구간 연산(interval arithmetic) 검사는 Lean 형식화 밖에 있고 아직 공개되지 않았다. 11월 20일 수정본은 다시 빌드되지 않았다. 버크매스터도 보도된 마스토돈 글에서 원고가 "다듬어지지 않았고 LLM 도움을 크게 받았다"고 했다. (7) 타오 블로그 댓글에는 AI 없이 사람만으로 쓴 별개의 GRH 증명 초안(알레산드로 마술로)도 언급됐는데, 이 역시 미검증이다.</p>
+    </div>
+  </div>
+
+  <h3><span class="marker">/</span>알아두면 좋은 용어</h3>
+  <div class="terms">
+    <div class="term">
+      <div class="en">Riemann Hypothesis (RH, 리만 가설)</div>
+      <div class="ko">리만 제타 함수의 자명하지 않은 영점이 모두 실수부 1/2인 직선 위에 있다는 추측. 소수가 얼마나 고르게 분포하는지를 정밀하게 정한다</div>
+    </div>
+    <div class="term">
+      <div class="en">Generalized Riemann Hypothesis (GRH, 일반화 리만 가설)</div>
+      <div class="ko">같은 주장을 디리클레 L-함수 전체로 넓힌 것. 등차수열 속 소수 분포 등 많은 정리가 이를 전제로 증명돼 왔다</div>
+    </div>
+    <div class="term">
+      <div class="en">Proof assistant / Lean (증명 보조기)</div>
+      <div class="ko">수학 증명을 코드로 적으면 컴퓨터가 단계마다 논리 규칙을 검사하는 소프트웨어. Lean은 그중 가장 널리 쓰이는 것이다</div>
+    </div>
+    <div class="term">
+      <div class="en">Kernel (커널)</div>
+      <div class="ko">Lean에서 최종 검사를 맡는 작은 핵심 프로그램. 작게 만들어 신뢰할 수 있게 했고, 이것이 통과시키면 증명이 형식적으로 옳다고 본다</div>
+    </div>
+    <div class="term">
+      <div class="en">Axiom (공리)</div>
+      <div class="ko">증명 없이 참으로 받아들이는 전제. 형식 증명에서는 표준 공리 외에 다른 공리를 쓰지 않았는지가 핵심 검사 항목이다</div>
+    </div>
+    <div class="term">
+      <div class="en">Mathlib</div>
+      <div class="ko">Lean 사용자들이 함께 만드는 표준 수학 라이브러리. 리만 가설의 정식 진술도 여기에 들어 있다</div>
+    </div>
+  </div>
+
+  <h3><span class="marker">/</span>출처</h3>
+  <div class="src">
+    <div class="item"><a href="https://terrytao.wordpress.com/2026/11/20/unforced-euler-singularity-unforced-navier-stokes-singularity-and-the-generalized-riemann-hypothesis/">Unforced Euler singularity, unforced Navier-Stokes singularity, and the Generalized Riemann Hypothesis</a> — Terence Tao 블로그, 2026년 11월 20일</div>
+    <div class="item"><a href="https://alpo.ge/remark.pdf">알푀게 노트(PDF)</a> — Levent Alpöge, 2026년 11월 20일 (이번 실행에서 원문 미열람)</div>
+    <div class="item"><a href="https://github.com/tristanbuckmaster/navier-stokes/">tristanbuckmaster/navier-stokes</a> — 나비에-스토크스 무강제 폭발 논문·Lean 저장소, GitHub</div>
+    <div class="item"><a href="https://www.anthropic.com/research/riemann-zeta">Anthropic 리만 제타 영점 연구</a> — Anthropic, 2026년 8월 10일</div>
+    <div class="item"><a href="https://officechai.com/ai/how-mathematicians-have-reacted-to-claimed-riemann-hypothesis-proof-by-anthropics-levent-alpoge/">How Mathematicians Have Reacted To Claimed Riemann Hypothesis Proof</a> — OfficeChai, 2026년 11월 20일</div>
+    <div class="item"><a href="https://www.scientificamerican.com/article/anthropic-mathematician-claims-to-prove-riemann-hypothesis-most-famous-problem-in-all-of-math/">Anthropic mathematician claims to prove Riemann hypothesis</a> — Scientific American, 2026년 11월</div>
+    <div class="item"><a href="https://thenextweb.com/news/navier-stokes-blow-up-without-force-buckmaster-alpoge">Navier-Stokes can blow up with no outside force, Buckmaster and Alpöge say</a> — The Next Web, 2026년 11월</div>
+  </div>
+</article>
+  <details class="toggle">
+    <summary>지난 회차 64개</summary>
 <article class="entry" id="a64">
   <div class="entry-meta">
     <span class="chip">64회차</span>
@@ -440,8 +532,6 @@
     <div class="item"><a href="https://9to5mac.com/2026/11/09/anthropic-upgrades-claude-with-new-fable-5-2-model-details-here/">Anthropic upgrades Claude with new Fable 5.2 model</a> — 9to5Mac, 2026년 11월 9일</div>
   </div>
 </article>
-  <details class="toggle">
-    <summary>지난 회차 63개</summary>
 <article class="entry" id="a63">
   <div class="entry-meta">
     <span class="chip">63회차</span>
