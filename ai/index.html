@@ -294,6 +294,7 @@
   <!-- INDEX:START — 새 회차는 이 목록 맨 위에 <a> 하나 추가 -->
   <nav class="toc">
     <div class="toc-label">회차</div>
+    <a href="#a66"><span class="n">66회차</span><span class="t">드라고스, 5개월간 AI 서비스에 미끼 자격증명을 담은 프롬프트 약 200만 건을 보내 추적 — AI 제공자 최소 3곳의 침해와 추론 마켓 판매자의 프롬프트 열람 확인 (드라고스 자체 조사, 제공자 실명 비공개)</span><span class="gloss">사이버보안 · 개인정보</span></a>
     <a href="#a65"><span class="n">65회차</span><span class="t">앤트로픽 소속 수학자 레벤트 알푀게, AI와 만든 일반화 리만 가설 증명을 Lean 코드로만 공개 — 독립 검사기 통과가 보도됐고, 사람이 읽을 수 있는 증명은 아직 없다 (알푀게 노트 원문 미열람)</span><span class="gloss">연구 · 수학</span></a>
     <a href="#a64"><span class="n">64회차</span><span class="t">앤트로픽, 같은 모델을 안전장치 수준만 달리한 '클로드 페이블 5.2'와 '미토스 5.2' 출시 — FrontierCode 2.0 49.1%, 입력 100만 토큰당 8달러 (벤치마크는 앤트로픽 자체 측정)</span><span class="gloss">모델 출시</span></a>
     <a href="#a63"><span class="n">63회차</span><span class="t">엔비디아, 젠슨 황 사임 후 첫 분기 실적 발표 — 매출 1,158억 달러(전년 대비 103% 증가), 4분기 전망에서 중국 데이터센터 연산 매출 제외 (H200 중국 출하 중단은 콜 발언 보도 기준)</span><span class="gloss">산업 동향 · 인프라·하드웨어</span></a>
@@ -363,6 +364,87 @@
   <!-- INDEX:END -->
 
   <!-- ENTRIES:START — 새 회차 <article class="entry">는 이 줄 바로 아래에 -->
+<article class="entry" id="a66">
+  <div class="entry-meta">
+    <span class="chip">66회차</span>
+    <span>2026년 11월 23일</span>
+    <span class="chip type">사이버보안 · 개인정보</span>
+  </div>
+
+  <h2 class="headword">드라고스, 5개월간 AI 서비스에 미끼 자격증명을 담은 프롬프트 약 200만 건을 보내 추적 — AI 제공자 최소 3곳의 침해와 추론 마켓 판매자의 프롬프트 열람 확인 (드라고스 자체 조사, 제공자 실명 비공개)</h2>
+  <div class="lede">Three breaches, endless leaks: Your AI supply chain needs canaries · HD Moore(Dragos) · 2026년 11월 19일</div>
+
+  <div class="callout blue">
+    <span class="ico">💡</span>
+    <div class="body">
+      <p>산업보안 회사 드라고스(Dragos)의 HD 무어(HD Moore)가 7월부터 11월까지 여러 AI 서비스에 고유한 URL과 미끼 자격증명(canary token)을 심은 프롬프트 약 200만 건을 보내고, 그 값이 나중에 어디서 쓰이는지 지켜본 결과를 공개했다. 드라고스에 따르면 최소 세 곳의 AI 제공자에서 고객 요청 데이터가 유출됐고, 세 곳 모두 드라고스가 알려줄 때까지 침해 사실을 몰랐다. 별도로 추론 마켓플레이스(inference marketplace)에 입점한 일부 판매자는 해킹 없이 기본 로그 기능만으로 고객 프롬프트를 보고 보관할 수 있었다.</p>
+    </div>
+  </div>
+
+  <h3><span class="marker">/</span>무슨 일인가</h3>
+  <p>요즘 많은 개발자와 기업이 모델 개발사 API를 직접 쓰지 않고, 여러 호스팅 업체의 모델을 한데 모아 가장 싼 곳으로 요청을 보내 주는 중개 서비스(라우터·마켓플레이스)를 쓴다. 이때 프롬프트는 사용자 → 중개 서비스 → 실제로 모델을 돌리는 호스팅 업체(때로는 그 뒤의 또 다른 업체)를 거친다. 코딩 에이전트가 보내는 프롬프트에는 소스 코드, 환경 변수, 클라우드 키, 내부 URL이 자주 섞여 들어간다. 그래서 '중간 단계 어디선가 프롬프트를 엿보거나 빼돌리는 곳이 있는가'는 계속 제기돼 온 질문이었다.</p>
+  <p>드라고스는 이를 직접 측정하려고 덫을 놓았다. 프롬프트마다 다른 비밀 URL, DNS 이름, AWS 액세스 키, 비공개 git 저장소 주소 같은 값을 넣고, 그 값에 누가 언제 접근하는지 기록했다. 처음에는 공개 도구인 Thinkst Canarytokens를 쓰다가 나중에는 요청마다 고유한 값을 만들어 주는 자체 시스템으로 바꿨다. 정상적이라면 이 값들은 모델이 읽고 끝나야 하고, 바깥에서 쓰일 일이 없다. 바깥에서 쓰였다면 프롬프트가 어딘가에서 새어 나갔다는 뜻이다. 결과는 11월 19일 드라고스 블로그에 공개됐다. 원 데이터나 제공자 실명 목록은 공개되지 않았다.</p>
+
+  <h3><span class="marker">/</span>핵심 내용</h3>
+  <div class="facts">
+    <div class="fact"><span class="k">조사 주체</span><span class="v">드라고스(Dragos) 최고연구책임자 HD 무어. 보안 도구 메타스플로잇(Metasploit)을 만든 연구자</span></div>
+    <div class="fact"><span class="k">규모·기간</span><span class="v">2026년 7월~11월, 미끼를 넣은 프롬프트 <b>약 200만 건</b>을 널리 쓰이는 AI 서비스들에 전송</span></div>
+    <div class="fact"><span class="k">제공자 침해</span><span class="v"><b>최소 3곳</b>의 AI 호스팅 제공자에서 데이터 노출. 가장 이른 건은 7월 중순. 세 곳 모두 드라고스가 통보하기 전까지 몰랐다</span></div>
+    <div class="fact"><span class="k">최대 사례</span><span class="v">미끼 AWS 키 <b>수백 개(a couple hundred)</b>가 유출. 키 하나는 한 제공자에게 한 번만 보냈고, 모두 10월 말 짧은 몇 구간에 몰려 있었다. 모델 실행 전에 거부된 요청에 담긴 키도 포함</span></div>
+    <div class="fact"><span class="k">공격자 행동</span><span class="v">키가 살아 있는지 확인 → S3·Secrets Manager·Parameter Store 조회 → Bedrock 활성화 → IAM 사용자 추가. 미끼 키로 호출된 AWS API는 <b>수만 건</b>. 10월 21일 심은 키가 다음 날부터 쓰여 3주 뒤에도 사용 중</span></div>
+    <div class="fact"><span class="k">마켓 판매자 열람</span><span class="v">추론 마켓플레이스의 여러 재판매자가 가장 낮은 가격으로 모델을 등록하고 요청 로깅을 켜 두는 것만으로 고객 프롬프트를 보고 보관할 수 있었다. 취약점 악용은 없었다</span></div>
+    <div class="fact"><span class="k">데이터 미보존(ZDR) 요청</span><span class="v">침해 3건 중 2건에서는 유출된 요청 일부가 ZDR로 표시된 요청이었다</span></div>
+  </div>
+
+  <h3><span class="marker">/</span>어떻게 동작하나</h3>
+  <p>카나리 토큰(canary token)은 진짜처럼 보이지만 아무 권한이 없는(또는 감시되는) 가짜 값이다. 누군가 그 값을 쓰는 순간 알림이 오도록 만든다. 탄광의 카나리아처럼 '이미 새어 나갔다'는 사실을 늦게라도 알려주는 경보 장치다. 드라고스는 프롬프트마다 다른 값을 넣었기 때문에, 특정 키가 쓰이면 어느 날 어느 서비스로 보낸 요청이었는지를 거꾸로 짚을 수 있었다.</p>
+  <p>이 방식은 '어느 요청이 샜다'는 것은 보여주지만, 프롬프트가 지나간 경로 중 정확히 어느 단계에서 샜는지는 바로 알려주지 않는다. 드라고스는 응답의 특징을 모아 둔 서명 데이터베이스로 요청 경로를 추적했다. 드라고스에 따르면 이 과정에서 중개 서비스가 밝히지 않은 중간 단계(hop)가 있는 경로도 나왔다.</p>
+  <p>ZDR(Zero Data Retention, 데이터 미보존)은 '요청 내용을 저장하지 않는다'는 서비스 약속이다. 드라고스는 이 약속이 첫 번째 단계에만 걸리고 그 뒤 업체까지 강제되지는 않는다는 점을 문제로 짚었다. 중개 서비스에서 ZDR을 켜도, 실제로 모델을 돌리는 업체가 해킹당했거나 로그를 남기면 소용이 없다.</p>
+
+  <h3><span class="marker">/</span>왜 중요한가</h3>
+  <p>AI 공급망 보안 논의는 그동안 주로 모델 자체(탈옥, 프롬프트 주입)에 맞춰져 있었다. 이번 조사는 모델이 아니라 모델을 돌리는 '배관'에서 실제 키 도난과 악용이 일어났다는 관측 자료를 내놓았다. 미끼 키로 클라우드 권한을 조회하고 IAM 사용자를 추가하는 등 실제 공격 행동까지 기록됐다.</p>
+  <p>사용자 입장에서 지금 바로 적용할 수 있는 교훈은 단순하다. 프롬프트에 들어간 비밀값은 유출된 것으로 보고 관리해야 한다. 에이전트가 읽는 파일·환경 변수에서 키를 빼고, 권한이 좁고 수명이 짧은 키를 쓰고, 가장 싼 경로로 자동으로 보내는 설정을 켜기 전에 실제로 어느 업체가 요청을 처리하는지 확인하는 것이다. 이번 조사 뒤 일부 매체는 대형 중개 서비스가 문제 제공자를 퇴출하는 등 조치에 나섰다고 보도했다. 다만 이 회차에서는 해당 서비스의 공식 발표문을 직접 확인하지 못해 구체적인 내용은 적지 않는다.</p>
+
+  <div class="callout yellow">
+    <span class="ico">⚠️</span>
+    <div class="body">
+      <p><b>짚어둘 점</b> — 모든 수치와 결론은 드라고스 한 회사의 자체 조사다. 원 데이터와 제공자 실명이 공개되지 않아 외부에서 재현하거나 검증할 수 없다. '수백 개', '수만 건'처럼 정확한 수가 아닌 표현이 많다. 카나리 토큰은 유출이 있었다는 것만 보여줄 뿐 어느 단계에서 샜는지는 경로 추적에 기대는데, 이 추적은 드라고스의 서명 데이터베이스에 의존한다. '판매자가 로그를 볼 수 있었다'는 것은 열람할 수 있는 구조가 있었다는 뜻이고, 판매자 대부분이 악의적이라는 뜻은 아니다. 드라고스 스스로 유출은 마켓 전체가 아니라 판매자를 따라간다고 적었다. 반대로 드라고스가 시험한 서비스 밖의 업체는 이 조사로 안전하다고 볼 수 없다. 한 제공자는 아직 침해 사실을 공개하지 않아 범위가 더 넓어질 수 있다. 보안 회사가 위협을 알리는 글이라 자사 관점이 들어갈 수 있다는 점도 감안해야 한다.</p>
+    </div>
+  </div>
+
+  <h3><span class="marker">/</span>알아두면 좋은 용어</h3>
+  <div class="terms">
+    <div class="term">
+      <div class="en">Canary token (카나리 토큰)</div>
+      <div class="ko">쓰이는 순간 알림이 오도록 만든 가짜 키·URL. 데이터가 샜는지 알아내는 미끼다</div>
+    </div>
+    <div class="term">
+      <div class="en">Inference marketplace / router (추론 마켓플레이스·라우터)</div>
+      <div class="ko">여러 호스팅 업체의 모델 API를 한 창구로 묶어 가격·속도에 따라 요청을 나눠 보내는 중개 서비스</div>
+    </div>
+    <div class="term">
+      <div class="en">Zero Data Retention (ZDR)</div>
+      <div class="ko">요청·응답 내용을 저장하지 않겠다는 서비스 약속. 그 약속을 지키는 범위가 어디까지인지가 문제가 된다</div>
+    </div>
+    <div class="term">
+      <div class="en">IAM (Identity and Access Management)</div>
+      <div class="ko">클라우드에서 누가 어떤 자원에 접근할 수 있는지 정하는 권한 체계. 공격자가 IAM 사용자를 추가하면 키를 바꿔도 접근이 남는다</div>
+    </div>
+    <div class="term">
+      <div class="en">Hop (홉)</div>
+      <div class="ko">요청이 목적지까지 가며 거치는 한 단계. 중개 서비스 뒤에 다른 업체가 끼면 홉이 늘어난다</div>
+    </div>
+  </div>
+
+  <h3><span class="marker">/</span>출처</h3>
+  <div class="src">
+    <div class="item"><a href="https://www.dragos.com/blog/ai-supply-chain-security-canary-tokens">Three breaches, endless leaks: Your AI supply chain needs canaries</a> — HD Moore, Dragos, 2026년 11월 19일</div>
+    <div class="item"><a href="https://thehackernews.com/2026/11/openrouter-drops-3-providers-after.html">OpenRouter drops 3 providers after prompt exposure findings</a> — The Hacker News, 2026년 11월 (본문 미열람)</div>
+    <div class="item"><a href="https://the-decoder.com/security-researchers-show-how-cheap-ai-inference-providers-steal-keys-and-snoop-on-users/">Security researchers show how cheap AI inference providers steal keys and snoop on users</a> — The Decoder, 2026년 11월 (본문 미열람)</div>
+  </div>
+</article>
+  <details class="toggle">
+    <summary>지난 회차 65개</summary>
 <article class="entry" id="a65">
   <div class="entry-meta">
     <span class="chip">65회차</span>
@@ -452,8 +534,6 @@
     <div class="item"><a href="https://thenextweb.com/news/navier-stokes-blow-up-without-force-buckmaster-alpoge">Navier-Stokes can blow up with no outside force, Buckmaster and Alpöge say</a> — The Next Web, 2026년 11월</div>
   </div>
 </article>
-  <details class="toggle">
-    <summary>지난 회차 64개</summary>
 <article class="entry" id="a64">
   <div class="entry-meta">
     <span class="chip">64회차</span>
