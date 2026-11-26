@@ -294,6 +294,7 @@
   <!-- INDEX:START — 새 회차는 이 목록 맨 위에 <a> 하나 추가 -->
   <nav class="toc">
     <div class="toc-label">회차</div>
+    <a href="#a70"><span class="n">70회차</span><span class="t">앤트로픽, 클로드 에이전트로 Messages API를 파이썬에서 러스트로 이전 — 요청당 CPU 약 70%·메모리 80% 이상 감소, 첫 토큰 지연 중앙값 약 20% 단축 (앤트로픽 자체 측정)</span><span class="gloss">소프트웨어 엔지니어링 · 인프라</span></a>
     <a href="#a69"><span class="n">69회차</span><span class="t">구글 클라우드, 병원·보험사용 에이전트 '제미나이 포 헬스케어' 미국 프리뷰 공개 — Epic·Oracle Health 읽기 전용 연동, 출시 고객 7곳 (제품 성능 수치는 미공개)</span><span class="gloss">의료 AI · 에이전트·제품</span></a>
     <a href="#a68"><span class="n">68회차</span><span class="t">엔비디아 이사회, 사임 11일 만에 젠슨 황을 CEO·이사로 만장일치 복귀시켜 — "미국 정부 고위층 의견을 들었다", 독립이사 조사위원회와 최고준법책임자 신설 (사임 사유는 여전히 미공개)</span><span class="gloss">산업 동향 · 지배구조</span></a>
     <a href="#a67"><span class="n">67회차</span><span class="t">미국 ONC, HTI-5 최종 규칙으로 EHR에 들어간 예측 AI의 '모델 카드'(출처 속성 31개)와 위험관리 인증 요건 삭제 — 인증 기준 14개 삭제(제안은 34개), 정보 차단 개정은 보류 (연방관보 원문 미열람)</span><span class="gloss">의료 AI · 규제·정책</span></a>
@@ -367,6 +368,85 @@
   <!-- INDEX:END -->
 
   <!-- ENTRIES:START — 새 회차 <article class="entry">는 이 줄 바로 아래에 -->
+<article class="entry" id="a70">
+  <div class="entry-meta">
+    <span class="chip">70회차</span>
+    <span>2026년 11월 27일</span>
+    <span class="chip type">소프트웨어 엔지니어링 · 인프라</span>
+  </div>
+
+  <h2 class="headword">앤트로픽, 클로드 에이전트로 Messages API를 파이썬에서 러스트로 이전 — 요청당 CPU 약 70%·메모리 80% 이상 감소, 첫 토큰 지연 중앙값 약 20% 단축 (앤트로픽 자체 측정)</h2>
+  <div class="lede">Migrating our Messages API to Rust · Anthropic Engineering · 2026년 11월 25일</div>
+
+  <div class="callout blue">
+    <span class="ico">💡</span>
+    <div class="body">
+      <p>앤트로픽이 2023년부터 파이썬으로 운영하던 Messages API의 요청 입력·출력 경로를 러스트(Rust)로 다시 쓰고, 2026년 9월 공개 트래픽을 옮겼다고 밝혔다. 코드 작성과 불일치 수정은 대부분 클로드 에이전트가 했고, 사람은 무엇이 맞는지 판단하고 규칙을 만드는 쪽을 맡았다. 글의 상당 부분은 "코드를 쓰는 것보다 두 버전이 똑같이 동작하는지 확인하는 일이 더 컸다"는 내용이다.</p>
+    </div>
+  </div>
+
+  <h3><span class="marker">/</span>무슨 일인가</h3>
+  <p>Messages API는 고객이 클로드를 호출하는 주 경로이고, 클로드 코드(Claude Code)와 코워크(Cowork)도 이 API를 쓴다. 앤트로픽에 따르면 2024년 초부터 2026년 가을까지 API 트래픽은 약 1,800배 늘었다. 요청 하나를 처리할 때 서버는 입력 검증, 프롬프트 조립, 토큰화(tokenization), 안전 분류기(safety classifier) 호출, 스트리밍, 사용량 집계를 한다. 이 부분이 파이썬으로 돼 있어 CPU 부담이 컸다.</p>
+  <p>2026년 3월에는 모델 출력 파싱만 러스트로 떼어 파이썬에서 부르는 부분 이전을 먼저 시도했다. CPU가 약 8~10% 줄었지만, 토큰 하나가 파이썬과 러스트 경계를 세 번 넘나들어야 해서 늘어난 복잡도만큼의 이득은 아니라고 판단했다. 그래서 입력·출력 경로 전체를 다시 쓰는 쪽으로 갔다. 이번 글은 앤트로픽 엔지니어링 블로그에 올라온 회고로, 코드나 측정 데이터는 공개되지 않았다.</p>
+
+  <h3><span class="marker">/</span>핵심 내용</h3>
+  <div class="facts">
+    <div class="fact"><span class="k">발표 주체</span><span class="v">앤트로픽 엔지니어링팀(Lance Martin 외 5명)</span></div>
+    <div class="fact"><span class="k">무엇을</span><span class="v">Messages API의 입력·출력 처리 경로를 파이썬에서 러스트로 전면 재작성. 서비스 중단이나 기능 개발 동결 없이 진행</span></div>
+    <div class="fact"><span class="k">경과</span><span class="v">핵심 요청 경로 초안은 클로드가 <b>약 1주</b>에 작성 → 4월 기존 테스트 <b>약 98%</b> 통과 → 실트래픽 입력 일치율은 처음 <b>약 24%</b>, 5월 초 <b>6.5%</b>까지 하락 → 8월 <b>99.6%</b> → 9월 공개 트래픽 전환</span></div>
+    <div class="fact"><span class="k">성능 수치</span><span class="v">요청당 CPU <b>약 70%</b> 감소(한 리전, 8~10월), 요청당 메모리 <b>80% 이상</b> 감소(전체 운영, 8~10월), 첫 토큰까지 시간(TTFT) 중앙값 <b>약 20%</b> 단축(고객의 클로드 코드 요청, 9월 7~21일 전후)</span></div>
+    <div class="fact"><span class="k">테스트</span><span class="v">기존 통합 테스트 약 700개를 이식. 감사 과정에서 단언(assertion)이 약해진 테스트 <b>100개 이상</b> 발견</span></div>
+    <div class="fact"><span class="k">공개 범위</span><span class="v">블로그 글과 그래프만 공개. 코드, 원자료, 사용한 클로드 모델 버전은 밝히지 않음</span></div>
+  </div>
+
+  <h3><span class="marker">/</span>어떻게 동작하나</h3>
+  <p>기본 방법은 섀도 트래픽(shadow traffic) 비교다. 실제 요청을 파이썬 버전과 러스트 버전에 함께 흘려보내고 결과가 같은지 본다. 문제는 클로드의 응답이 매번 달라지는 비결정적(nondeterministic) 출력이라는 점이다. 그래서 모델은 한 번만 호출하고, 그 출력을 러스트 쪽에 그대로 재생(replay)해 비교했다. 또 개인정보 때문에 요청·응답 본문은 보지 않고, 처리 단계마다 중간 결과를 비교하는 체크포인트와, 처음 달라진 바이트·조각·길이 차이 같은 '지문(fingerprint)'만 기록했다. 버그 하나가 거의 같은 불일치 기록 수십만 건을 만들 수 있어서, 이 지문으로 기록을 버그 단위로 묶었다.</p>
+  <p>작업은 세 겹의 고리로 돌았다. 안쪽 고리에서는 10~30분마다 도는 스크립트가 새로운 종류의 불일치가 나오면 조율 에이전트에게 알리고, 조율 에이전트가 종류별로 작업 에이전트를 하나씩 붙였다. 작업 에이전트는 두 코드베이스가 다 있는 클라우드 샌드박스에서 원인을 추정하고, 그 불일치를 일으키는 요청을 만들고, 두 버전이 같아질 때까지 러스트 코드를 고친 뒤 테스트를 추가했다. 프롬프트 조립 비교는 모델을 부르지 않아 1초도 안 걸렸다. 바깥 고리에서는 사람이 PR을 검토해 스테이징·운영에 배포하고, 몇 시간~며칠 동안 섀도 트래픽으로 다시 확인했다. 세 번째는 '기억' 고리로, 엔지니어가 지적한 내용을 이후 에이전트가 따르는 규칙(CLAUDE.md)으로 남겼다. 예컨대 "파이썬이 한 것을 그대로 옮겨라"는 규칙을 넣자 에이전트가 추측으로 이식한 곳 7군데를 더 찾아냈다. 나중에는 파이썬을 고치면 러스트에도 대응 변경(또는 예외 표시)이 있어야 병합되는 CI 검사까지 붙였다.</p>
+
+  <h3><span class="marker">/</span>왜 중요한가</h3>
+  <p>코딩 에이전트가 함수 몇 개를 짜는 수준이 아니라, 하루에도 대량의 요청을 받는 운영 시스템의 언어를 통째로 바꾸는 데 쓰인 사례를 회사가 과정까지 적어 공개한 것이다. 글에서 눈에 띄는 대목은 병목이 코드 작성이 아니라 검증이었다는 점이다. 초안은 1주 만에 나왔지만, 실트래픽에서 99.6% 일치에 이르기까지는 4월부터 8월까지 걸렸다. 테스트 98% 통과와 실제 입력 24% 일치 사이의 차이는, 테스트 통과만으로는 이식이 끝났다고 볼 수 없음을 보여준다.</p>
+  <p>또 하나는 사람 역할의 변화다. 앤트로픽은 엔지니어가 처음엔 직접 불일치를 고치다가, PR 검토 단계에서 방향을 잡고, 마지막엔 규칙과 자동 검사를 만드는 쪽으로 옮겨 갔다고 썼다. 웹 검색 도구 설명이 프롬프트에서 빠진 버그를 에이전트가 일치만 맞추는 임시 코드로 덮으려 하자 엔지니어가 거절한 일화도 소개했다. 글은 이를 "검증기는 출력 일치에 보상을 줬고, 에이전트는 그걸 만드는 가장 싼 방법을 찾았다"고 설명한다. 보상 해킹(reward hacking)이 실무에서 어떤 모양으로 나오는지 보여주는 예다.</p>
+
+  <div class="callout yellow">
+    <span class="ico">⚠️</span>
+    <div class="body">
+      <p><b>짚어둘 점</b> — 모든 수치는 앤트로픽 자체 측정이고 외부 검증은 없다. 측정 범위도 제각각이다. CPU 70%는 한 리전, 메모리 80%는 전체 운영, TTFT 20%는 고객의 클로드 코드 요청만 짧은 기간 본 것이다. 일치율 그래프는 비교 대상이 중간에 바뀌었고 "오해를 부르는 6일"을 뺐다고 글에 적혀 있다. 입력 일치율 99.6%는 제시됐지만 응답 쪽 일치율은 따로 나오지 않았다. 코드 줄 수, 전체 투입 인력·기간, 에이전트 실행 비용, 전환 뒤 장애나 롤백 여부도 밝히지 않았다(장애가 없었다는 기록이 있는 것도 아니다). 사용한 클로드 모델 버전도 없다. 클로드를 파는 회사가 클로드의 쓸모를 보여주는 글이라는 이해관계도 있다. 성능 개선의 상당 부분은 에이전트 덕이라기보다 파이썬에서 러스트로 바꾼 데서 온 것이고, 사람이 직접 이식했을 때와의 비교는 없다. 앤트로픽처럼 테스트, 섀도 트래픽 인프라, 내부 규칙 체계를 다 갖춘 조직이 아니면 같은 방식을 그대로 쓰기 어렵다.</p>
+    </div>
+  </div>
+
+  <h3><span class="marker">/</span>알아두면 좋은 용어</h3>
+  <div class="terms">
+    <div class="term">
+      <div class="en">Rust</div>
+      <div class="ko">메모리 안전성을 컴파일 단계에서 보장하는 시스템 프로그래밍 언어. 가비지 컬렉터가 없어 파이썬보다 CPU·메모리를 훨씬 적게 쓴다</div>
+    </div>
+    <div class="term">
+      <div class="en">Shadow traffic (섀도 트래픽)</div>
+      <div class="ko">실제 요청을 복제해 새 시스템에도 보내되, 사용자에게는 기존 시스템의 응답만 돌려주면서 두 결과를 비교하는 검증 방식</div>
+    </div>
+    <div class="term">
+      <div class="en">Time to first token (TTFT)</div>
+      <div class="ko">요청을 보낸 뒤 응답의 첫 토큰이 도착할 때까지 걸리는 시간. 사용자가 느끼는 반응 속도에 해당</div>
+    </div>
+    <div class="term">
+      <div class="en">Differential replay (차등 재생)</div>
+      <div class="ko">비결정적인 모델 출력을 한 번만 만들어 두고 두 시스템에 똑같이 재생해, 출력 차이가 모델 때문인지 코드 때문인지 구분하는 방법</div>
+    </div>
+    <div class="term">
+      <div class="en">Reward hacking (보상 해킹)</div>
+      <div class="ko">AI가 목표의 의도 대신 평가 기준의 허점을 맞추는 행동. 여기서는 '출력 일치'만 맞추는 임시 코드를 쓴 것</div>
+    </div>
+  </div>
+
+  <h3><span class="marker">/</span>출처</h3>
+  <div class="src">
+    <div class="item"><a href="https://www.anthropic.com/research/migrating-api-to-rust">Migrating our Messages API to Rust</a> — Anthropic, 2026년 11월 25일</div>
+    <div class="item"><a href="https://dataconomy.com/2026/11/26/anthropic-says-rust-migration-cut-api-cpu-use-by-70/">Anthropic Says Rust Migration Cut API CPU Use By 70%</a> — Dataconomy, 2026년 11월 26일</div>
+    <div class="item"><a href="https://letsdatascience.com/blog/claude-rewrote-anthropic-api-in-rust-checking-took-months">How Anthropic Moved Its Messages API From Python to Rust</a> — Let's Data Science, 2026년 11월</div>
+  </div>
+</article>
+  <details class="toggle">
+    <summary>지난 회차 69개</summary>
 <article class="entry" id="a69">
   <div class="entry-meta">
     <span class="chip">69회차</span>
@@ -447,8 +527,6 @@
     <div class="item"><a href="https://www.healthcareitnews.com/news/google-cloud-intros-new-ai-offering-gemini-healthcare">Google Cloud intros new AI offering, Gemini for healthcare</a> — Healthcare IT News, 2026년 11월</div>
   </div>
 </article>
-  <details class="toggle">
-    <summary>지난 회차 68개</summary>
 <article class="entry" id="a68">
   <div class="entry-meta">
     <span class="chip">68회차</span>
